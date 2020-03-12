@@ -9,6 +9,6 @@ public class ImageButton {
 	public ImageButton(ImageIcon icon,String image,int height,int width){
 		JButton button1=new JButton(icon);
 		
-		//set up the height,width,text etc..
+		//set up the height,width,text,margin etc..
 	}
 }
