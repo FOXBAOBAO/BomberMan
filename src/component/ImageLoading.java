@@ -1,20 +1,20 @@
 package component;
+
 import java.awt.Image;
-import java.swing.ImageIcon;
+import java.awt.Toolkit;
+import javax.swing.ImageIcon;
+
 public class ImageLoading {
 
-	public ImageIcon createImageIcon(String path){
-		ImageIcon ima=new ImageIcon(path);
-		return ima;
-		
-	}
-	public Image CreatImage(String path){
-		Image ima = new Image(path);
-		return ima;
-		
-		
+	public static ImageIcon createImageIcon(String path){
+
+		return new ImageIcon(path);
 	}
 	
+	public static Image createImage(String path){
+		
+		return Toolkit.getDefaultToolkit().getImage(path);
+	}
 	
 
 }
