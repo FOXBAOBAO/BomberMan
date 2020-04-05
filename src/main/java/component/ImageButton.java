@@ -1,4 +1,4 @@
-package component;
+package main.java.component;
 
 import java.awt.Insets;
 import javax.swing.ImageIcon;

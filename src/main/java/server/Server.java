@@ -1,4 +1,4 @@
-package server;
+package main.java.server;
 
 public class Server {
 

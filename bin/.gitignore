@@ -1,6 +1,2 @@
-/component/
-/game/
-/logic/
-/server/
-/ui/
-/util/
+/main/
+/test/

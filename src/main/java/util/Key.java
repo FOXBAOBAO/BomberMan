@@ -1,4 +1,4 @@
-package util;
+package main.java.util;
 
 public class Key {
 	public static int PORT = 9000;

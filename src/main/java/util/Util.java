@@ -1,4 +1,4 @@
-package util;
+package main.java.util;
 
 
 import java.awt.Dimension;
@@ -7,8 +7,8 @@ import java.awt.Window;
 
 import javax.swing.JFrame;
 
-import logic.Message;
-import component.Windows;
+import main.java.logic.Message;
+import main.java.component.Windows;
 
 public class Util {
 	public static void printMessage(String desc ,Message msg){
