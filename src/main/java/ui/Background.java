@@ -1,4 +1,4 @@
-package main.java.ui;
+package ui;
 
 import java.awt.*;
 import java.awt.event.*;
@@ -9,8 +9,8 @@ import java.util.ArrayList;
 
 import javax.swing.JFrame;
 
-import main.java.logic.Message;
-import main.java.component.ImageLoading;
+import logic.Message;
+import component.ImageLoading;
 
 public class Background extends Panel implements  Runnable , MouseListener,KeyListener{
 	private static final long serialVersionUID = 1L;
