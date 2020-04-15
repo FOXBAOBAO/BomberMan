@@ -55,48 +55,35 @@ test {
  def artifactId = projectDir.name 
  def versionNumber = version 
  
- artifactory {
- contextUrl ='http：//path.to.artifactory'// base artifactory url 
-publish{
- repository {
- repoKey ='libs-releases'//发布到
- username ='ling'//发布者用户名
- password ='fox'//发布者密码
- maven = true 
-} 
-} 
-} 
- artifactoryPublish {
- dependsOn jar 
-} 
-
-
-
-publishing {
-    publications {
-        mavenJava(MavenPublication) {
-            from components.java
-        }
-    }
-}
-defaults {
-   publications ('mavenJava')
-}
 */
 
 apply plugin:'java'
 apply plugin:'eclipse'
 apply plugin:'maven'
-//apply plugin:'artifactory-publish'
 apply plugin:'maven-publish'
-group = 'test'
+
+ 
 dependencies {
     testCompile 'junit:junit:4.8.2'
 }
-
+configurations {
+    deployerJars
+}
  repositories {
     mavenCentral()
 }
+dependencies {
+     deployerJars "org.apache.maven.wagon:wagon-ssh:2.2"
+}
+uploadArchives {
+    repositories.mavenDeployer {
+        configuration = configurations.deployerJars
+        repository(url: "https://github.com/FOXBAOBAO/BomberMan.git") {
+            authentication(userName: "FOXBAOBAO", password: "zxcy669918") // 这里是仓库账号认证设置，用户名和密码
+        }
+    }
+}
+/*
 publishing {
     repositories {
  
@@ -114,4 +101,7 @@ publishing {
             from(components.java)
         }
     }
-}
+}*/
+
+
+
