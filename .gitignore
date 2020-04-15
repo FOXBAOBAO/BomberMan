@@ -22,7 +22,7 @@
 .classpath
 # if the files to be tracked are in subdirectories
 !/gradle/wrapper/gradle-wrapper.jar
-!/build/libs/test1.jar
+!/build/libs/*.jar
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 /.gradle/
