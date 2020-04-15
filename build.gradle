@@ -6,7 +6,7 @@
  * User Manual available at https://docs.gradle.org/6.0/userguide/java_library_plugin.html
  */
 
-plugins {
+/*plugins {
     // Apply the java-library plugin to add support for Java Library
     id 'java-library'
 }
@@ -27,6 +27,8 @@ dependencies {
     testImplementation 'junit:junit:4.12'
 
 }
+
+*/
 /*apply plugin: 'java'
 group = 'test'
 dependencies {
@@ -81,12 +83,23 @@ defaults {
    publications ('mavenJava')
 }
 */
-plugins {
-    id("maven-publish")
+
+apply plugin:'java'
+apply plugin:'eclipse'
+apply plugin:'maven'
+//apply plugin:'artifactory-publish'
+apply plugin:'maven-publish'
+group = 'test'
+dependencies {
+    testCompile 'junit:junit:4.8.2'
 }
 
+ repositories {
+    mavenCentral()
+}
 publishing {
     repositories {
+ 
         maven {
             name = "GitHubPackages"
             url = uri("https://maven.pkg.github.com/OWNER/REPOSITORY")
