@@ -25,4 +25,8 @@ public class ImageButton extends JButton{
 		setText(null);
 		setSize(icon.getImage().getWidth(null), icon.getImage().getHeight(null));
 	}
+	
+	 public String check(){
+	        return "Check.";
+	    } 
 }

@@ -6,7 +6,7 @@
  * User Manual available at https://docs.gradle.org/6.0/userguide/java_library_plugin.html
  */
 
-plugins {
+/*plugins {
     // Apply the java-library plugin to add support for Java Library
     id 'java-library'
 }
@@ -26,4 +26,12 @@ dependencies {
 
     // Use JUnit test framework
     testImplementation 'junit:junit:4.12'
+}*/
+apply plugin: 'java'
+group = 'test'
+dependencies {
+    testCompile 'junit:junit:4.8.2'
+}
+repositories {
+        mavenCentral()
 }
