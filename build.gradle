@@ -81,3 +81,24 @@ defaults {
    publications ('mavenJava')
 }
 */
+plugins {
+    id("maven-publish")
+}
+
+publishing {
+    repositories {
+        maven {
+            name = "GitHubPackages"
+            url = uri("https://maven.pkg.github.com/OWNER/REPOSITORY")
+            credentials {
+                username = project.findProperty("gpr.user") ?: System.getenv("FOXBAOBAO")
+                password = project.findProperty("gpr.key") ?: System.getenv("cde2f046808a80e9f2c5644af1b6b4f724fe6651")
+            }
+        }
+    }
+    publications {
+        gpr(MavenPublication) {
+            from(components.java)
+        }
+    }
+}
