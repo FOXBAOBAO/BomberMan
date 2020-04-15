@@ -75,14 +75,41 @@ configurations {
 dependencies {
      deployerJars "org.apache.maven.wagon:wagon-ssh:2.2"
 }
-uploadArchives {
+/*uploadArchives {
     repositories.mavenDeployer {
         configuration = configurations.deployerJars
-        repository(url: "https://github.com/FOXBAOBAO/BomberMan.git") {
-            authentication(userName: "FOXBAOBAO", password: "zxcy669918") // 这里是仓库账号认证设置，用户名和密码
+        repository(url: "com.github.FOXBAOBAO:BomberMan:CreateCI-SNAPSHOT") {
+            authentication(userName: "", password: "") // 这里是仓库账号认证设置，用户名和密码
+        }
+    }
+}*/
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            repository(url: "file://localhost/tmp/myRepo/")
+            pom.version = '1.0Maven' // 发布到仓库的构建版本
+            pom.artifactId = 'myMavenName' // 发布到仓库的构建id
         }
     }
 }
+ uploadArchives {
+        repositories {
+            mavenDeployer {
+                repository(url: "com.github.FOXBAOBAO:BomberMan:CreateCI-SNAPSHOT") {
+                    // 用户校验 用户名/密码
+                    authentication(userName: "", password: "")
+                }
+                pom.project {
+                    name "artifact_test"// artifact名称
+                    version 1.0 // artifact版本
+                    artifactId "test" // artifact id
+                    groupId "bomberman" // artifact所属Group Id
+                    packaging jar // 文件格式，例如jar、aar
+                    description "" // 描述
+                }
+            }
+        }
+    }
 /*
 publishing {
     repositories {
