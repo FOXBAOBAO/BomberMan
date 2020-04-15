@@ -62,18 +62,27 @@ apply plugin:'eclipse'
 apply plugin:'maven'
 apply plugin:'maven-publish'
 
- 
-dependencies {
-    testCompile 'junit:junit:4.8.2'
-}
-configurations {
-    deployerJars
-}
  repositories {
     mavenCentral()
+     // maven {url 'https://dl.bintray.com/jetbrains/anko'} 
+       maven {
+        url "http://repo.mycompany.com/maven2"
+    }
 }
 dependencies {
-     deployerJars "org.apache.maven.wagon:wagon-ssh:2.2"
+    compile group: 'org.hibernate', name: 'hibernate-core', version: '3.6.7.Final'
+    testCompile group: 'junit', name: 'junit', version: '4.+'
+}
+task myJar(type: Jar)
+artifacts {
+    archives myJar
+}
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            repository(url: "file://localhost/tmp/myRepo/")
+        }
+    }
 }
 /*uploadArchives {
     repositories.mavenDeployer {
@@ -83,6 +92,7 @@ dependencies {
         }
     }
 }*/
+/*
 uploadArchives {
     repositories {
         mavenDeployer {
@@ -109,7 +119,7 @@ uploadArchives {
                 }
             }
         }
-    }
+    }*/
 /*
 publishing {
     repositories {
