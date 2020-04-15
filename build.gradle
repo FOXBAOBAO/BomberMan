@@ -9,8 +9,28 @@
 /*plugins {
     // Apply the java-library plugin to add support for Java Library
     id 'java-library'
-}
+}*/
 
+apply plugin: 'java'
+apply plugin:'application'
+jar{
+    manifestContentCharset 'utf-8'
+    metadataCharset 'utf-8'
+    manifest{
+        // manifest 文件声明主程序入口
+        attributes "Main-Class":"test.java.test.ImageButtonTest"
+    }
+
+    from {
+        configurations.compile.collect {
+            it.isDirectory() ? it : zipTree(it)
+        }
+    }
+
+}
+group = 'test'
+version '1.0-SNAPSHOT'
+sourceCompatibility = 1.8
 repositories {
     // Use jcenter for resolving dependencies.
     // You can declare any Maven/Ivy/file repository here.
@@ -19,19 +39,67 @@ repositories {
 
 dependencies {
     // This dependency is exported to consumers, that is to say found on their compile classpath.
-    api 'org.apache.commons:commons-math3:3.6.1'
+    //api 'org.apache.commons:commons-math3:3.6.1'
 
     // This dependency is used internally, and not exposed to consumers on their own compile classpath.
-    implementation 'com.google.guava:guava:28.0-jre'
+    //implementation 'com.google.guava:guava:28.0-jre'
 
     // Use JUnit test framework
-    testImplementation 'junit:junit:4.12'
-}*/
-apply plugin: 'java'
+    //testImplementation 'junit:junit:4.12'
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    compile group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '3.141.59'
+}
+/*apply plugin: 'java'
 group = 'test'
 dependencies {
     testCompile 'junit:junit:4.8.2'
 }
 repositories {
         mavenCentral()
+test {
+	    testLogging {
+	        // Show that tests are run in the command-line output
+	        events 'started', 'passed'
+	    }
+	}
+}*/
+
+/*
+ apply plugin：'java'
+ apply plugin：' eclipse'
+ apply plugin：'maven'
+ apply plugin：'artifactory-publish'
+ apply plugin: 'maven-publish'
+ groupId ='myGroup'
+ version ='1.0'
+ def artifactId = projectDir.name 
+ def versionNumber = version 
+ 
+ artifactory {
+ contextUrl ='http：//path.to.artifactory'// base artifactory url 
+publish{
+ repository {
+ repoKey ='libs-releases'//发布到
+ username ='ling'//发布者用户名
+ password ='fox'//发布者密码
+ maven = true 
+} 
+} 
+} 
+ artifactoryPublish {
+ dependsOn jar 
+} 
+
+
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            from components.java
+        }
+    }
 }
+defaults {
+   publications ('mavenJava')
+}
+*/
