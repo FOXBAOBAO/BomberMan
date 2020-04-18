@@ -27,6 +27,6 @@ public class ImageButton extends JButton{
 	}
 	
 	 public String check(){
-	        return "Check.";
+	        return "Check";
 	    } 
 }

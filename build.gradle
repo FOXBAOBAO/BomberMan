@@ -70,7 +70,7 @@ apply plugin:'maven-publish'
     }
 }
 dependencies {
-    compile group: 'org.hibernate', name: 'hibernate-core', version: '3.6.7.Final'
+    compile group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '2.41.0'
     testCompile group: 'junit', name: 'junit', version: '4.+'
 }
 task myJar(type: Jar)
@@ -84,61 +84,3 @@ uploadArchives {
         }
     }
 }
-/*uploadArchives {
-    repositories.mavenDeployer {
-        configuration = configurations.deployerJars
-        repository(url: "com.github.FOXBAOBAO:BomberMan:CreateCI-SNAPSHOT") {
-            authentication(userName: "", password: "") // 这里是仓库账号认证设置，用户名和密码
-        }
-    }
-}*/
-/*
-uploadArchives {
-    repositories {
-        mavenDeployer {
-            repository(url: "file://localhost/tmp/myRepo/")
-            pom.version = '1.0Maven' // 发布到仓库的构建版本
-            pom.artifactId = 'myMavenName' // 发布到仓库的构建id
-        }
-    }
-}
- uploadArchives {
-        repositories {
-            mavenDeployer {
-                repository(url: "com.github.FOXBAOBAO:BomberMan:CreateCI-SNAPSHOT") {
-                    // 用户校验 用户名/密码
-                    authentication(userName: "", password: "")
-                }
-                pom.project {
-                    name "artifact_test"// artifact名称
-                    version 1.0 // artifact版本
-                    artifactId "test" // artifact id
-                    groupId "bomberman" // artifact所属Group Id
-                    packaging jar // 文件格式，例如jar、aar
-                    description "" // 描述
-                }
-            }
-        }
-    }*/
-/*
-publishing {
-    repositories {
- 
-        maven {
-            name = "GitHubPackages"
-            url = uri("https://maven.pkg.github.com/OWNER/REPOSITORY")
-            credentials {
-                username = project.findProperty("gpr.user") ?: System.getenv("FOXBAOBAO")
-                password = project.findProperty("gpr.key") ?: System.getenv("cde2f046808a80e9f2c5644af1b6b4f724fe6651")
-            }
-        }
-    }
-    publications {
-        gpr(MavenPublication) {
-            from(components.java)
-        }
-    }
-}*/
-
-
-

@@ -1,6 +1,7 @@
 package ui;
 
 import java.awt.*;
+
 import java.awt.event.*;
 import java.net.*;
 import java.util.*;
@@ -89,6 +90,10 @@ public class Background extends Panel implements  Runnable , MouseListener,KeyLi
 			th=new Thread(this);
 			th.start();
 		}	
+	public Background() {
+		
+	}
+	
 	public void start(){
 		//	thread.start();
 	}
@@ -808,11 +813,19 @@ public void initMap() throws IOException{
 		}
     		
 	}
+	public static int flag = 0;
 	public void mousePressed(MouseEvent e){}
 	public void mouseReleased(MouseEvent e){}
 	public void mouseEntered(MouseEvent e){}
 	public void mouseExited(MouseEvent e){}
 	public void mouseClicked(MouseEvent e){}
+	public int verKeyPressed(KeyEvent e) {
+		
+		 Background background = new Background();
+		background.keyPressed(e);
+		return flag;
+		
+	}
 	public void keyPressed(KeyEvent e){
 
 		
@@ -868,6 +881,7 @@ public void initMap() throws IOException{
 			MessageControl.sendMessage(test,out);
 			System.out.println("UP Pressed "+test.team+test.head+test.moveTypeX/10+test.moveTypeY/10);
 			}
+			flag = 1;
 		}
 		if(e.getKeyCode()==KeyEvent.VK_RIGHT){
 			int m1=(myX-5)/40;
@@ -915,6 +929,7 @@ public void initMap() throws IOException{
 			
 			}
 			System.out.println("RIGHT Pressed ");
+			flag = 2;
 		}
 		if(e.getKeyCode()==KeyEvent.VK_DOWN){
 			int m1=(myX-5)/40;
@@ -957,6 +972,7 @@ public void initMap() throws IOException{
 			MessageControl.sendMessage(test,out);
 			}
 			System.out.println("DOWN Pressed ");
+			flag = 3;
 			
 		}
 		
@@ -1008,6 +1024,7 @@ public void initMap() throws IOException{
 			MessageControl.sendMessage(test,out);
 			}
 			System.out.println("LEFT Pressed ");
+			flag = 4;
 		}
 		
 		if(e.getKeyCode()==KeyEvent.VK_SPACE){
@@ -1021,6 +1038,7 @@ public void initMap() throws IOException{
 			test.y=n1;
 			test.BombPower=myBombPower;
 			MessageControl.sendMessage(test,out);
+			flag = 5;
 			
 		}
 		
