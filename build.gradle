@@ -65,9 +65,9 @@ apply plugin:'maven-publish'
  repositories {
     mavenCentral()
      // maven {url 'https://dl.bintray.com/jetbrains/anko'} 
-       maven {
-        url "http://repo.mycompany.com/maven2"
-    }
+      // maven {
+      //  url "http://repo.mycompany.com/maven2"
+   // }
 }
 dependencies {
     compile group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '2.41.0'
