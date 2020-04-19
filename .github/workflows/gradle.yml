@@ -8,38 +8,28 @@ on:
        - workflow_test
 
 jobs:
-  job_1:
-    build:
-      runs-on: ubuntu-latest
-      steps:
-        - uses: actions/checkout@v1
-        - name: Set up JDK 1.8
-          uses: actions/setup-java@v1
-          with:
-            java-version: 1.8
-        - name: Cache Gradle packages
-          uses: actions/cache@v1
-          with:
-            path: ~/.gradle/caches
-            key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle') }}
-            restore-keys: ${{ runner.os }}-gradle
-        - name: Grant execute permission for gradlew
-          run: chmod +x gradlew
-        - name: Java CI with Gradle
-          run: ./gradlew build
-
-  job_2:
-    name: Generate artifact
+  build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v1
       - name: Set up JDK 1.8
         uses: actions/setup-java@v1
         with:
           java-version: 1.8
+      - name: Cache Gradle packages
+        uses: actions/cache@v1
+        with:
+            path: ~/.gradle/caches
+            key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle') }}
+            restore-keys: ${{ runner.os }}-gradle
+      - name: Grant execute permission for gradlew
+        run: chmod +x gradlew
+      - name: Build Gradle
+        run: ./gradlew build
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
       - uses: actions/upload-artifact@v1
         with:
           name: Package
           path: build/libs
+        
