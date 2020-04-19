@@ -4,6 +4,7 @@ on:
    pull_request:
    push:
      branches:
+       - CreateCI
        - workflow_test
 
 jobs:
