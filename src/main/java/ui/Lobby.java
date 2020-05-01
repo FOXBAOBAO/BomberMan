@@ -58,22 +58,22 @@ public class Lobby extends JFrame implements MouseListener, MouseMotionListener,
 	ImageButton sendImg;
 	ImageButton ready;
 	ImageButton leave;
-	ImageButton player1_b =  new ImageButton(new ImageIcon("images/player13.jpg"));
-	ImageButton player1_r =  new ImageButton(new ImageIcon("images/player23.jpg"));
-	ImageButton player2_b =  new ImageButton(new ImageIcon("images/player13.jpg"));
-	ImageButton player2_r =  new ImageButton(new ImageIcon("images/player23.jpg"));
-	ImageButton player3_b =  new ImageButton(new ImageIcon("images/player13.jpg"));
-	ImageButton player3_r =  new ImageButton(new ImageIcon("images/player23.jpg"));
-	ImageButton player4_b =  new ImageButton(new ImageIcon("images/player13.jpg"));
-	ImageButton player4_r =  new ImageButton(new ImageIcon("images/player23.jpg"));
-	ImageButton player5_b =  new ImageButton(new ImageIcon("images/player13.jpg"));
-	ImageButton player5_r =  new ImageButton(new ImageIcon("images/player23.jpg"));
-	ImageButton player6_b =  new ImageButton(new ImageIcon("images/player13.jpg"));
-	ImageButton player6_r =  new ImageButton(new ImageIcon("images/player23.jpg"));
-	ImageButton player7_b =  new ImageButton(new ImageIcon("images/player13.jpg"));
-	ImageButton player7_r =  new ImageButton(new ImageIcon("images/player23.jpg"));
-	ImageButton player8_b =  new ImageButton(new ImageIcon("images/player13.jpg"));
-	ImageButton player8_r =  new ImageButton(new ImageIcon("images/player23.jpg"));
+	ImageButton player1_b =  new ImageButton(new ImageIcon("images/player1.jpg"));
+	ImageButton player1_r =  new ImageButton(new ImageIcon("images/player2.jpg"));
+	ImageButton player2_b =  new ImageButton(new ImageIcon("images/player1.jpg"));
+	ImageButton player2_r =  new ImageButton(new ImageIcon("images/player2.jpg"));
+	ImageButton player3_b =  new ImageButton(new ImageIcon("images/player1.jpg"));
+	ImageButton player3_r =  new ImageButton(new ImageIcon("images/player2.jpg"));
+	ImageButton player4_b =  new ImageButton(new ImageIcon("images/player1.jpg"));
+	ImageButton player4_r =  new ImageButton(new ImageIcon("images/player2.jpg"));
+	ImageButton player5_b =  new ImageButton(new ImageIcon("images/player1.jpg"));
+	ImageButton player5_r =  new ImageButton(new ImageIcon("images/player2.jpg"));
+	ImageButton player6_b =  new ImageButton(new ImageIcon("images/player1.jpg"));
+	ImageButton player6_r =  new ImageButton(new ImageIcon("images/player2.jpg"));
+	ImageButton player7_b =  new ImageButton(new ImageIcon("images/player1.jpg"));
+	ImageButton player7_r =  new ImageButton(new ImageIcon("images/player2.jpg"));
+	ImageButton player8_b =  new ImageButton(new ImageIcon("images/player1.jpg"));
+	ImageButton player8_r =  new ImageButton(new ImageIcon("images/player2.jpg"));
 	Cursor handcur,customcur;
 
 	ImageLabel il ;
@@ -95,8 +95,10 @@ public class Lobby extends JFrame implements MouseListener, MouseMotionListener,
 		
 		bule_role = new ImageButton(new ImageIcon("images/team1.jpg"));
 		bule_role.setRolloverIcon(ImageLoading.createImageIcon("images/team12.jpg"));
+
+		bule_role.setRolloverSelectedIcon(ImageLoading.createImageIcon("images/team12.jpg"));
 		bule_role.setSelectedIcon(ImageLoading.createImageIcon("images/team12.jpg"));
-		bule_role.setDisabledIcon(ImageLoading.createImageIcon("images/a2.png"));
+		//bule_role.setDisabledIcon(ImageLoading.createImageIcon("images/a2.png"));
 		bule_role.setLocation(526,185);
 		bule_role.setSelected(true);
 		bule_role.addMouseListener(this);
@@ -105,6 +107,7 @@ public class Lobby extends JFrame implements MouseListener, MouseMotionListener,
 
 		red_role = new ImageButton(new ImageIcon("images/team2.jpg"));
 		red_role.setRolloverIcon(ImageLoading.createImageIcon("images/team22.jpg"));
+
 		red_role.setRolloverSelectedIcon(ImageLoading.createImageIcon("images/team22.jpg"));
 		red_role.setSelectedIcon(ImageLoading.createImageIcon("images/team22.jpg"));
 		red_role.setLocation(653,183);
@@ -125,7 +128,7 @@ public class Lobby extends JFrame implements MouseListener, MouseMotionListener,
 		ready = new ImageButton(new ImageIcon("images/ready.jpg"));
 		ready.setRolloverIcon(ImageLoading.createImageIcon("images/ready2.jpg"));
 		ready.setSelectedIcon(ImageLoading.createImageIcon("images/ready_ok.jpg"));
-		ready.setLocation(572,538);
+		ready.setLocation(569,538);
 		ready.addMouseListener(this);
 		ready.addMouseMotionListener(this);
 		bgPanel.add(ready);
@@ -133,7 +136,7 @@ public class Lobby extends JFrame implements MouseListener, MouseMotionListener,
 
 		leave = new ImageButton(new ImageIcon("images/leave.jpg"));
 		leave.setRolloverIcon(ImageLoading.createImageIcon("images/leave2.jpg"));
-		leave.setLocation(655,538);
+		leave.setLocation(658,538);
 		leave.addMouseListener(this);
 		leave.addMouseMotionListener(this);
 		bgPanel.add(leave);
@@ -178,7 +181,7 @@ public class Lobby extends JFrame implements MouseListener, MouseMotionListener,
 		Util.printMessage("Tank House",this.meMessage);
 		this.in=in;
 		this.out=out;
-		this.setTitle("Player:"+userName);
+		this.setTitle("Uer Name:"+userName);
 
 		init();
 		
