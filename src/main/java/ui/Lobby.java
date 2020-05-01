@@ -58,22 +58,22 @@ public class Lobby extends JFrame implements MouseListener, MouseMotionListener,
 	ImageButton sendImg;
 	ImageButton ready;
 	ImageButton leave;
-	ImageButton player1_b =  new ImageButton(new ImageIcon("images/player1.jpg"));
-	ImageButton player1_r =  new ImageButton(new ImageIcon("images/player2.jpg"));
-	ImageButton player2_b =  new ImageButton(new ImageIcon("images/player1.jpg"));
-	ImageButton player2_r =  new ImageButton(new ImageIcon("images/player2.jpg"));
-	ImageButton player3_b =  new ImageButton(new ImageIcon("images/player1.jpg"));
-	ImageButton player3_r =  new ImageButton(new ImageIcon("images/player2.jpg"));
-	ImageButton player4_b =  new ImageButton(new ImageIcon("images/player1.jpg"));
-	ImageButton player4_r =  new ImageButton(new ImageIcon("images/player2.jpg"));
-	ImageButton player5_b =  new ImageButton(new ImageIcon("images/player1.jpg"));
-	ImageButton player5_r =  new ImageButton(new ImageIcon("images/player2.jpg"));
-	ImageButton player6_b =  new ImageButton(new ImageIcon("images/player1.jpg"));
-	ImageButton player6_r =  new ImageButton(new ImageIcon("images/player2.jpg"));
-	ImageButton player7_b =  new ImageButton(new ImageIcon("images/player1.jpg"));
-	ImageButton player7_r =  new ImageButton(new ImageIcon("images/player2.jpg"));
-	ImageButton player8_b =  new ImageButton(new ImageIcon("images/player1.jpg"));
-	ImageButton player8_r =  new ImageButton(new ImageIcon("images/player2.jpg"));
+	ImageButton player1_b =  new ImageButton(new ImageIcon("images/player13.jpg"));
+	ImageButton player1_r =  new ImageButton(new ImageIcon("images/player23.jpg"));
+	ImageButton player2_b =  new ImageButton(new ImageIcon("images/player13.jpg"));
+	ImageButton player2_r =  new ImageButton(new ImageIcon("images/player23.jpg"));
+	ImageButton player3_b =  new ImageButton(new ImageIcon("images/player13.jpg"));
+	ImageButton player3_r =  new ImageButton(new ImageIcon("images/player23.jpg"));
+	ImageButton player4_b =  new ImageButton(new ImageIcon("images/player13.jpg"));
+	ImageButton player4_r =  new ImageButton(new ImageIcon("images/player23.jpg"));
+	ImageButton player5_b =  new ImageButton(new ImageIcon("images/player13.jpg"));
+	ImageButton player5_r =  new ImageButton(new ImageIcon("images/player23.jpg"));
+	ImageButton player6_b =  new ImageButton(new ImageIcon("images/player13.jpg"));
+	ImageButton player6_r =  new ImageButton(new ImageIcon("images/player23.jpg"));
+	ImageButton player7_b =  new ImageButton(new ImageIcon("images/player13.jpg"));
+	ImageButton player7_r =  new ImageButton(new ImageIcon("images/player23.jpg"));
+	ImageButton player8_b =  new ImageButton(new ImageIcon("images/player13.jpg"));
+	ImageButton player8_r =  new ImageButton(new ImageIcon("images/player23.jpg"));
 	Cursor handcur,customcur;
 
 	ImageLabel il ;
@@ -147,7 +147,6 @@ public class Lobby extends JFrame implements MouseListener, MouseMotionListener,
 		this.player8_b.setSelectedIcon(ImageLoading.createImageIcon("images/player_b_ready.jpg"));
 		
 		this.player1_r.setSelectedIcon(ImageLoading.createImageIcon("images/player_r_ready.jpg"));
-		this.player2_r.setSelectedIcon(ImageLoading.createImageIcon("images/player_r_ready.jpg"));
 		this.player3_r.setSelectedIcon(ImageLoading.createImageIcon("images/player_r_ready.jpg"));
 		this.player4_r.setSelectedIcon(ImageLoading.createImageIcon("images/player_r_ready.jpg"));
 		this.player5_r.setSelectedIcon(ImageLoading.createImageIcon("images/player_r_ready.jpg"));
