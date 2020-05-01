@@ -1,5 +1,6 @@
 package ui;
 
+import java.awt.Color;
 import java.awt.Cursor;
 import java.awt.Point;
 import java.awt.Toolkit;
@@ -66,15 +67,17 @@ public class Login extends JFrame implements  ActionListener , MouseMotionListen
 		login_bt = new ImageButton(new ImageIcon("images/login_bt1.png"));
 		login_bt.setPressedIcon(ImageLoading.createImageIcon("images/login_bt.png"));
 		login_bt.setRolloverIcon(ImageLoading.createImageIcon("images/login_bt.png"));
-		login_bt.setLocation(210,153);
+		login_bt.setLocation(110, 180);
 		login_bt.addActionListener(this);
 		login_bt.addMouseMotionListener(this);
 		panel.add(login_bt);
 		
 		exit_bt = new ImageButton(new ImageIcon("images/exit_bt1.png"));
+		Color c = new Color(49,27,13);
+		exit_bt.setBackground(c);  
 		exit_bt.setPressedIcon(ImageLoading.createImageIcon("images/exit_bt2.png"));
 		exit_bt.setRolloverIcon(ImageLoading.createImageIcon("images/exit_bt2.png"));
-		exit_bt.setLocation(277,162);
+		exit_bt.setLocation(335,0);
 		exit_bt.addActionListener(this);
 		exit_bt.addMouseMotionListener(this);
 		panel.add(exit_bt);
@@ -86,13 +89,13 @@ public class Login extends JFrame implements  ActionListener , MouseMotionListen
 		user = new JTextField();
 		Border border = BorderFactory.createEmptyBorder(1, 0,0,0);
 		user.setBorder(border);
-		user.setLocation(105, 83);
+		user.setLocation(132, 100);
 		user.setSize(115,20);
 		panel.add(user);
 		
 		password = new JPasswordField();
 		password.setBorder(border);
-		password.setLocation(105, 113);
+		password.setLocation(132, 150);
 		password.setSize(115,20);
 		password.setEchoChar('*');
 		panel.add(password);
