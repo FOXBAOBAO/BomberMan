@@ -53,7 +53,7 @@ public class Lobby extends JFrame implements MouseListener, MouseMotionListener,
 	ObjectOutputStream out;
 	
 	Thread thread;
-	ImagePanel bgPanel = new ImagePanel(new ImageIcon("images/house.jpg").getImage());
+	ImagePanel bgPanel = new ImagePanel(new ImageIcon("images/house2.jpg").getImage());
 	ImageButton bule_role;
 	ImageButton red_role;
 	ImageButton sendImg;
@@ -167,7 +167,8 @@ public class Lobby extends JFrame implements MouseListener, MouseMotionListener,
 		this.player8_r.setSelectedIcon(ImageLoading.createImageIcon("images/player_r_ready.jpg"));
 
 		showMsg.setBounds(30,370,455,138);
-		showMsg.setBackground(Color.yellow);
+		//showMsg.setBackground(Color.blue);
+		showMsg.setBackground(new Color(120,225,247));
 		showMsg.setEditable(false);
 		//showMsg.setAutoscrolls(true);
 		bgPanel.add(showMsg);
