@@ -1,0 +1,80 @@
+src/main/java/logic/Bomb.java:5:	CommentRequired: Class comments are required
+src/main/java/logic/Bomb.java:5:	CommentRequired: Class comments are required
+src/main/java/logic/Bomb.java:5:	DoNotUseThreads: To be compliant to J2EE, a webapp should not use any thread.
+src/main/java/logic/Bomb.java:5:	DoNotUseThreads: To be compliant to J2EE, a webapp should not use any thread.
+src/main/java/logic/Bomb.java:5:	ShortClassName: Avoid short class names like Bomb
+src/main/java/logic/Bomb.java:5:	ShortClassName: Avoid short class names like Bomb
+src/main/java/logic/Bomb.java:6:	BeanMembersShouldSerialize: Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/logic/Bomb.java:6:	BeanMembersShouldSerialize: Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/logic/Bomb.java:6:	CommentDefaultAccessModifier: To avoid mistakes add a comment at the beginning of the bg field if you want a default access modifier
+src/main/java/logic/Bomb.java:6:	CommentDefaultAccessModifier: To avoid mistakes add a comment at the beginning of the bg field if you want a default access modifier
+src/main/java/logic/Bomb.java:6:	CommentRequired: Field comments are required
+src/main/java/logic/Bomb.java:6:	CommentRequired: Field comments are required
+src/main/java/logic/Bomb.java:6:	DefaultPackage: Use explicit scoping instead of the default package private level
+src/main/java/logic/Bomb.java:6:	DefaultPackage: Use explicit scoping instead of the default package private level
+src/main/java/logic/Bomb.java:6:	ShortVariable: Avoid variables with short names like bg
+src/main/java/logic/Bomb.java:6:	ShortVariable: Avoid variables with short names like bg
+src/main/java/logic/Bomb.java:7:	BeanMembersShouldSerialize: Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/logic/Bomb.java:7:	BeanMembersShouldSerialize: Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/logic/Bomb.java:7:	BeanMembersShouldSerialize: Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/logic/Bomb.java:7:	BeanMembersShouldSerialize: Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/logic/Bomb.java:7:	CommentDefaultAccessModifier: To avoid mistakes add a comment at the beginning of the m field if you want a default access modifier
+src/main/java/logic/Bomb.java:7:	CommentDefaultAccessModifier: To avoid mistakes add a comment at the beginning of the m field if you want a default access modifier
+src/main/java/logic/Bomb.java:7:	CommentRequired: Field comments are required
+src/main/java/logic/Bomb.java:7:	CommentRequired: Field comments are required
+src/main/java/logic/Bomb.java:7:	DefaultPackage: Use explicit scoping instead of the default package private level
+src/main/java/logic/Bomb.java:7:	DefaultPackage: Use explicit scoping instead of the default package private level
+src/main/java/logic/Bomb.java:7:	OneDeclarationPerLine: Use one line for each declaration, it enhances code readability.
+src/main/java/logic/Bomb.java:7:	OneDeclarationPerLine: Use one line for each declaration, it enhances code readability.
+src/main/java/logic/Bomb.java:7:	ShortVariable: Avoid variables with short names like m
+src/main/java/logic/Bomb.java:7:	ShortVariable: Avoid variables with short names like m
+src/main/java/logic/Bomb.java:7:	ShortVariable: Avoid variables with short names like n
+src/main/java/logic/Bomb.java:7:	ShortVariable: Avoid variables with short names like n
+src/main/java/logic/Bomb.java:8:	BeanMembersShouldSerialize: Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/logic/Bomb.java:8:	BeanMembersShouldSerialize: Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/logic/Bomb.java:8:	CommentDefaultAccessModifier: To avoid mistakes add a comment at the beginning of the sleepTime field if you want a default access modifier
+src/main/java/logic/Bomb.java:8:	CommentDefaultAccessModifier: To avoid mistakes add a comment at the beginning of the sleepTime field if you want a default access modifier
+src/main/java/logic/Bomb.java:8:	CommentRequired: Field comments are required
+src/main/java/logic/Bomb.java:8:	CommentRequired: Field comments are required
+src/main/java/logic/Bomb.java:8:	DefaultPackage: Use explicit scoping instead of the default package private level
+src/main/java/logic/Bomb.java:8:	DefaultPackage: Use explicit scoping instead of the default package private level
+src/main/java/logic/Bomb.java:9:	BeanMembersShouldSerialize: Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/logic/Bomb.java:9:	BeanMembersShouldSerialize: Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/logic/Bomb.java:9:	CommentDefaultAccessModifier: To avoid mistakes add a comment at the beginning of the power field if you want a default access modifier
+src/main/java/logic/Bomb.java:9:	CommentDefaultAccessModifier: To avoid mistakes add a comment at the beginning of the power field if you want a default access modifier
+src/main/java/logic/Bomb.java:9:	CommentRequired: Field comments are required
+src/main/java/logic/Bomb.java:9:	CommentRequired: Field comments are required
+src/main/java/logic/Bomb.java:9:	DefaultPackage: Use explicit scoping instead of the default package private level
+src/main/java/logic/Bomb.java:9:	DefaultPackage: Use explicit scoping instead of the default package private level
+src/main/java/logic/Bomb.java:10:	BeanMembersShouldSerialize: Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/logic/Bomb.java:10:	BeanMembersShouldSerialize: Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/logic/Bomb.java:10:	CommentDefaultAccessModifier: To avoid mistakes add a comment at the beginning of the stopMark field if you want a default access modifier
+src/main/java/logic/Bomb.java:10:	CommentDefaultAccessModifier: To avoid mistakes add a comment at the beginning of the stopMark field if you want a default access modifier
+src/main/java/logic/Bomb.java:10:	CommentRequired: Field comments are required
+src/main/java/logic/Bomb.java:10:	CommentRequired: Field comments are required
+src/main/java/logic/Bomb.java:10:	DefaultPackage: Use explicit scoping instead of the default package private level
+src/main/java/logic/Bomb.java:10:	DefaultPackage: Use explicit scoping instead of the default package private level
+src/main/java/logic/Bomb.java:12:	CallSuperInConstructor: It is a good practice to call super() in a constructor
+src/main/java/logic/Bomb.java:12:	CallSuperInConstructor: It is a good practice to call super() in a constructor
+src/main/java/logic/Bomb.java:12:	CommentRequired: Public method and constructor comments are required
+src/main/java/logic/Bomb.java:12:	CommentRequired: Public method and constructor comments are required
+src/main/java/logic/Bomb.java:12:	MethodArgumentCouldBeFinal: Parameter 'p' is not assigned and could be declared final
+src/main/java/logic/Bomb.java:12:	MethodArgumentCouldBeFinal: Parameter 'p' is not assigned and could be declared final
+src/main/java/logic/Bomb.java:12:	MethodArgumentCouldBeFinal: Parameter 'pp' is not assigned and could be declared final
+src/main/java/logic/Bomb.java:12:	MethodArgumentCouldBeFinal: Parameter 'pp' is not assigned and could be declared final
+src/main/java/logic/Bomb.java:12:	MethodArgumentCouldBeFinal: Parameter 'x' is not assigned and could be declared final
+src/main/java/logic/Bomb.java:12:	MethodArgumentCouldBeFinal: Parameter 'x' is not assigned and could be declared final
+src/main/java/logic/Bomb.java:12:	MethodArgumentCouldBeFinal: Parameter 'y' is not assigned and could be declared final
+src/main/java/logic/Bomb.java:12:	MethodArgumentCouldBeFinal: Parameter 'y' is not assigned and could be declared final
+src/main/java/logic/Bomb.java:12:	ShortVariable: Avoid variables with short names like p
+src/main/java/logic/Bomb.java:12:	ShortVariable: Avoid variables with short names like p
+src/main/java/logic/Bomb.java:12:	ShortVariable: Avoid variables with short names like pp
+src/main/java/logic/Bomb.java:12:	ShortVariable: Avoid variables with short names like pp
+src/main/java/logic/Bomb.java:12:	ShortVariable: Avoid variables with short names like x
+src/main/java/logic/Bomb.java:12:	ShortVariable: Avoid variables with short names like x
+src/main/java/logic/Bomb.java:12:	ShortVariable: Avoid variables with short names like y
+src/main/java/logic/Bomb.java:12:	ShortVariable: Avoid variables with short names like y
+src/main/java/logic/Bomb.java:21:	CommentRequired: Public method and constructor comments are required
+src/main/java/logic/Bomb.java:21:	CommentRequired: Public method and constructor comments are required
+src/main/java/logic/Bomb.java:21:	MissingOverride: The method 'run()' is missing an @Override annotation.
+src/main/java/logic/Bomb.java:21:	MissingOverride: The method 'run()' is missing an @Override annotation.
