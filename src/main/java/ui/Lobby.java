@@ -34,6 +34,7 @@ import util.Key;
 import util.Util;
 
 public class Lobby extends JFrame implements MouseListener, MouseMotionListener,Runnable,KeyListener{
+	
 	String userName;
 	int number;
 	int team;
@@ -87,6 +88,14 @@ public class Lobby extends JFrame implements MouseListener, MouseMotionListener,
 
 	Hashtable htPlayer=null;
 	
+//	public Lobby(){
+//		init();
+//		this.addMouseMotionListener(this);
+//		this.addMouseListener(this);
+//		this.setSize(805,620);
+//		this.setVisible(true);
+//	}
+
 	public void init(){
 		this.setResizable(false);
 		this.getContentPane().add(bgPanel);
@@ -95,10 +104,8 @@ public class Lobby extends JFrame implements MouseListener, MouseMotionListener,
 		
 		bule_role = new ImageButton(new ImageIcon("images/team1.jpg"));
 		bule_role.setRolloverIcon(ImageLoading.createImageIcon("images/team12.jpg"));
-
-		bule_role.setRolloverSelectedIcon(ImageLoading.createImageIcon("images/team12.jpg"));
 		bule_role.setSelectedIcon(ImageLoading.createImageIcon("images/team12.jpg"));
-		//bule_role.setDisabledIcon(ImageLoading.createImageIcon("images/a2.png"));
+		bule_role.setDisabledIcon(ImageLoading.createImageIcon("images/a2.png"));
 		bule_role.setLocation(526,185);
 		bule_role.setSelected(true);
 		bule_role.addMouseListener(this);
@@ -107,7 +114,6 @@ public class Lobby extends JFrame implements MouseListener, MouseMotionListener,
 
 		red_role = new ImageButton(new ImageIcon("images/team2.jpg"));
 		red_role.setRolloverIcon(ImageLoading.createImageIcon("images/team22.jpg"));
-
 		red_role.setRolloverSelectedIcon(ImageLoading.createImageIcon("images/team22.jpg"));
 		red_role.setSelectedIcon(ImageLoading.createImageIcon("images/team22.jpg"));
 		red_role.setLocation(653,183);
@@ -128,7 +134,7 @@ public class Lobby extends JFrame implements MouseListener, MouseMotionListener,
 		ready = new ImageButton(new ImageIcon("images/ready.jpg"));
 		ready.setRolloverIcon(ImageLoading.createImageIcon("images/ready2.jpg"));
 		ready.setSelectedIcon(ImageLoading.createImageIcon("images/ready_ok.jpg"));
-		ready.setLocation(569,538);
+		ready.setLocation(572,538);
 		ready.addMouseListener(this);
 		ready.addMouseMotionListener(this);
 		bgPanel.add(ready);
@@ -136,10 +142,12 @@ public class Lobby extends JFrame implements MouseListener, MouseMotionListener,
 
 		leave = new ImageButton(new ImageIcon("images/leave.jpg"));
 		leave.setRolloverIcon(ImageLoading.createImageIcon("images/leave2.jpg"));
-		leave.setLocation(658,538);
+		leave.setLocation(655,538);
 		leave.addMouseListener(this);
 		leave.addMouseMotionListener(this);
 		bgPanel.add(leave);
+
+		
 		this.player1_b.setSelectedIcon(ImageLoading.createImageIcon("images/player_b_ready.jpg"));
 		this.player2_b.setSelectedIcon(ImageLoading.createImageIcon("images/player_b_ready.jpg"));
 		this.player3_b.setSelectedIcon(ImageLoading.createImageIcon("images/player_b_ready.jpg"));
@@ -150,12 +158,14 @@ public class Lobby extends JFrame implements MouseListener, MouseMotionListener,
 		this.player8_b.setSelectedIcon(ImageLoading.createImageIcon("images/player_b_ready.jpg"));
 		
 		this.player1_r.setSelectedIcon(ImageLoading.createImageIcon("images/player_r_ready.jpg"));
+		this.player2_r.setSelectedIcon(ImageLoading.createImageIcon("images/player_r_ready.jpg"));
 		this.player3_r.setSelectedIcon(ImageLoading.createImageIcon("images/player_r_ready.jpg"));
 		this.player4_r.setSelectedIcon(ImageLoading.createImageIcon("images/player_r_ready.jpg"));
 		this.player5_r.setSelectedIcon(ImageLoading.createImageIcon("images/player_r_ready.jpg"));
 		this.player6_r.setSelectedIcon(ImageLoading.createImageIcon("images/player_r_ready.jpg"));
 		this.player7_r.setSelectedIcon(ImageLoading.createImageIcon("images/player_r_ready.jpg"));
 		this.player8_r.setSelectedIcon(ImageLoading.createImageIcon("images/player_r_ready.jpg"));
+
 		showMsg.setBounds(30,370,455,138);
 		showMsg.setBackground(Color.yellow);
 		showMsg.setEditable(false);
@@ -181,7 +191,7 @@ public class Lobby extends JFrame implements MouseListener, MouseMotionListener,
 		Util.printMessage("Tank House",this.meMessage);
 		this.in=in;
 		this.out=out;
-		this.setTitle("Uer Name:"+userName);
+		this.setTitle("User Name: "+userName);
 
 		init();
 		
@@ -221,7 +231,7 @@ public class Lobby extends JFrame implements MouseListener, MouseMotionListener,
 
 		init();
 		
-		if(this.meMessage.team == Key.TEAM_BLUE){
+		if(this.meMessage.team==Key.TEAM_BLUE){
 			this.bule_role.setSelected(true);
 			this.red_role.setSelected(false);
 		}else {
@@ -237,9 +247,9 @@ public class Lobby extends JFrame implements MouseListener, MouseMotionListener,
 		thread.start();
 	}
 	
-	public void start(){
+//	public void start(){
 	//	thread.start();
-	}
+	//}
 	public void run(){
 		System.out.println("run Start");
 //		
@@ -257,17 +267,22 @@ public class Lobby extends JFrame implements MouseListener, MouseMotionListener,
 				this.repaint();
 				//Thread.sleep(1000);
 				if(this.Ready ){
-					BattleFrame frame =new BattleFrame(htPlayer,this.number,in,out);
-					frame.setVisible(true);
+					BattleFrame qq =new BattleFrame(htPlayer,this.number,in,out);
+					qq.setVisible(true);
 					
 					Message mm=new Message();
 					mm =msg;
 					mm.type=44;
+					//bg.sendMessage(mm);
 					MessageControl.sendMessage(mm,out);
 					htPlayer.clear();
 					Ready = false;
 					this.dispose();
-					break ;			
+					break ;
+//					Message msgtest=new Message();
+//					msg.type=44;
+//					bg.sendMessage(msgtest);
+					
 					
 				}
 			}
@@ -278,6 +293,7 @@ public class Lobby extends JFrame implements MouseListener, MouseMotionListener,
 	}
 	
 	public void paint(){
+		//int t_y = inf_y;
 		this.removeAllPlayer();
 		for(Enumeration e=htPlayer.elements();e.hasMoreElements();){
 			Message msg =(Message)e.nextElement();
@@ -503,18 +519,20 @@ public class Lobby extends JFrame implements MouseListener, MouseMotionListener,
 		
 		
 	}
-public void doMessage(Message msg){
+
+	public void doMessage(Message msg){
 		
 		int type=msg.type;
 
 		Util.printMessage("TankHost DoMessage ",msg);
 		
    		switch(type){
-   			//switch teams
+
+   			//change group
    			case 5:{
    				for(Enumeration e=htPlayer.elements();e.hasMoreElements();){
 					Message test =(Message)e.nextElement();
-   					System.out.println("case 5 team="+test.team);
+   					System.out.println("^^^^^^^^^case 5 team="+test.team);
 					if(test.number==msg.number){
 						test.team=msg.team;
 						htPlayer.put(test.number,test);
@@ -550,15 +568,25 @@ public void doMessage(Message msg){
    				
    			}
    			break;
-   			//chat
+   			//处理聊天消息
    			case 2:{   				
    				this.showMsg.append(msg.msg+"\n");   				
    			}break;
    			case 31:{
+   			//	htPlayer.put(Integer.toString(msg.number),msg);
+   				//allMessage=msg;
+   				
+   			//	for(int i=0;i<msg.PlayersInf.length;i++){
+   			//		String playerInf=msg.PlayersInf[i];
+   			//		playerNum=playerInf.substring(0,1);
+   			//		playerName=playerInf.substring(1);
+   					
+   					
+   			//	}
    			
    			}break;
    			
-   			//ready
+   			
    			case 10:{
    				for(Enumeration e=htPlayer.elements();e.hasMoreElements();){
 					Message test =(Message)e.nextElement();
@@ -579,23 +607,28 @@ public void doMessage(Message msg){
 				if(b==0){
 					this.Ready = true;
 				}
+				//this.bgPanel.repaint();
 				this.paint();
 				this.repaint();
    			}break;
    			
-   			//退出
    			case 11:{
    				
    				for(Enumeration e=htPlayer.elements();e.hasMoreElements();){
 					Message test =(Message)e.nextElement();
 					if(test.number==msg.number){
+						//int i=test.number;
+						//test.type=msg.type;
 						test.exit=msg.exit;
+						//test.team=msg.team;
 						htPlayer.remove(test.number);
-						System.out.println("case 11  number"+test.number+"  type="+test.type+"  team="+test.team);
+						System.out.println("^^^^^^^^^case 11  number"+test.number+"  type="+test.type+"  team="+test.team);
 					}
 				}
 				//EXIT=1;
-				System.out.println("EXIT");
+				System.out.println("********************EXIT");
+
+				//this.bgPanel.repaint();
 				this.paint();
 				this.repaint();
    			}break;
@@ -647,21 +680,21 @@ public void doMessage(Message msg){
 	}
 
 	public void mouseClicked(MouseEvent e){
-		//choose team
+
+		//choose group
 		if(e.getSource() == this.bule_role){
 
 			if(!this.bule_role.isSelected()){
 				Message test=new Message();
-				//test=meMessage;
-				test.team= Key.TEAM_BLUE;
-				test.type= Key.MESSAGE_TYPE_CHANGE_TEAM;
+				test.team=Key.TEAM_BLUE;
+				test.type=Key.MESSAGE_TYPE_CHANGE_TEAM;
 				test.number=meMessage.number;
 				test.UserName=meMessage.UserName;
-				team= Key.TEAM_BLUE;
-				meMessage.team= Key.TEAM_BLUE;
+				team=Key.TEAM_BLUE;
+				meMessage.team=Key.TEAM_BLUE;
 				
-				meMessage.setTeam( Key.TEAM_BLUE);
-				meMessage.setType( Key.MESSAGE_TYPE_CHANGE_TEAM);
+				meMessage.setTeam(Key.TEAM_BLUE);
+				meMessage.setType(Key.MESSAGE_TYPE_CHANGE_TEAM);
 				MessageControl.sendMessage(test , out);
 				Util.printMessage("Select Team ",test);
 				this.bule_role.setSelected(true);
@@ -671,14 +704,15 @@ public void doMessage(Message msg){
 		}else if(e.getSource() == this.red_role){
 			if(!this.red_role.isSelected()){
 				Message test=new Message();
-				test.team= Key.TEAM_RED;
-				test.type=5;
+				test.team=Key.TEAM_RED;
+				//test.type=5;
+				test.type=Key.MESSAGE_TYPE_CHANGE_TEAM;
 				test.number=meMessage.number;
-				test.UserName=meMessage.UserName;
+				test.UserName=meMessage.UserName;				
+				team=Key.TEAM_RED;
+				meMessage.team=Key.TEAM_RED;
 				
-				team= Key.TEAM_RED;
-				meMessage.team= Key.TEAM_RED;
-				meMessage.setTeam( Key.TEAM_RED);
+				meMessage.setTeam(Key.TEAM_RED);
 				meMessage.setType(Key.MESSAGE_TYPE_CHANGE_TEAM);
 				MessageControl.sendMessage(test , out);
 	
@@ -777,4 +811,6 @@ public void doMessage(Message msg){
 	public void keyTyped(KeyEvent arg0) {
 		
 	}
+	
 }
+

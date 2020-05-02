@@ -11,6 +11,7 @@ import java.util.Iterator;
 
 import logic.Message;
 import logic.MessageControl;
+
 import server.ServerThread;
 import util.Key;
 import util.Util;
@@ -47,7 +48,6 @@ public class Server {
 					+ serversocket.getLocalPort());
 
 			while (true) {
-				//Set players ID:1-8
 				if (number < 2) {
 					number++;
 				} else {
@@ -152,6 +152,13 @@ class ServerThread extends Thread implements Runnable {
 							}
 						}
 						
+//						for (Enumeration e = ht_out.elements(); e.hasMoreElements();) {
+//							ObjectOutputStream outData = (ObjectOutputStream) e
+//									.nextElement();
+//							Util.printMessage("Send Message",message);
+//							MessageControl.sendMessage(message ,outData);
+//							
+//						}
 					}
 
 					for (Enumeration ee = htPlayer.elements(); ee
