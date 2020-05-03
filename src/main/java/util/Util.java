@@ -11,7 +11,7 @@ import logic.Message;
 import component.Windows;
 
 public class Util {
-	public static void printMessage(String desc ,Message msg){
+	public static void printMessage(String desc,Message msg){
 		System.out.println(desc +"===>>> userName="+msg.getUserName() 
 				+ " number=" +msg.getNumber() +" team=" +msg.getTeam() 
 				+" type=" +msg.getType()+" ready="+msg.getReady() 
@@ -30,25 +30,25 @@ public class Util {
 		if(w==0)w=1;
 		int count = 10;
 		int cur_h = 0;
-		int cur_w = 0 ;
-		float w_n = w/h ;
+		int cur_w = 0;
+		float w_n = w/h;
 
 	    new Windows(window);
 	    
 		while(cur_w < w || cur_h < h){
-			if(cur_w <w )
-				cur_w = (int) (cur_w + count*w_n) ;
+			if(cur_w <w)
+				cur_w = (int) (cur_w + count*w_n);
 			if(cur_h < h)
-				cur_h = cur_h + count ;
+				cur_h = cur_h + count;
 			window.setSize(cur_w, cur_h);
 			if(cur_w > w && cur_h > h)
-				return ;
+				return;
 			try {
 				Thread.sleep(20);
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+        e.printStackTrace();
+      }
 		}
 	}
 	public static void closeWindow(JFrame window){
@@ -56,26 +56,26 @@ public class Util {
 		int h = window.getHeight();
 		int count = 10;
 		int cur_h = h;
-		int cur_w = w ;
-		float w_n = w/h ;
+		int cur_w = w;
+		float w_n = w/h;
 
 	    new Windows(window);
 		while(cur_w > 0  || cur_h > 0){
 			if(cur_w > 0)
-				cur_w = (int)(cur_w - count*w_n) ;
+				cur_w = (int)(cur_w - count*w_n);
 			if(cur_h > 0)
-				cur_h = cur_h - count ;
+				cur_h = cur_h - count;
 			
 			window.setSize(cur_w, cur_h);
 			
 			if(cur_w < 0  && cur_h < 0)
-				return ;
+				return;
 			
 			try {
 				Thread.sleep(10);
 			} catch (InterruptedException e) {
-				e.printStackTrace(System.out);//print the log ,may cause deadlock 
-			}
+        e.printStackTrace(System.out);//print the log ,may cause deadlock 
+      }
 		}
 	}
 

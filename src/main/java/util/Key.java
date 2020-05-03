@@ -6,7 +6,7 @@ public class Key {
 	public static String GAME_NAME = "Bomber Man";
 	
 	public static int MESSAGE_TYPE_LOGIN = 1;
-	public static int MESSAGE_TYPE_CHANGE_TEAM = 2;
+	public static int MESSAGE_TYPE_CHANGE_TEAM = 5;
 	public static int MESSAGE_TYPE_CHART = 2;
 	public static int MESSAGE_TYPE_READY = 10;
 	public static int MESSAGE_TYPE_EXIT = 11;
@@ -16,8 +16,8 @@ public class Key {
 	public static int MESSAGE_TYPE_PLAYER_MOVE = 101;
 	
 	
-	public static int TEAM_BLUE = 1 ;
-	public static int TEAM_RED = -1 ;
+	public static int TEAM_BLUE = 1;
+	public static int TEAM_RED = -1;
 	
 	
 	public static int PLAYER_HEADER_UP = 1;

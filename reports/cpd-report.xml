@@ -1,0 +1,764 @@
+<?xml version="1.0" encoding="GBK"?>
+<pmd-cpd>
+   <duplication lines="25" tokens="132">
+      <file column="33" endcolumn="26" endline="533" line="509"
+            path="E:\课件\BomberMan\src\main\java\ui\Background.java"/>
+      <file column="31" endcolumn="26" endline="559" line="534"
+            path="E:\课件\BomberMan\src\main\java\ui\Background.java"/>
+      <codefragment><![CDATA[			if(i>=15){
+				break;
+			}
+			//check if it has plant
+			if(map[i][n]==2){
+				break;
+			}
+			if(map[i][n]==0){
+				map[i][n]=88;
+			}
+			if(map[i][n]==1){
+				map[i][n]=88;
+				break;
+			}
+			//check if player is killed by bomb
+			if(map[i][n]>1000&&map[i][n]<1500){
+
+				map[i][n]=44;
+				if((myX-5)/40==i&&(myY-20)/40==n){
+					myLive=0;
+				}
+			}
+		}
+
+		for(int i=m;i>=m-power;i--){]]></codefragment>
+   </duplication>
+   <duplication lines="24" tokens="127">
+      <file column="33" endcolumn="17" endline="583" line="560"
+            path="E:\课件\BomberMan\src\main\java\ui\Background.java"/>
+      <file column="31" endcolumn="17" endline="610" line="587"
+            path="E:\课件\BomberMan\src\main\java\ui\Background.java"/>
+      <codefragment><![CDATA[			if(i>=13){
+				break;
+			}
+			if(map[m][i]==2){
+				break;
+			}
+			if(map[m][i]==0){
+				map[m][i]=88;
+			}
+			if(map[m][i]==1){
+
+				map[m][i]=88;
+				break;
+			}
+			if(map[m][i]>1000&&map[m][i]<1500){
+
+				map[m][i]=44;
+
+				if((myX-5)/40==m&&(myY-20)/40==i){
+					myLive=0;
+				}
+			}
+
+		}]]></codefragment>
+   </duplication>
+   <duplication lines="15" tokens="99">
+      <file column="37" endcolumn="28" endline="29" line="15"
+            path="E:\课件\BomberMan\src\main\java\component\Windows.java"/>
+      <file column="38" endcolumn="28" endline="42" line="29"
+            path="E:\课件\BomberMan\src\main\java\component\Windows.java"/>
+      <codefragment><![CDATA[	   public   Windows(Dialog  window)   {//target is window
+	       window.setResizable(false);//don't allow resize
+	       //Center   the   window   
+	       Dimension   screenSize   =   Toolkit.getDefaultToolkit().getScreenSize();   
+	       Dimension   dialogSize   =   window.getSize();   
+	       if   (dialogSize.height   >   screenSize.height)   {   
+	           dialogSize.height   =   screenSize.height;   
+	       }   
+	       if   (dialogSize.width   >   screenSize.width)   {   
+	           dialogSize.width   =   screenSize.width;   
+	       }   
+	       window.setLocation((screenSize.width   -   dialogSize.width)   /   2,   
+	           (screenSize.height   -   dialogSize.height)   /   2);   
+	   } 
+	   public   Windows(JFrame   window)   {]]></codefragment>
+   </duplication>
+   <duplication lines="14" tokens="96">
+      <file column="37" endcolumn="12" endline="28" line="15"
+            path="E:\课件\BomberMan\src\main\java\component\Windows.java"/>
+      <file column="38" endcolumn="12" endline="41" line="29"
+            path="E:\课件\BomberMan\src\main\java\component\Windows.java"/>
+      <file column="37" endcolumn="12" endline="54" line="42"
+            path="E:\课件\BomberMan\src\main\java\component\Windows.java"/>
+      <codefragment><![CDATA[	   public   Windows(Dialog  window)   {//target is window
+	       window.setResizable(false);//don't allow resize
+	       //Center   the   window   
+	       Dimension   screenSize   =   Toolkit.getDefaultToolkit().getScreenSize();   
+	       Dimension   dialogSize   =   window.getSize();   
+	       if   (dialogSize.height   >   screenSize.height)   {   
+	           dialogSize.height   =   screenSize.height;   
+	       }   
+	       if   (dialogSize.width   >   screenSize.width)   {   
+	           dialogSize.width   =   screenSize.width;   
+	       }   
+	       window.setLocation((screenSize.width   -   dialogSize.width)   /   2,   
+	           (screenSize.height   -   dialogSize.height)   /   2);   
+	   } ]]></codefragment>
+   </duplication>
+   <duplication lines="21" tokens="91">
+      <file column="44" endcolumn="14" endline="215" line="195"
+            path="E:\课件\BomberMan\src\main\java\ui\Lobby.java"/>
+      <file column="40" endcolumn="14" endline="254" line="231"
+            path="E:\课件\BomberMan\src\main\java\ui\Lobby.java"/>
+      <codefragment><![CDATA[		this.setTitle("User Name: "+userName);
+
+		init();
+		
+		if(this.meMessage.team==Key.TEAM_BLUE){
+			this.bule_role.setSelected(true);
+			this.red_role.setSelected(false);
+		}else {
+			this.bule_role.setSelected(false);
+			this.red_role.setSelected(true);
+		}
+		
+		this.setSize(805,630);
+		this.setVisible(true);
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		thread=new Thread(this);
+		thread.start();
+	}
+	
+	public Lobby(Hashtable ht , Message ms,ObjectInputStream in,ObjectOutputStream out){]]></codefragment>
+   </duplication>
+   <duplication lines="13" tokens="68">
+      <file column="25" endcolumn="43" endline="993" line="981"
+            path="E:\课件\BomberMan\src\main\java\ui\Background.java"/>
+      <file column="25" endcolumn="43" endline="1043" line="1032"
+            path="E:\课件\BomberMan\src\main\java\ui\Background.java"/>
+      <codefragment><![CDATA[			Message test = new Message();
+			test.isNext=isNext;
+			test.type=Key.MESSAGE_TYPE_PLAYER_MOVE;
+			test.x=m;
+			test.y=n;
+			test.head=myHead;
+			test.team=myTeam;
+			test.moveTypeX=this.moveTypeX;
+			test.moveTypeY=this.moveTypeY;
+			MessageControl.sendMessage(test,out);
+
+			}
+			System.out.println("RIGHT Pressed ");]]></codefragment>
+   </duplication>
+   <duplication lines="4" tokens="61">
+      <file column="27" endcolumn="39" endline="107" line="104"
+            path="E:\课件\BomberMan\src\main\java\ui\Background.java"/>
+      <file column="33" endcolumn="39" endline="182" line="178"
+            path="E:\课件\BomberMan\src\main\java\ui\Lobby.java"/>
+      <codefragment><![CDATA[		initparam();
+		handcur = Toolkit.getDefaultToolkit().createCustomCursor(ImageLoading.createImage("images/hand.png"),new Point(10,10),"hand") ;
+		customcur = Toolkit.getDefaultToolkit().createCustomCursor(ImageLoading.createImage("images/custom.png"),new Point(10,10),"custom") ;
+		this.setCursor(handcur);]]></codefragment>
+   </duplication>
+   <duplication lines="10" tokens="61">
+      <file column="25" endcolumn="60" endline="937" line="928"
+            path="E:\课件\BomberMan\src\main\java\ui\Background.java"/>
+      <file column="25" endcolumn="60" endline="990" line="981"
+            path="E:\课件\BomberMan\src\main\java\ui\Background.java"/>
+      <file column="25" endcolumn="60" endline="1041" line="1032"
+            path="E:\课件\BomberMan\src\main\java\ui\Background.java"/>
+      <codefragment><![CDATA[			Message test =new Message();
+			test.isNext=isNext;
+			test.type=Key.MESSAGE_TYPE_PLAYER_MOVE;
+			test.x=m;
+			test.y=n;
+			test.head=myHead;
+			test.team=myTeam;
+			test.moveTypeX=this.moveTypeX;
+			test.moveTypeY=this.moveTypeY;
+			MessageControl.sendMessage(test,out);]]></codefragment>
+   </duplication>
+   <duplication lines="4" tokens="59">
+      <file column="27" endcolumn="31" endline="107" line="104"
+            path="E:\课件\BomberMan\src\main\java\ui\Background.java"/>
+      <file column="33" endcolumn="31" endline="182" line="178"
+            path="E:\课件\BomberMan\src\main\java\ui\Lobby.java"/>
+      <file column="34" endcolumn="31" endline="87" line="83"
+            path="E:\课件\BomberMan\src\main\java\ui\Login.java"/>
+      <codefragment><![CDATA[		initparam();
+		handcur = Toolkit.getDefaultToolkit().createCustomCursor(ImageLoading.createImage("images/hand.png"),new Point(10,10),"hand") ;
+		customcur = Toolkit.getDefaultToolkit().createCustomCursor(ImageLoading.createImage("images/custom.png"),new Point(10,10),"custom") ;
+		this.setCursor(handcur);]]></codefragment>
+   </duplication>
+   <duplication lines="8" tokens="50">
+      <file column="17" endcolumn="30" endline="195" line="188"
+            path="E:\课件\BomberMan\src\main\java\ui\Lobby.java"/>
+      <file column="17" endcolumn="30" endline="231" line="224"
+            path="E:\课件\BomberMan\src\main\java\ui\Lobby.java"/>
+      <codefragment><![CDATA[		this.number=ms.number;
+		this.userName=ms.UserName;
+		this.team=ms.team;
+		this.meMessage=ms;
+		Util.printMessage("Tank House",this.meMessage);
+		this.in=in;
+		this.out=out;
+		this.setTitle("User Name: "+userName);]]></codefragment>
+   </duplication>
+   <duplication lines="8" tokens="48">
+      <file column="54" endcolumn="17" endline="735" line="728"
+            path="E:\课件\BomberMan\src\main\java\ui\Lobby.java"/>
+      <file column="53" endcolumn="17" endline="806" line="798"
+            path="E:\课件\BomberMan\src\main\java\ui\Lobby.java"/>
+      <codefragment><![CDATA[		else if(e.getSource() == this.sendImg){
+			String s=send.getText();
+			send.setText("");
+			Message msg =new Message();
+			msg.type=Key.MESSAGE_TYPE_CHART;
+			msg.msg=userName+" --> "+s;
+			MessageControl.sendMessage(msg , out);
+		}]]></codefragment>
+   </duplication>
+   <duplication lines="9" tokens="46">
+      <file column="33" endcolumn="41" endline="916" line="908"
+            path="E:\课件\BomberMan\src\main\java\ui\Background.java"/>
+      <file column="25" endcolumn="33" endline="1018" line="1002"
+            path="E:\课件\BomberMan\src\main\java\ui\Background.java"/>
+      <codefragment><![CDATA[				}else {
+
+					switch((myY-20)%40){
+						case 10: moveTypeY=10;break;
+						case 20: moveTypeY=20;break;
+						case 30: moveTypeY=30;break;
+						case 0: moveTypeY=0;break;
+						default: break;
+					}]]></codefragment>
+   </duplication>
+   <duplication lines="15" tokens="44">
+      <file column="29" endcolumn="25" endline="964" line="950"
+            path="E:\课件\BomberMan\src\main\java\ui\Background.java"/>
+      <file column="54" endcolumn="41" endline="1079" line="1065"
+            path="E:\课件\BomberMan\src\main\java\ui\Background.java"/>
+      <codefragment><![CDATA[			else{
+//			switch((myY-20)%40){
+//				case 10: moveTypeY=10;break;
+//				case 20: moveTypeY=20;break;
+//				case 30: moveTypeY=30;break;
+//				case 0: moveTypeY=0;break;
+//				default: break;
+//			}
+			switch((myX-5)%40){
+				case 10: moveTypeX=10;break;
+				case 20: moveTypeX=20;break;
+				case 30: moveTypeX=30;break;
+				case 0: moveTypeX=0;break;
+				default: break;
+			}]]></codefragment>
+   </duplication>
+   <duplication lines="5" tokens="43">
+      <file column="30" endcolumn="46" endline="629" line="625"
+            path="E:\课件\BomberMan\src\main\java\ui\Background.java"/>
+      <file column="32" endcolumn="46" endline="642" line="637"
+            path="E:\课件\BomberMan\src\main\java\ui\Background.java"/>
+      <codefragment><![CDATA[	public void cleanBomb(){
+		int j,i;
+		for (j=0;j<NumY;j++){
+			for(i=NumX-1;i>=0;i--){
+				if(map[i][j]==88){]]></codefragment>
+   </duplication>
+   <duplication lines="8" tokens="43">
+      <file column="25" endcolumn="39" endline="935" line="928"
+            path="E:\课件\BomberMan\src\main\java\ui\Background.java"/>
+      <file column="25" endcolumn="39" endline="988" line="981"
+            path="E:\课件\BomberMan\src\main\java\ui\Background.java"/>
+      <file column="25" endcolumn="39" endline="1039" line="1032"
+            path="E:\课件\BomberMan\src\main\java\ui\Background.java"/>
+      <file column="25" endcolumn="39" endline="1096" line="1089"
+            path="E:\课件\BomberMan\src\main\java\ui\Background.java"/>
+      <codefragment><![CDATA[			Message test =new Message();
+			test.isNext=isNext;
+			test.type=Key.MESSAGE_TYPE_PLAYER_MOVE;
+			test.x=m;
+			test.y=n;
+			test.head=myHead;
+			test.team=myTeam;
+			test.moveTypeX=this.moveTypeX;]]></codefragment>
+   </duplication>
+   <duplication lines="6" tokens="43">
+      <file column="32" endcolumn="53" endline="596" line="591"
+            path="E:\课件\BomberMan\src\main\java\ui\Lobby.java"/>
+      <file column="32" endcolumn="53" endline="623" line="616"
+            path="E:\课件\BomberMan\src\main\java\ui\Lobby.java"/>
+      <codefragment><![CDATA[   			case 10:{
+   				for(Enumeration e=htPlayer.elements();e.hasMoreElements();){
+					Message test =(Message)e.nextElement();
+					
+					if(test.number==msg.number){
+						test.ready=msg.ready;]]></codefragment>
+   </duplication>
+   <duplication lines="6" tokens="39">
+      <file column="33" endcolumn="35" endline="285" line="280"
+            path="E:\课件\BomberMan\src\main\java\ui\Background.java"/>
+      <file column="33" endcolumn="35" endline="293" line="288"
+            path="E:\课件\BomberMan\src\main\java\ui\Background.java"/>
+      <codefragment><![CDATA[		for(int i=0;i<6;i++){
+			int m,n;
+			Random random = new Random();
+			m=random.nextInt(15);
+			n=random.nextInt(13);
+			map2[m][n]=6;]]></codefragment>
+   </duplication>
+   <duplication lines="3" tokens="39">
+      <file column="33" endcolumn="68" endline="556" line="554"
+            path="E:\课件\BomberMan\src\main\java\ui\Lobby.java"/>
+      <file column="33" endcolumn="68" endline="595" line="592"
+            path="E:\课件\BomberMan\src\main\java\ui\Lobby.java"/>
+      <file column="33" endcolumn="68" endline="620" line="618"
+            path="E:\课件\BomberMan\src\main\java\ui\Lobby.java"/>
+      <codefragment><![CDATA[   				for(Enumeration e=htPlayer.elements();e.hasMoreElements();){
+					Message test =(Message)e.nextElement();
+					if(test.number==msg.number){]]></codefragment>
+   </duplication>
+   <duplication lines="3" tokens="36">
+      <file column="17" endcolumn="46" endline="629" line="627"
+            path="E:\课件\BomberMan\src\main\java\ui\Background.java"/>
+      <file column="17" endcolumn="46" endline="642" line="639"
+            path="E:\课件\BomberMan\src\main\java\ui\Background.java"/>
+      <file column="17" endcolumn="46" endline="659" line="656"
+            path="E:\课件\BomberMan\src\main\java\ui\Background.java"/>
+      <codefragment><![CDATA[		for (j=0;j<NumY;j++){
+			for(i=NumX-1;i>=0;i--){
+				if(map[i][j]==88){]]></codefragment>
+   </duplication>
+   <duplication lines="4" tokens="35">
+      <file column="20" endcolumn="49" endline="111" line="108"
+            path="E:\课件\BomberMan\src\main\java\ui\Background.java"/>
+      <file column="21" endcolumn="48" endline="117" line="115"
+            path="E:\课件\BomberMan\src\main\java\ui\Background.java"/>
+      <codefragment><![CDATA[		map=new int [NumX][NumY];
+
+		for(int i=0;i<NumX;i++){
+			for (int j=0;j<NumY;j++){]]></codefragment>
+   </duplication>
+   <duplication lines="7" tokens="34">
+      <file column="39" endcolumn="9" endline="27" line="21"
+            path="E:\课件\BomberMan\src\main\java\component\ImageButton.java"/>
+      <file column="33" endcolumn="9" endline="20" line="14"
+            path="E:\课件\BomberMan\src\main\java\component\ImageLabel.java"/>
+      <codefragment><![CDATA[		setBorderPainted(false);
+		//set border
+		setBorder(null);
+		//set text
+		setText(null);
+		setSize(icon.getImage().getWidth(null), icon.getImage().getHeight(null));
+	}]]></codefragment>
+   </duplication>
+   <duplication lines="3" tokens="34">
+      <file column="25" endcolumn="50" endline="214" line="212"
+            path="E:\课件\BomberMan\src\main\java\server\Server.java"/>
+      <file column="17" endcolumn="40" endline="130" line="128"
+            path="E:\课件\BomberMan\src\main\java\ui\Background.java"/>
+      <codefragment><![CDATA[			for (Enumeration ee = htPlayer.elements(); ee.hasMoreElements();) {
+				Message test = (Message) ee.nextElement();
+				if (test.number == msg.number) {]]></codefragment>
+   </duplication>
+   <duplication lines="5" tokens="34">
+      <file column="38" endcolumn="48" endline="556" line="552"
+            path="E:\课件\BomberMan\src\main\java\ui\Lobby.java"/>
+      <file column="38" endcolumn="48" endline="604" line="601"
+            path="E:\课件\BomberMan\src\main\java\ui\Lobby.java"/>
+      <codefragment><![CDATA[   				int s=0;
+   				
+   				for(Enumeration e=htPlayer.elements();e.hasMoreElements();){
+					Message test =(Message)e.nextElement();
+					if(test.number==msg.number){]]></codefragment>
+   </duplication>
+   <duplication lines="4" tokens="33">
+      <file column="26" endcolumn="41" endline="214" line="211"
+            path="E:\课件\BomberMan\src\main\java\server\Server.java"/>
+      <file column="53" endcolumn="40" endline="742" line="737"
+            path="E:\课件\BomberMan\src\main\java\ui\Lobby.java"/>
+      <codefragment><![CDATA[		case 11: {
+			for (Enumeration ee = htPlayer.elements(); ee.hasMoreElements();) {
+				Message test = (Message) ee.nextElement();
+				if (test.number == msg.number) {]]></codefragment>
+   </duplication>
+   <duplication lines="3" tokens="32">
+      <file column="17" endcolumn="32" endline="130" line="128"
+            path="E:\课件\BomberMan\src\main\java\ui\Background.java"/>
+      <file column="25" endcolumn="40" endline="742" line="740"
+            path="E:\课件\BomberMan\src\main\java\ui\Lobby.java"/>
+      <codefragment><![CDATA[		for(Enumeration ee=htPlayer.elements();ee.hasMoreElements();){
+			Message test =(Message)ee.nextElement();
+			if(test.number==myNum){]]></codefragment>
+   </duplication>
+   <duplication lines="4" tokens="32">
+      <file column="33" endcolumn="48" endline="595" line="592"
+            path="E:\课件\BomberMan\src\main\java\ui\Lobby.java"/>
+      <file column="33" endcolumn="48" endline="604" line="602"
+            path="E:\课件\BomberMan\src\main\java\ui\Lobby.java"/>
+      <file column="33" endcolumn="48" endline="620" line="618"
+            path="E:\课件\BomberMan\src\main\java\ui\Lobby.java"/>
+      <codefragment><![CDATA[   				for(Enumeration e=htPlayer.elements();e.hasMoreElements();){
+					Message test =(Message)e.nextElement();
+					
+					if(test.number==msg.number){]]></codefragment>
+   </duplication>
+   <duplication lines="2" tokens="31">
+      <file column="37" endcolumn="30" endline="690" line="689"
+            path="E:\课件\BomberMan\src\main\java\ui\Background.java"/>
+      <file column="37" endcolumn="30" endline="731" line="730"
+            path="E:\课件\BomberMan\src\main\java\ui\Background.java"/>
+      <file column="37" endcolumn="30" endline="771" line="770"
+            path="E:\课件\BomberMan\src\main\java\ui\Background.java"/>
+      <file column="37" endcolumn="30" endline="811" line="810"
+            path="E:\课件\BomberMan\src\main\java\ui\Background.java"/>
+      <codefragment><![CDATA[             	g.drawImage(Player11,-5+i*DX-10,-45+j*DX-10,this);
+             	if(map[i][j]==1112)]]></codefragment>
+   </duplication>
+   <duplication lines="2" tokens="31">
+      <file column="37" endcolumn="30" endline="694" line="693"
+            path="E:\课件\BomberMan\src\main\java\ui\Background.java"/>
+      <file column="37" endcolumn="30" endline="735" line="734"
+            path="E:\课件\BomberMan\src\main\java\ui\Background.java"/>
+      <file column="37" endcolumn="30" endline="775" line="774"
+            path="E:\课件\BomberMan\src\main\java\ui\Background.java"/>
+      <file column="37" endcolumn="30" endline="815" line="814"
+            path="E:\课件\BomberMan\src\main\java\ui\Background.java"/>
+      <codefragment><![CDATA[             	g.drawImage(Player11,-5+i*DX-10,-45+j*DX+10,this);
+             	if(map[i][j]==1110)]]></codefragment>
+   </duplication>
+   <duplication lines="3" tokens="31">
+      <file column="37" endcolumn="30" endline="697" line="695"
+            path="E:\课件\BomberMan\src\main\java\ui\Background.java"/>
+      <file column="37" endcolumn="30" endline="738" line="736"
+            path="E:\课件\BomberMan\src\main\java\ui\Background.java"/>
+      <file column="37" endcolumn="30" endline="778" line="776"
+            path="E:\课件\BomberMan\src\main\java\ui\Background.java"/>
+      <file column="37" endcolumn="30" endline="818" line="816"
+            path="E:\课件\BomberMan\src\main\java\ui\Background.java"/>
+      <codefragment><![CDATA[             	g.drawImage(Player11,-5+i*DX-10,-45+j*DX-20,this);
+//team+head+mTypeX+mTypeY
+             	if(map[i][j]==1121)]]></codefragment>
+   </duplication>
+   <duplication lines="2" tokens="31">
+      <file column="37" endcolumn="30" endline="709" line="708"
+            path="E:\课件\BomberMan\src\main\java\ui\Background.java"/>
+      <file column="37" endcolumn="30" endline="750" line="749"
+            path="E:\课件\BomberMan\src\main\java\ui\Background.java"/>
+      <file column="37" endcolumn="30" endline="790" line="789"
+            path="E:\课件\BomberMan\src\main\java\ui\Background.java"/>
+      <file column="37" endcolumn="30" endline="830" line="829"
+            path="E:\课件\BomberMan\src\main\java\ui\Background.java"/>
+      <codefragment><![CDATA[             	g.drawImage(Player11,-5+i*DX+10,-45+j*DX-10,this);
+             	if(map[i][j]==1132)]]></codefragment>
+   </duplication>
+   <duplication lines="2" tokens="31">
+      <file column="37" endcolumn="30" endline="711" line="710"
+            path="E:\课件\BomberMan\src\main\java\ui\Background.java"/>
+      <file column="37" endcolumn="30" endline="752" line="751"
+            path="E:\课件\BomberMan\src\main\java\ui\Background.java"/>
+      <file column="37" endcolumn="30" endline="792" line="791"
+            path="E:\课件\BomberMan\src\main\java\ui\Background.java"/>
+      <file column="37" endcolumn="30" endline="832" line="831"
+            path="E:\课件\BomberMan\src\main\java\ui\Background.java"/>
+      <codefragment><![CDATA[             	g.drawImage(Player11,-5+i*DX+10,-45+j*DX+0,this);
+             	if(map[i][j]==1133)]]></codefragment>
+   </duplication>
+   <duplication lines="2" tokens="31">
+      <file column="37" endcolumn="30" endline="713" line="712"
+            path="E:\课件\BomberMan\src\main\java\ui\Background.java"/>
+      <file column="37" endcolumn="30" endline="754" line="753"
+            path="E:\课件\BomberMan\src\main\java\ui\Background.java"/>
+      <file column="37" endcolumn="30" endline="794" line="793"
+            path="E:\课件\BomberMan\src\main\java\ui\Background.java"/>
+      <file column="37" endcolumn="30" endline="834" line="833"
+            path="E:\课件\BomberMan\src\main\java\ui\Background.java"/>
+      <codefragment><![CDATA[             	g.drawImage(Player11,-5+i*DX+10,-45+j*DX+10,this);
+             	if(map[i][j]==1130)]]></codefragment>
+   </duplication>
+   <duplication lines="3" tokens="31">
+      <file column="37" endcolumn="30" endline="716" line="714"
+            path="E:\课件\BomberMan\src\main\java\ui\Background.java"/>
+      <file column="37" endcolumn="30" endline="757" line="755"
+            path="E:\课件\BomberMan\src\main\java\ui\Background.java"/>
+      <file column="37" endcolumn="30" endline="797" line="795"
+            path="E:\课件\BomberMan\src\main\java\ui\Background.java"/>
+      <file column="37" endcolumn="30" endline="837" line="835"
+            path="E:\课件\BomberMan\src\main\java\ui\Background.java"/>
+      <codefragment><![CDATA[             	g.drawImage(Player11,-5+i*DX+10,-45+j*DX-20,this);
+//team+head+mTypeX+mTypeY
+             	if(map[i][j]==1101)]]></codefragment>
+   </duplication>
+   <duplication lines="2" tokens="31">
+      <file column="37" endcolumn="30" endline="718" line="717"
+            path="E:\课件\BomberMan\src\main\java\ui\Background.java"/>
+      <file column="37" endcolumn="30" endline="759" line="758"
+            path="E:\课件\BomberMan\src\main\java\ui\Background.java"/>
+      <file column="37" endcolumn="30" endline="799" line="798"
+            path="E:\课件\BomberMan\src\main\java\ui\Background.java"/>
+      <file column="37" endcolumn="30" endline="839" line="838"
+            path="E:\课件\BomberMan\src\main\java\ui\Background.java"/>
+      <codefragment><![CDATA[             	g.drawImage(Player11,-5+i*DX-20,-45+j*DX-10,this);
+             	if(map[i][j]==1102)]]></codefragment>
+   </duplication>
+   <duplication lines="2" tokens="31">
+      <file column="37" endcolumn="30" endline="720" line="719"
+            path="E:\课件\BomberMan\src\main\java\ui\Background.java"/>
+      <file column="37" endcolumn="30" endline="761" line="760"
+            path="E:\课件\BomberMan\src\main\java\ui\Background.java"/>
+      <file column="37" endcolumn="30" endline="801" line="800"
+            path="E:\课件\BomberMan\src\main\java\ui\Background.java"/>
+      <file column="37" endcolumn="30" endline="841" line="840"
+            path="E:\课件\BomberMan\src\main\java\ui\Background.java"/>
+      <codefragment><![CDATA[             	g.drawImage(Player11,-5+i*DX-20,-45+j*DX+0,this);
+             	if(map[i][j]==1103)]]></codefragment>
+   </duplication>
+   <duplication lines="2" tokens="31">
+      <file column="37" endcolumn="30" endline="722" line="721"
+            path="E:\课件\BomberMan\src\main\java\ui\Background.java"/>
+      <file column="37" endcolumn="30" endline="763" line="762"
+            path="E:\课件\BomberMan\src\main\java\ui\Background.java"/>
+      <file column="37" endcolumn="30" endline="803" line="802"
+            path="E:\课件\BomberMan\src\main\java\ui\Background.java"/>
+      <file column="37" endcolumn="30" endline="843" line="842"
+            path="E:\课件\BomberMan\src\main\java\ui\Background.java"/>
+      <codefragment><![CDATA[             	g.drawImage(Player11,-5+i*DX-20,-45+j*DX+10,this);
+             	if(map[i][j]==1100)]]></codefragment>
+   </duplication>
+   <duplication lines="7" tokens="31">
+      <file column="37" endcolumn="30" endline="729" line="723"
+            path="E:\课件\BomberMan\src\main\java\ui\Background.java"/>
+      <file column="37" endcolumn="30" endline="769" line="764"
+            path="E:\课件\BomberMan\src\main\java\ui\Background.java"/>
+      <file column="37" endcolumn="30" endline="809" line="804"
+            path="E:\课件\BomberMan\src\main\java\ui\Background.java"/>
+      <codefragment><![CDATA[             	g.drawImage(Player11,-5+i*DX-20,-45+j*DX-20,this);
+
+//-------------------------head towards right-----------------------------------
+
+
+//team+head+mTypeX+mTypeY
+             	if(map[i][j]==1211)]]></codefragment>
+   </duplication>
+   <duplication lines="4" tokens="30">
+      <file column="33" endcolumn="63" endline="166" line="163"
+            path="E:\课件\BomberMan\src\main\java\ui\Background.java"/>
+      <file column="52" endcolumn="73" endline="741" line="737"
+            path="E:\课件\BomberMan\src\main\java\ui\Lobby.java"/>
+      <codefragment><![CDATA[	public void initPlayers(){
+
+		for(Enumeration ee=htPlayer.elements();ee.hasMoreElements();){
+			Message test =(Message)ee.nextElement();]]></codefragment>
+   </duplication>
+   <duplication lines="3" tokens="30">
+      <file column="31" endcolumn="78" endline="535" line="533"
+            path="E:\课件\BomberMan\src\main\java\ui\Lobby.java"/>
+      <file column="32" endcolumn="78" endline="593" line="591"
+            path="E:\课件\BomberMan\src\main\java\ui\Lobby.java"/>
+      <file column="32" endcolumn="78" endline="619" line="616"
+            path="E:\课件\BomberMan\src\main\java\ui\Lobby.java"/>
+      <codefragment><![CDATA[   			case 5:{
+   				for(Enumeration e=htPlayer.elements();e.hasMoreElements();){
+					Message test =(Message)e.nextElement();]]></codefragment>
+   </duplication>
+   <duplication lines="3" tokens="29">
+      <file column="26" endcolumn="73" endline="213" line="211"
+            path="E:\课件\BomberMan\src\main\java\server\Server.java"/>
+      <file column="34" endcolumn="63" endline="166" line="163"
+            path="E:\课件\BomberMan\src\main\java\ui\Background.java"/>
+      <codefragment><![CDATA[		case 11: {
+			for (Enumeration ee = htPlayer.elements(); ee.hasMoreElements();) {
+				Message test = (Message) ee.nextElement();]]></codefragment>
+   </duplication>
+   <duplication lines="2" tokens="29">
+      <file column="61" endcolumn="30" endline="664" line="663"
+            path="E:\课件\BomberMan\src\main\java\ui\Background.java"/>
+      <file column="37" endcolumn="30" endline="666" line="665"
+            path="E:\课件\BomberMan\src\main\java\ui\Background.java"/>
+      <file column="37" endcolumn="30" endline="668" line="667"
+            path="E:\课件\BomberMan\src\main\java\ui\Background.java"/>
+      <file column="37" endcolumn="30" endline="672" line="669"
+            path="E:\课件\BomberMan\src\main\java\ui\Background.java"/>
+      <file column="37" endcolumn="30" endline="676" line="673"
+            path="E:\课件\BomberMan\src\main\java\ui\Background.java"/>
+      <codefragment><![CDATA[					g.drawImage(Player21,(i+1)*DX,(j+1)*DX,this);
+             	if(map[i][j]==22)]]></codefragment>
+   </duplication>
+   <duplication lines="2" tokens="29">
+      <file column="37" endcolumn="30" endline="692" line="691"
+            path="E:\课件\BomberMan\src\main\java\ui\Background.java"/>
+      <file column="37" endcolumn="30" endline="733" line="732"
+            path="E:\课件\BomberMan\src\main\java\ui\Background.java"/>
+      <file column="37" endcolumn="30" endline="773" line="772"
+            path="E:\课件\BomberMan\src\main\java\ui\Background.java"/>
+      <file column="37" endcolumn="30" endline="813" line="812"
+            path="E:\课件\BomberMan\src\main\java\ui\Background.java"/>
+      <codefragment><![CDATA[             	g.drawImage(Player11,-5+i*DX-10,-45+j*DX,this);
+             	if(map[i][j]==1113)]]></codefragment>
+   </duplication>
+   <duplication lines="2" tokens="29">
+      <file column="37" endcolumn="30" endline="699" line="698"
+            path="E:\课件\BomberMan\src\main\java\ui\Background.java"/>
+      <file column="37" endcolumn="30" endline="740" line="739"
+            path="E:\课件\BomberMan\src\main\java\ui\Background.java"/>
+      <file column="37" endcolumn="30" endline="780" line="779"
+            path="E:\课件\BomberMan\src\main\java\ui\Background.java"/>
+      <file column="37" endcolumn="30" endline="820" line="819"
+            path="E:\课件\BomberMan\src\main\java\ui\Background.java"/>
+      <codefragment><![CDATA[             	g.drawImage(Player11,-5+i*DX,-45+j*DX-10,this);
+             	if(map[i][j]==1122)]]></codefragment>
+   </duplication>
+   <duplication lines="2" tokens="29">
+      <file column="37" endcolumn="30" endline="703" line="702"
+            path="E:\课件\BomberMan\src\main\java\ui\Background.java"/>
+      <file column="37" endcolumn="30" endline="744" line="743"
+            path="E:\课件\BomberMan\src\main\java\ui\Background.java"/>
+      <file column="37" endcolumn="30" endline="784" line="783"
+            path="E:\课件\BomberMan\src\main\java\ui\Background.java"/>
+      <file column="37" endcolumn="30" endline="824" line="823"
+            path="E:\课件\BomberMan\src\main\java\ui\Background.java"/>
+      <codefragment><![CDATA[             	g.drawImage(Player11,-5+i*DX,-45+j*DX+10,this);
+             	if(map[i][j]==1120)]]></codefragment>
+   </duplication>
+   <duplication lines="4" tokens="29">
+      <file column="37" endcolumn="30" endline="707" line="704"
+            path="E:\课件\BomberMan\src\main\java\ui\Background.java"/>
+      <file column="37" endcolumn="30" endline="748" line="745"
+            path="E:\课件\BomberMan\src\main\java\ui\Background.java"/>
+      <file column="37" endcolumn="30" endline="788" line="785"
+            path="E:\课件\BomberMan\src\main\java\ui\Background.java"/>
+      <file column="37" endcolumn="30" endline="828" line="825"
+            path="E:\课件\BomberMan\src\main\java\ui\Background.java"/>
+      <codefragment><![CDATA[             	g.drawImage(Player11,-5+i*DX,-45+j*DX-20,this);
+
+//team+head+mTypeX+mTypeY
+             	if(map[i][j]==1131)]]></codefragment>
+   </duplication>
+   <duplication lines="7" tokens="29">
+      <file column="33" endcolumn="39" endline="924" line="918"
+            path="E:\课件\BomberMan\src\main\java\ui\Background.java"/>
+      <file column="33" endcolumn="39" endline="1029" line="1023"
+            path="E:\课件\BomberMan\src\main\java\ui\Background.java"/>
+      <codefragment><![CDATA[				}
+			}
+
+			m=(myX-5)/40;
+			n=(myY-20)/40;
+			if(n1!=n){
+				isNext=1;]]></codefragment>
+   </duplication>
+   <duplication lines="9" tokens="29">
+      <file column="33" endcolumn="39" endline="977" line="969"
+            path="E:\课件\BomberMan\src\main\java\ui\Background.java"/>
+      <file column="41" endcolumn="39" endline="1085" line="1079"
+            path="E:\课件\BomberMan\src\main\java\ui\Background.java"/>
+      <codefragment><![CDATA[				}
+			}
+
+
+
+			m=(myX-5)/40;
+			n=(myY-20)/40;
+			if(m1!=m){
+				isNext=2;]]></codefragment>
+   </duplication>
+   <duplication lines="3" tokens="28">
+      <file column="41" endcolumn="89" endline="166" line="164"
+            path="E:\课件\BomberMan\src\main\java\server\Server.java"/>
+      <file column="25" endcolumn="73" endline="213" line="212"
+            path="E:\课件\BomberMan\src\main\java\server\Server.java"/>
+      <file column="17" endcolumn="63" endline="129" line="128"
+            path="E:\课件\BomberMan\src\main\java\ui\Background.java"/>
+      <file column="17" endcolumn="63" endline="166" line="165"
+            path="E:\课件\BomberMan\src\main\java\ui\Background.java"/>
+      <file column="25" endcolumn="73" endline="741" line="740"
+            path="E:\课件\BomberMan\src\main\java\ui\Lobby.java"/>
+      <codefragment><![CDATA[					for (Enumeration ee = htPlayer.elements(); ee
+							.hasMoreElements();) {
+						Message test = (Message) ee.nextElement();]]></codefragment>
+   </duplication>
+   <duplication lines="2" tokens="28">
+      <file column="33" endcolumn="80" endline="200" line="199"
+            path="E:\课件\BomberMan\src\main\java\server\Server.java"/>
+      <file column="33" endcolumn="78" endline="535" line="534"
+            path="E:\课件\BomberMan\src\main\java\ui\Lobby.java"/>
+      <file column="33" endcolumn="78" endline="555" line="554"
+            path="E:\课件\BomberMan\src\main\java\ui\Lobby.java"/>
+      <file column="33" endcolumn="78" endline="593" line="592"
+            path="E:\课件\BomberMan\src\main\java\ui\Lobby.java"/>
+      <file column="33" endcolumn="78" endline="603" line="602"
+            path="E:\课件\BomberMan\src\main\java\ui\Lobby.java"/>
+      <file column="33" endcolumn="78" endline="619" line="618"
+            path="E:\课件\BomberMan\src\main\java\ui\Lobby.java"/>
+      <codefragment><![CDATA[				for (Enumeration e = htPlayer.elements(); e.hasMoreElements();) {
+					Message test = (Message) e.nextElement();]]></codefragment>
+   </duplication>
+   <duplication lines="4" tokens="27">
+      <file column="38" endcolumn="30" endline="688" line="685"
+            path="E:\课件\BomberMan\src\main\java\ui\Background.java"/>
+      <file column="37" endcolumn="30" endline="701" line="700"
+            path="E:\课件\BomberMan\src\main\java\ui\Background.java"/>
+      <file column="37" endcolumn="30" endline="742" line="741"
+            path="E:\课件\BomberMan\src\main\java\ui\Background.java"/>
+      <file column="37" endcolumn="30" endline="782" line="781"
+            path="E:\课件\BomberMan\src\main\java\ui\Background.java"/>
+      <file column="37" endcolumn="30" endline="822" line="821"
+            path="E:\课件\BomberMan\src\main\java\ui\Background.java"/>
+      <codefragment><![CDATA[             	g.drawImage(Player132,-5+i*DX,-45+j*DX,this);
+//-------------------------head towards up-----------------------------------
+//team+head+mTypeX+mTypeY
+             	if(map[i][j]==1111)]]></codefragment>
+   </duplication>
+   <duplication lines="5" tokens="27">
+      <file column="64" endcolumn="37" endline="701" line="697"
+            path="E:\课件\BomberMan\src\main\java\ui\Lobby.java"/>
+      <file column="63" endcolumn="37" endline="721" line="716"
+            path="E:\课件\BomberMan\src\main\java\ui\Lobby.java"/>
+      <codefragment><![CDATA[				meMessage.setTeam(Key.TEAM_BLUE);
+				meMessage.setType(Key.MESSAGE_TYPE_CHANGE_TEAM);
+				MessageControl.sendMessage(test , out);
+				Util.printMessage("Select Team ",test);
+				this.bule_role.setSelected(true);]]></codefragment>
+   </duplication>
+   <duplication lines="4" tokens="26">
+      <file column="43" endcolumn="30" endline="680" line="677"
+            path="E:\课件\BomberMan\src\main\java\ui\Background.java"/>
+      <file column="44" endcolumn="30" endline="684" line="681"
+            path="E:\课件\BomberMan\src\main\java\ui\Background.java"/>
+      <codefragment><![CDATA[             		g.drawImage(paopao,i*DX+5,j*DX+20,this);
+             	}
+
+             	if(map[i][j]==88){]]></codefragment>
+   </duplication>
+   <duplication lines="5" tokens="25">
+      <file column="50" endcolumn="31" endline="888" line="884"
+            path="E:\课件\BomberMan\src\main\java\ui\Background.java"/>
+      <file column="52" endcolumn="31" endline="998" line="995"
+            path="E:\课件\BomberMan\src\main\java\ui\Background.java"/>
+      <codefragment><![CDATA[		if(e.getKeyCode()==KeyEvent.VK_UP){
+			int m1=(myX-5)/40;
+			int n1=(myY-20)/40;
+
+			myY=myY-MoveD;]]></codefragment>
+   </duplication>
+   <duplication lines="4" tokens="25">
+      <file column="53" endcolumn="31" endline="944" line="941"
+            path="E:\课件\BomberMan\src\main\java\ui\Background.java"/>
+      <file column="52" endcolumn="31" endline="1052" line="1047"
+            path="E:\课件\BomberMan\src\main\java\ui\Background.java"/>
+      <codefragment><![CDATA[		if(e.getKeyCode()==KeyEvent.VK_RIGHT){
+			int m1=(myX-5)/40;
+			int n1=(myY-20)/40;
+			myX=myX+MoveD;]]></codefragment>
+   </duplication>
+   <duplication lines="4" tokens="25">
+      <file column="33" endcolumn="41" endline="694" line="691"
+            path="E:\课件\BomberMan\src\main\java\ui\Lobby.java"/>
+      <file column="33" endcolumn="41" endline="713" line="710"
+            path="E:\课件\BomberMan\src\main\java\ui\Lobby.java"/>
+      <codefragment><![CDATA[				test.type=Key.MESSAGE_TYPE_CHANGE_TEAM;
+				test.number=meMessage.number;
+				test.UserName=meMessage.UserName;
+				team=Key.TEAM_BLUE;]]></codefragment>
+   </duplication>
+</pmd-cpd>
