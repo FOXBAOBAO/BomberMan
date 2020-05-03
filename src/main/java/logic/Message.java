@@ -7,7 +7,7 @@ public class Message implements Serializable{
 	
 	public int type;	
 	public int number;
-	public String msg =null ;
+	public String msg =null;
 	public String UserName = null;
 	public String PassWord = null;
 	public int team;
@@ -27,9 +27,9 @@ public class Message implements Serializable{
 	public int isDead;
 
 
-	public Message(){
-		super();
-	}
+  public Message(){
+    super();
+  }
 	protected Object clone() throws CloneNotSupportedException {
 		return super.clone();
 	}

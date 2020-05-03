@@ -8,7 +8,7 @@ import logic.Message;
 import util.Util;
 
 public class MessageControl {
-	public Message message ;
+	public Message message;
 
 	public Message getMessage() {
 		return message;
@@ -18,16 +18,16 @@ public class MessageControl {
 		this.message = message;
 	}
 	
-	public static void sendMessage (Message message , ObjectOutputStream out){
+	public static void sendMessage(Message message,ObjectOutputStream out){
 		try{
 
 			Util.printMessage("------All Send Messages ",message);
 			if(message == null)System.out.println("Message is null ");
 			out.writeObject(message);
 		}
-		catch(IOException e){
-			System.out.println("Send Messages Exception.");
-		}
+    catch(IOException e){
+      System.out.println("Send Messages Exception.");
+    }
 	}
 	
 	public static Message receiveMessage(ObjectInputStream in){
@@ -36,10 +36,10 @@ public class MessageControl {
 			msg = new Message();
 			msg=(Message)in.readObject();
 		}
-		catch(Exception e){
-			System.out.println("Rreceive Meassge Failure.");
-			return null;
-		}
+    catch(Exception e){
+      System.out.println("Rreceive Meassge Failure.");
+      return null;
+    }
 		Util.printMessage("------All Receive Messages ",msg);
 		return msg;
 	}

@@ -38,9 +38,9 @@ public class Server {
 		new Server();
 	}
 
-	public Server() throws IOException {
+  public Server() throws IOException {
 		// Socket clientsocket;
-		allMessage.type = 3;
+    allMessage.type = 3;
 		try {
 			serversocket = new ServerSocket(port);
 			System.out.println("Game Server started at:"
@@ -53,7 +53,7 @@ public class Server {
 				} else {
 					number = 0;
 					continue;
-				}
+        }
 				
 				clientsocket = serversocket.accept();
 				System.out.println("Connection from:" + clientsocket);
@@ -71,9 +71,9 @@ public class Server {
 			}
 
 		} catch (IOException ex) {
-		}
+    }
 
-	}
+  }
 
 }
 
@@ -92,15 +92,15 @@ class ServerThread extends Thread implements Runnable {
 
 	protected static Message returnMessage = new Message();
 	
-	public ServerThread(Socket clientsocket, Hashtable ht_out, int num,
+  public ServerThread(Socket clientsocket, Hashtable ht_out, int num,
 			ObjectOutputStream out, Message allMessage) {
-		this.clientsocket = clientsocket;
+    this.clientsocket = clientsocket;
 		// this.htPlayer=htPlayer;
-		this.ht_out = ht_out;
-		number = num;
-		this.out = out;
-		this.allMessage = allMessage;
-	}
+    this.ht_out = ht_out;
+    number = num;
+    this.out = out;
+    this.allMessage = allMessage;
+  }
 
 	public void run() {
 		ObjectInputStream inData;
@@ -109,10 +109,10 @@ class ServerThread extends Thread implements Runnable {
 			while (true) {
 				Message message= new Message();
 				message = (Message) inData.readObject();
-				if(message == null ){
+				if(message == null){
 					System.out.println("Connect is not open ");
 					inData.close();
-					return ;
+					return;
 				}
 				Util.printMessage("Message From ",message);
 				// message.number=number;
@@ -148,7 +148,7 @@ class ServerThread extends Thread implements Runnable {
 								ht_out.remove(key);
 							}else{
 								Util.printMessage("Send Message",message);
-								MessageControl.sendMessage(message ,outData);
+								MessageControl.sendMessage(message,outData);
 							}
 						}
 						
@@ -170,9 +170,9 @@ class ServerThread extends Thread implements Runnable {
 				}
 			}
 		} catch (IOException e) {
-		} catch (ClassNotFoundException e) {
-			e.printStackTrace();
-		}
+    } catch (ClassNotFoundException e) {
+      e.printStackTrace();
+    }
 	}
 
 	public Message getMessage() {
@@ -184,7 +184,7 @@ class ServerThread extends Thread implements Runnable {
 		Util.printMessage("Do Message",msg);
 		switch (type) {
 		
-		case 1: {
+      case 1: {
 			if (number <= 8) {
 				htPlayer.remove(msg.number);
 				allMessage = msg;
@@ -192,23 +192,23 @@ class ServerThread extends Thread implements Runnable {
 					allMessage.number = msg.number;
 				}else{
 					allMessage.number = number;
-				}
+          }
 				allMessage.type = 3;
 				htPlayer.put(allMessage.number, allMessage);
 
 				for (Enumeration e = htPlayer.elements(); e.hasMoreElements();) {
 					Message test = (Message) e.nextElement();
-					MessageControl.sendMessage(test , out);
+					MessageControl.sendMessage(test,out);
 
 					Util.printMessage("Send Message(doMessage)",test);
 				}
 
 			}
 
-		}
+      }
 			break;
 		//exit
-		case 11: {
+      case 11: {
 			for (Enumeration ee = htPlayer.elements(); ee.hasMoreElements();) {
 				Message test = (Message) ee.nextElement();
 				if (test.number == msg.number) {
@@ -217,27 +217,27 @@ class ServerThread extends Thread implements Runnable {
 					}
 				}
 			}
-			System.out.println("^^^^^^^^^^^^^^^^^^^^remove!");
-		}
+        System.out.println("^^^^^^^^^^^^^^^^^^^^remove!");
+      }
 			break;
 
-		case 10: {
-			htPlayer.remove(msg.number);
-			htPlayer.put(msg.number, msg);
-		}
+      case 10: {
+        htPlayer.remove(msg.number);
+        htPlayer.put(msg.number, msg);
+      }
 			break;
 
-		case 44: {
-			number = 0;
+      case 44: {
+        number = 0;
 			if (htPlayer.isEmpty()) {
 			}
-		}
+      }
 			break;
 
-		case 101 :{
-			MessageControl.sendMessage(msg , out );
-			break ;
-		}
+      case 101 :{
+        MessageControl.sendMessage(msg,out);
+        break;
+      }
 		}
 	}
 

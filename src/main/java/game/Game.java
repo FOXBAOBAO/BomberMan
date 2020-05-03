@@ -11,23 +11,23 @@ import util.Util;
 
 public class Game extends JFrame{
 	
-	public Game(){
+  public Game(){
 		//this.add(panel);
 		//panel.setDoubleBuffered(true);
 		//panel.setIgnoreRepaint(true);
-		this.setUndecorated(true);
-		this.pack();
-		this.setVisible(true);
-		new Windows(this);
-	} 
+    this.setUndecorated(true);
+    this.pack();
+    this.setVisible(true);
+    new Windows(this);
+  } 
 	public static  void main(String[] args){
 		Game game =new Game();
 		Util.showWindow(game);
 		try {
 			Thread.sleep(5);
 		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
+      e.printStackTrace();
+    }
 		Util.closeWindow(game);
        Login frame = new Login();
        

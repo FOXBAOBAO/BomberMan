@@ -4,19 +4,20 @@ import ui.Background;
 
 public class Bomb extends Thread{
 	Background bg;
-	int m,n;
+	int m;
+	int n;
 	int sleepTime=4000;
 	int power;
 	boolean stopMark;
 	
-	public Bomb(int x,int y,int pp,Background p){
-		m=x;
-		n=y;
-		bg=p;
+  public Bomb(int x,int y,int pp,Background p){
+    m=x;
+    n=y;
+    bg=p;
 		
-		power=pp;
+    power=pp;
 		
-	}
+  }
 	
 	public void run(){
 		while(!stopMark){
@@ -36,9 +37,9 @@ public class Bomb extends Thread{
 				bg.cleanPlayer();
 				
 			}
-			catch(InterruptedException e){
+      catch(InterruptedException e){
 				
-			}
+      }
 			stopMark=true;
 		}
 	}

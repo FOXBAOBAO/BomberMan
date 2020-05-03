@@ -17,93 +17,111 @@ import component.Windows;
 import ui.Lobby;
 import component.ImageLoading;
 
-public class Background extends Panel implements Runnable ,MouseListener,KeyListener{
+public class Background extends Panel implements Runnable,MouseListener,KeyListener{
 
 
-	private static final long serialVersionUID = 1L;
-	String fileName="map/map1.txt";
-	Hashtable htPlayer=new Hashtable();
+  private static final long serialVersionUID = 1L;
+  String fileName = "map/map1.txt";
+  Hashtable htPlayer = new Hashtable();
 
-	Hashtable allPlayers=new Hashtable();
-	public static int myNum;
+  Hashtable allPlayers = new Hashtable();
+  public static int myNum;
 
-	public static int isClose=0;
+  public static int isClose = 0;
 
-	private static int NumX=15;
-	private static int NumY=13;
-	private static int myHead;
-	private static int myTeam;
-	private static int myLive=1;
-	private static int myBombPower=3;
+  private static int NumX = 15;
+  private static int NumY = 13;
+  private static int myHead;
+  private static int myTeam;
+  private static int myLive = 1;
+  private static int myBombPower = 3;
 
-	private static int moveTypeX;
-	private static int moveTypeY;
-	private static int DX=40;
-	protected static int map[][];
-	protected static int map2[][];
-	private static int MoveD=20;
-	private static int mySpeed=MoveD/10;
-	Cursor handcur,customcur;
+  private static int moveTypeX;
+  private static int moveTypeY;
+  private static int DX = 40;
+  protected static int map[][];
+  protected static int map2[][];
+  private static int MoveD = 20;
+  private static int mySpeed = MoveD / 10;
+  Cursor handcur;
+  Cursor customcur;
 
-	private static int Sum_Blue=0,Dead_Blue=0,Dead_Red=0,Sum_Red=0;
-	private   boolean blue_team_alive=true ,red_team_alive=true ;
+  private static int Sum_Blue = 0;
+  private static int Dead_Blue = 0;
+  private static int Dead_Red = 0;
+  private static int Sum_Red = 0;
+  private boolean blue_team_alive=true;
+  private boolean red_team_alive=true;
 
-	Socket mysocket;
-	ObjectInputStream in;
-	ObjectOutputStream out;
-	Message  meMessage=new Message();
+  Socket mysocket;
+  ObjectInputStream in;
+  ObjectOutputStream out;
+  Message  meMessage=new Message();
 
-	Image bg;
-	Image bgImg;
-	Image Box1,Box2,Box3;
-	Image Player11,Player12,Player13,Player14;
-	Image Player21,Player22,Player23,Player24;
-	Image Player132;
-	Image tree;
-	Image paopao,bombing;
-	Image deathImg,winImg,lossImg;
-	Image TestImg;
+  Image bg;
+  Image bgImg;
+  Image Box1;
+  Image Box2;
+  Image Box3;
+  Image Player11;
+  Image Player12;
+  Image Player13;
+  Image Player14;
+  Image Player21;
+  Image Player22;
+  Image Player23;
+  Image Player24;
+  Image Player132;
+  Image tree;
+  Image paopao;
+  Image bombing;
+  Image deathImg;
+  Image winImg;
+  Image lossImg;
+  Image TestImg;
 
 	private static int myX=35;
 	private static int myY=-5;
-	private  int myNumX,myNumY;
+	private  int myNumX;
+	private int myNumY;
 
 	private Image bgImage;
 	private Graphics bg2;
-	Thread th ;
+	Thread th;
 
-	boolean isFirstPrint = true ;
+	boolean isFirstPrint = true;
 	JFrame parentFrame;
 	/**
 	 * Method Background
 	 *
 	 *
 	 */
-	public Background(JFrame parentFrame ,Hashtable ht,int num,ObjectInputStream input,ObjectOutputStream output) {
+  
+  public Background(JFrame parentFrame,Hashtable ht,int num,ObjectInputStream input,ObjectOutputStream output) {
 
-		this.parentFrame = parentFrame;
+    this.parentFrame = parentFrame;
 
-		this.htPlayer=ht;
-		this.myNum=num;
+    this.htPlayer=ht;
+    this.myNum=num;
 
-		this.in=input;
-		this.out=output;
-		this.addMouseListener(this);
-		this.addKeyListener(this);
-		init();
-		initPlayers();
+    this.in=input;
+    this.out=output;
+    this.addMouseListener(this);
+    this.addKeyListener(this);
+    init();
+    initPlayers();
 
-		th=new Thread(this);
-		th.start();
-	}
+    th=new Thread(this);
+    th.start();
+  }
 
 	public void start(){
 		//	thread.start();
 	}
 	public void init(){
 		initparam();
-		handcur = Toolkit.getDefaultToolkit().createCustomCursor(ImageLoading.createImage("images/hand.png"),new Point(10,10),"hand") ;
-		customcur = Toolkit.getDefaultToolkit().createCustomCursor(ImageLoading.createImage("images/custom.png"),new Point(10,10),"custom") ;
+		handcur = Toolkit.getDefaultToolkit().createCustomCursor(ImageLoading.createImage("images/hand.png"),new Point(10,10),"hand");
+		customcur = Toolkit.getDefaultToolkit().createCustomCursor(ImageLoading.createImage("images/custom.png"),new Point(10,10),"custom");
 		this.setCursor(handcur);
 		map=new int [NumX][NumY];
 
@@ -145,18 +163,18 @@ public class Background extends Panel implements Runnable ,MouseListener,KeyList
 		try{
 			initMap();
 		}
-		catch(IOException e){}
+    catch(IOException e){}
 
 		initImages();
 
 	}
 	public void initparam(){
-		myLive = 1 ;
-		blue_team_alive=true ;
-		red_team_alive=true ;
+		myLive = 1;
+		blue_team_alive=true;
+		red_team_alive=true;
 		Sum_Blue=0;
-		Dead_Blue=0 ;
-		Dead_Red=0 ;
+		Dead_Blue=0;
+		Dead_Red=0;
 		Sum_Red=0;
 		isFirstPrint = true;
 	}
@@ -169,62 +187,62 @@ public class Background extends Panel implements Runnable ,MouseListener,KeyList
 			int n=test.y;
 
 			switch(test.number){
-				case 1:{
-					m=2;
-					n=2;
-					map[m][n]=1352;
+        case 1:{
+          m=2;
+          n=2;
+          map[m][n]=1352;
 				//	myX=40*m+5;
 				//	myY=40*n+20;
-				}break;
-				case 2:{
-					m=12;
-					n=10;
-					map[m][n]=1352;
+        }break;
+        case 2:{
+          m=12;
+          n=10;
+          map[m][n]=1352;
 				//	myX=40*m+5;
 				//	myY=40*n+20;
-				}break;
-				case 3:{
-					m=NumX-3;
-					n=3-1;
-					map[m][n]=1352;
+        }break;
+        case 3:{
+          m=NumX-3;
+          n=3-1;
+          map[m][n]=1352;
 				//	myX=40*m+5;
 				//	myY=40*n+20;
-				}break;
-				case 4:{
-					m=2;
-					n=10;
-					map[m][n]=1352;
+        }break;
+        case 4:{
+          m=2;
+          n=10;
+          map[m][n]=1352;
 				//	myX=40*m+5;
 				//	myY=40*n+20;
-				}break;
-				case 5:{
-					m=3;
-					n=1;
-					map[m][n]=1352;
+        }break;
+        case 5:{
+          m=3;
+          n=1;
+          map[m][n]=1352;
 				//	myX=40*m+5;
 				//	myY=40*n+20;
-				}break;
-				case 6:{
-					m=3;
-					n=1;
-					map[m][n]=1352;
+        }break;
+        case 6:{
+          m=3;
+          n=1;
+          map[m][n]=1352;
 				//	myX=40*m+5;
 				//	myY=40*n+20;
-				}break;
-				case 7:{
-					m=3;
-					n=1;
-					map[m][n]=1352;
+        }break;
+        case 7:{
+          m=3;
+          n=1;
+          map[m][n]=1352;
 				//	myX=40*m+5;
 				//	myY=40*n+20;
-				}break;
-				case 8:{
-					m=3;
-					n=1;
-					map[m][n]=1352;
+        }break;
+        case 8:{
+          m=3;
+          n=1;
+          map[m][n]=1352;
 				//	myX=40*m+5;
 					//myY=40*n+20;
-				}break;
+        }break;
 
 
 
@@ -247,7 +265,7 @@ public class Background extends Panel implements Runnable ,MouseListener,KeyList
 		try{
 			reader=new BufferedReader(new FileReader(fileName));
 		}
-		catch(IOException e){}
+    catch(IOException e){}
 
 		while(true){
 			String line=reader.readLine();
@@ -343,7 +361,7 @@ public class Background extends Panel implements Runnable ,MouseListener,KeyList
 			doMessage(test);
 
 			if(Sum_Blue==Dead_Blue ||Sum_Red==Dead_Red){
-				int second = 5000 ;
+				int second = 5000;
 				if(Sum_Blue==Dead_Blue){
 					blue_team_alive = false;
 					if(this.meMessage.team==Key.TEAM_RED)second = 5000;
@@ -355,29 +373,29 @@ public class Background extends Panel implements Runnable ,MouseListener,KeyList
 				try{
 					Thread.sleep(second);
 				}
-				catch(InterruptedException e){}
+        catch(InterruptedException e){}
 
-				Message meme= null ;
+				Message meme= null;
 				for(Enumeration ee=allPlayers.elements();ee.hasMoreElements();){
 
 					Message tempM =(Message)ee.nextElement();
-					tempM.ready = 0 ;
+					tempM.ready = 0;
 					tempM.isLive = 1;
 					if(tempM.number == this.myNum){
 						meme = new Message();
 						meme=tempM;
-						meme.number = tempM.number ;
+						meme.number = tempM.number;
 
 					}
 					allPlayers.put(tempM.number, tempM);
 
 				}
-				if(meme != null ){
-					meme.ready = 0 ;
+				if(meme != null){
+					meme.ready = 0;
 					meme.isLive=1;
 					meme.number = this.myNum;
-					meme.team = this.myTeam ;
-					new Windows(new Lobby(allPlayers ,meme,in,out));
+					meme.team = this.myTeam;
+					new Windows(new Lobby(allPlayers,meme,in,out));
 					this.parentFrame.setVisible(false);
 				}
 
@@ -429,7 +447,7 @@ public class Background extends Panel implements Runnable ,MouseListener,KeyList
 			g.drawImage(Player132,-600,-600,this);
 			g.drawImage(winImg,-600,-600,this);
 			g.drawImage(lossImg,-600,-600,this);
-			isFirstPrint = false ;
+			isFirstPrint = false;
 
 		}
 
@@ -485,10 +503,10 @@ public class Background extends Panel implements Runnable ,MouseListener,KeyList
 		map[m][n]=all;
 
 			switch(isnext){
-				case 1:map[m][n+1]=0;break;
-				case 2:map[m-1][n]=0;break;
-				case 3:map[m][n-1]=0;break;
-				case 4:map[m+1][n]=0;break;
+      case 1:map[m][n+1]=0;break;
+      case 2:map[m-1][n]=0;break;
+      case 3:map[m][n-1]=0;break;
+      case 4:map[m+1][n]=0;break;
 			}
 	}
 	public void setBomb(int m,int n){
@@ -908,14 +926,14 @@ public class Background extends Panel implements Runnable ,MouseListener,KeyList
 				}else {
 
 					switch((myY-20)%40){
-						case 10: moveTypeY=10;break;
-						case 20: moveTypeY=20;break;
-						case 30: moveTypeY=30;break;
-						case 0: moveTypeY=0;break;
-						default: break;
+              case 10: moveTypeY=10;break;
+              case 20: moveTypeY=20;break;
+              case 30: moveTypeY=30;break;
+              case 0: moveTypeY=0;break;
+              default: break;
 					}
 
-				}
+          }
 			}
 
 			m=(myX-5)/40;
@@ -936,7 +954,7 @@ public class Background extends Panel implements Runnable ,MouseListener,KeyList
 			test.moveTypeY=this.moveTypeY;
 			MessageControl.sendMessage(test,out);
 			System.out.println("UP Pressed "+test.team+test.head+test.moveTypeX/10+test.moveTypeY/10);
-			}
+      }
 		}
 		if(e.getKeyCode()==KeyEvent.VK_RIGHT){
 			int m1=(myX-5)/40;
@@ -956,11 +974,11 @@ public class Background extends Panel implements Runnable ,MouseListener,KeyList
 //				default: break;
 //			}
 			switch((myX-5)%40){
-				case 10: moveTypeX=10;break;
-				case 20: moveTypeX=20;break;
-				case 30: moveTypeX=30;break;
-				case 0: moveTypeX=0;break;
-				default: break;
+          case 10: moveTypeX=10;break;
+          case 20: moveTypeX=20;break;
+          case 30: moveTypeX=30;break;
+          case 0: moveTypeX=0;break;
+          default: break;
 			}
 
 			if(m1+1<=14){
@@ -989,7 +1007,7 @@ public class Background extends Panel implements Runnable ,MouseListener,KeyList
 			test.moveTypeY=this.moveTypeY;
 			MessageControl.sendMessage(test,out);
 
-			}
+      }
 			System.out.println("RIGHT Pressed ");
 		}
 		if(e.getKeyCode()==KeyEvent.VK_DOWN){
@@ -1010,11 +1028,11 @@ public class Background extends Panel implements Runnable ,MouseListener,KeyList
 //				default: break;
 //			}
 				switch((myY-20)%40){
-					case 10: moveTypeY=10;break;
-					case 20: moveTypeY=20;break;
-					case 30: moveTypeY=30;break;
-					case 0: moveTypeY=0;break;
-					default: break;
+          case 10: moveTypeY=10;break;
+          case 20: moveTypeY=20;break;
+          case 30: moveTypeY=30;break;
+          case 0: moveTypeY=0;break;
+          default: break;
 				}
 
 			if(n1+1<=12){
@@ -1039,7 +1057,7 @@ public class Background extends Panel implements Runnable ,MouseListener,KeyList
 			test.moveTypeX=this.moveTypeX;
 			test.moveTypeY=this.moveTypeY;
 			MessageControl.sendMessage(test,out);
-			}
+      }
 			System.out.println("DOWN Pressed ");
 
 		}
@@ -1050,11 +1068,11 @@ public class Background extends Panel implements Runnable ,MouseListener,KeyList
 			int n1=(myY-20)/40;
 
 			myX=myX-MoveD;
-			boolean hasBlock = false ;
+			boolean hasBlock = false;
 			if(m1-1>=0){
 				if((map[m1-1][n1]==1||map2[m1-1][n1]==8||map[m1-1][n1]==2)&&moveTypeX<=20){
 					myX=myX+MoveD;
-					hasBlock = true ;
+					hasBlock = true;
 				}
 			}
 			if(myX<20+5){
@@ -1071,11 +1089,11 @@ public class Background extends Panel implements Runnable ,MouseListener,KeyList
 		//				default: break;
 		//			}
 					switch((myX-5)%40){
-						case 10: moveTypeX=10;break;
-						case 20: moveTypeX=20;break;
-						case 30: moveTypeX=30;break;
-						case 0: moveTypeX=0;break;
-						default: break;
+            case 10: moveTypeX=10;break;
+            case 20: moveTypeX=20;break;
+            case 30: moveTypeX=30;break;
+            case 0: moveTypeX=0;break;
+            default: break;
 					}
 				}
 			m=(myX-5)/40;
@@ -1097,7 +1115,7 @@ public class Background extends Panel implements Runnable ,MouseListener,KeyList
 			test.moveTypeY=moveTypeY;
 
 			MessageControl.sendMessage(test,out);
-			}
+      }
 			System.out.println("LEFT Pressed ");
 		}
 
