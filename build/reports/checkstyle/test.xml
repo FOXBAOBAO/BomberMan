@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <checkstyle version="8.32">
-<file name="C:\Users\Wang yuchen\Desktop\BomberMan\src\test\java\test\BackgroundTest.java">
+<file name="E:\课件\BomberMan\src\test\java\test\BackgroundTest.java">
 <error line="3" column="31" severity="warning" message="不应使用 &apos;.*&apos; 形式的导入 - org.junit.Assert.* 。" source="com.puppycrawl.tools.checkstyle.checks.imports.AvoidStarImportCheck"/>
 <error line="8" severity="warning" message="导入语句&apos;java.awt.Component&apos; 字典顺序错误。应在&apos;java.util.Hashtable&apos;之前。" source="com.puppycrawl.tools.checkstyle.checks.imports.CustomImportOrderCheck"/>
 <error line="9" severity="warning" message="导入语句&apos;java.awt.event.*&apos; 字典顺序错误。应在&apos;java.util.Hashtable&apos;之前。" source="com.puppycrawl.tools.checkstyle.checks.imports.CustomImportOrderCheck"/>
@@ -24,7 +24,7 @@
 <error line="33" column="1" severity="warning" message="行内含有制表符 tab 。" source="com.puppycrawl.tools.checkstyle.checks.whitespace.FileTabCharacterCheck"/>
 <error line="34" column="1" severity="warning" message="行内含有制表符 tab 。" source="com.puppycrawl.tools.checkstyle.checks.whitespace.FileTabCharacterCheck"/>
 </file>
-<file name="C:\Users\Wang yuchen\Desktop\BomberMan\src\test\java\test\GameTest.java">
+<file name="E:\课件\BomberMan\src\test\java\test\GameTest.java">
 <error line="3" column="31" severity="warning" message="不应使用 &apos;.*&apos; 形式的导入 - org.junit.Assert.* 。" source="com.puppycrawl.tools.checkstyle.checks.imports.AvoidStarImportCheck"/>
 <error line="9" severity="warning" message="&apos;method def modifier&apos; 缩进了8个缩进符，应为2个。" source="com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheck"/>
 <error line="9" column="1" severity="warning" message="行内含有制表符 tab 。" source="com.puppycrawl.tools.checkstyle.checks.whitespace.FileTabCharacterCheck"/>
@@ -33,7 +33,7 @@
 <error line="12" severity="warning" message="&apos;method def rcurly&apos; 缩进了8个缩进符，应为2个。" source="com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheck"/>
 <error line="12" column="1" severity="warning" message="行内含有制表符 tab 。" source="com.puppycrawl.tools.checkstyle.checks.whitespace.FileTabCharacterCheck"/>
 </file>
-<file name="C:\Users\Wang yuchen\Desktop\BomberMan\src\test\java\test\MessageControlTest.java">
+<file name="E:\课件\BomberMan\src\test\java\test\MessageControlTest.java">
 <error line="3" column="31" severity="warning" message="不应使用 &apos;.*&apos; 形式的导入 - org.junit.Assert.* 。" source="com.puppycrawl.tools.checkstyle.checks.imports.AvoidStarImportCheck"/>
 <error line="8" severity="warning" message="导入组之前的额外空行 &apos;org.junit.Test&apos;。" source="com.puppycrawl.tools.checkstyle.checks.imports.CustomImportOrderCheck"/>
 <error line="10" severity="warning" message="导入组之前的额外空行 &apos;logic.Message&apos;。" source="com.puppycrawl.tools.checkstyle.checks.imports.CustomImportOrderCheck"/>
@@ -62,7 +62,7 @@
 <error line="28" severity="warning" message="&apos;method def&apos; 子元素缩进了8个缩进符，应为4个。" source="com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheck"/>
 <error line="29" severity="warning" message="&apos;method def rcurly&apos; 缩进了4个缩进符，应为2个。" source="com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheck"/>
 </file>
-<file name="C:\Users\Wang yuchen\Desktop\BomberMan\src\test\java\test\MessageTest.java">
+<file name="E:\课件\BomberMan\src\test\java\test\MessageTest.java">
 <error line="3" column="31" severity="warning" message="不应使用 &apos;.*&apos; 形式的导入 - org.junit.Assert.* 。" source="com.puppycrawl.tools.checkstyle.checks.imports.AvoidStarImportCheck"/>
 <error line="6" severity="warning" message="导入语句&apos;logic.*&apos; 字典顺序错误。应在&apos;org.junit.Test&apos;之前。" source="com.puppycrawl.tools.checkstyle.checks.imports.CustomImportOrderCheck"/>
 <error line="6" column="13" severity="warning" message="不应使用 &apos;.*&apos; 形式的导入 - logic.* 。" source="com.puppycrawl.tools.checkstyle.checks.imports.AvoidStarImportCheck"/>

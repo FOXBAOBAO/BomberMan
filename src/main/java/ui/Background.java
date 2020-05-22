@@ -170,20 +170,20 @@ public class Background extends Panel implements Runnable ,MouseListener,KeyList
 
 			switch(test.number){
 				case 1:{
-					m=2;
-					n=2;
-					map[m][n]=1352;
+					m=3;
+					n=3;
+					map[m][n]=1372;
 				//	myX=40*m+5;
 				//	myY=40*n+20;
 				}break;
 				case 2:{
 					m=12;
 					n=10;
-					map[m][n]=1352;
+					map[m][n]=2152;
 				//	myX=40*m+5;
 				//	myY=40*n+20;
 				}break;
-				case 3:{
+				/*case 3:{
 					m=NumX-3;
 					n=3-1;
 					map[m][n]=1352;
@@ -224,7 +224,7 @@ public class Background extends Panel implements Runnable ,MouseListener,KeyList
 					map[m][n]=1352;
 				//	myX=40*m+5;
 					//myY=40*n+20;
-				}break;
+				}break;*/
 
 
 
@@ -421,12 +421,20 @@ public class Background extends Panel implements Runnable ,MouseListener,KeyList
 		if(isFirstPrint){
 			g.drawImage(bombing,-600,-600,this);
 			g.drawImage(paopao,-600,-600,this);
+			if(myTeam==Key.TEAM_BLUE) {
 			g.drawImage(Player12,-600,-600,this);
 			g.drawImage(Player13,-600,-600,this);
 			g.drawImage(Player14,-600,-600,this);
-			g.drawImage(Player11,-600,-600,this);
+			g.drawImage(Player11,-600,-600,this);}
+			
+			if(myTeam==Key.TEAM_RED) {
+				g.drawImage(Player22,-600,-600,this);
+				g.drawImage(Player23,-600,-600,this);
+				g.drawImage(Player24,-600,-600,this);
+				g.drawImage(Player21,-600,-600,this);}
+			
 			g.drawImage(deathImg,-600,-600,this);
-			g.drawImage(Player132,-600,-600,this);
+			//g.drawImage(Player132,-600,-600,this);
 			g.drawImage(winImg,-600,-600,this);
 			g.drawImage(lossImg,-600,-600,this);
 			isFirstPrint = false ;
