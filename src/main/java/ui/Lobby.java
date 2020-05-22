@@ -75,12 +75,13 @@ public class Lobby extends JFrame implements MouseListener, MouseMotionListener,
 	ImageButton player7_r =  new ImageButton(new ImageIcon("images/player2.jpg"));
 	ImageButton player8_b =  new ImageButton(new ImageIcon("images/player1.jpg"));
 	ImageButton player8_r =  new ImageButton(new ImageIcon("images/player2.jpg"));
-	Cursor handcur,customcur;
+	Cursor handcur;
+	Cursor customcur;
 
-	ImageLabel il ;
+	ImageLabel il;
 	Message meMessage=new Message();
-	int x ;
-	int y ;
+	int x;
+	int y;
 	int inf_x = 563;
 	int inf_y = 360;
 	boolean Ready =false;
@@ -177,24 +178,25 @@ public class Lobby extends JFrame implements MouseListener, MouseMotionListener,
 		send.setBounds(102,530,275,23);
 		bgPanel.add(send);
 		
-		handcur = Toolkit.getDefaultToolkit().createCustomCursor(ImageLoading.createImage("images/hand.png"),new Point(10,10),"hand") ; 
-		customcur = Toolkit.getDefaultToolkit().createCustomCursor(ImageLoading.createImage("images/custom.png"),new Point(10,10),"custom") ; 
+		handcur = Toolkit.getDefaultToolkit().createCustomCursor(ImageLoading.createImage("images/hand.png"),new Point(10,10),"hand"); 
+		customcur = Toolkit.getDefaultToolkit().createCustomCursor(ImageLoading.createImage("images/custom.png"),new Point(10,10),"custom"); 
 		this.setCursor(handcur);
 
 	}
-	public Lobby(Message ms,ObjectInputStream in,ObjectOutputStream out){
+	
+  public Lobby(Message ms,ObjectInputStream in,ObjectOutputStream out){
 
-		htPlayer = new Hashtable();
-		this.number=ms.number;
-		this.userName=ms.UserName;
-		this.team=ms.team;
-		this.meMessage=ms;
-		Util.printMessage("Tank House",this.meMessage);
-		this.in=in;
-		this.out=out;
-		this.setTitle("User Name: "+userName);
+    htPlayer = new Hashtable();
+    this.number=ms.number;
+    this.userName=ms.UserName;
+    this.team=ms.team;
+    this.meMessage=ms;
+    Util.printMessage("Tank House",this.meMessage);
+    this.in=in;
+    this.out=out;
+    this.setTitle("User Name: "+userName);
 
-		init();
+    init();
 		
 		if(this.meMessage.team==Key.TEAM_BLUE){
 			this.bule_role.setSelected(true);
@@ -202,35 +204,35 @@ public class Lobby extends JFrame implements MouseListener, MouseMotionListener,
 		}else {
 			this.bule_role.setSelected(false);
 			this.red_role.setSelected(true);
-		}
+    }
 		
-		this.setSize(805,630);
-		this.setVisible(true);
-		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    this.setSize(805,630);
+    this.setVisible(true);
+    this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
-		thread=new Thread(this);
-		thread.start();
-	}
+    thread=new Thread(this);
+    thread.start();
+  }
 	
-	public Lobby(Hashtable ht , Message ms,ObjectInputStream in,ObjectOutputStream out){
-		htPlayer = new Hashtable();
+  public Lobby(Hashtable ht,Message ms,ObjectInputStream in,ObjectOutputStream out){
+    htPlayer = new Hashtable();
 				
 		if(!htPlayer.isEmpty()){
 			this.htPlayer.clear();
 		}		
-		this.htPlayer = ht ;
+    this.htPlayer = ht;
 		
 		
-		this.number=ms.number;
-		this.userName=ms.UserName;
-		this.team=ms.team;
-		this.meMessage=ms;
-		Util.printMessage("Tank House",this.meMessage);
-		this.in=in;
-		this.out=out;
-		this.setTitle("Player:"+userName);
+    this.number=ms.number;
+    this.userName=ms.UserName;
+    this.team=ms.team;
+    this.meMessage=ms;
+    Util.printMessage("Tank House",this.meMessage);
+    this.in=in;
+    this.out=out;
+    this.setTitle("Player:"+userName);
 
-		init();
+    init();
 		
 		if(this.meMessage.team==Key.TEAM_BLUE){
 			this.bule_role.setSelected(true);
@@ -238,15 +240,15 @@ public class Lobby extends JFrame implements MouseListener, MouseMotionListener,
 		}else {
 			this.bule_role.setSelected(false);
 			this.red_role.setSelected(true);
-		}
+    }
 		
-		this.setSize(805,630);
-		this.setVisible(true);
-		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    this.setSize(805,630);
+    this.setVisible(true);
+    this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
-		thread=new Thread(this);
-		thread.start();
-	}
+    thread=new Thread(this);
+    thread.start();
+  }
 	
 //	public void start(){
 	//	thread.start();
@@ -267,7 +269,7 @@ public class Lobby extends JFrame implements MouseListener, MouseMotionListener,
 				this.paint();
 				this.repaint();
 				//Thread.sleep(1000);
-				if(this.Ready ){
+				if(this.Ready){
 					BattleFrame qq =new BattleFrame(htPlayer,this.number,in,out);
 					qq.setVisible(true);
 					
@@ -279,7 +281,7 @@ public class Lobby extends JFrame implements MouseListener, MouseMotionListener,
 					htPlayer.clear();
 					Ready = false;
 					this.dispose();
-					break ;
+					break;
 //					Message msgtest=new Message();
 //					msg.type=44;
 //					bg.sendMessage(msgtest);
@@ -287,7 +289,7 @@ public class Lobby extends JFrame implements MouseListener, MouseMotionListener,
 					
 				}
 			}
-			catch(Exception e){}
+      catch(Exception e){}
 		}
 		
 		
@@ -341,8 +343,8 @@ public class Lobby extends JFrame implements MouseListener, MouseMotionListener,
 		int x =0;
 		int y =0;
 		switch (num){
-			case 1: {
-				x=31;y=81;
+      case 1: {
+        x=31;y=81;
 				if(team==1){
 					this.bgPanel.add(player1_b);
 					player1_b.setLocation(x, y);
@@ -351,7 +353,7 @@ public class Lobby extends JFrame implements MouseListener, MouseMotionListener,
 						this.player1_b.setSelected(true);
 					}else{
 						this.player1_b.setSelected(false);
-					}
+          }
 					
 				}
 				if(team==-1){
@@ -362,11 +364,11 @@ public class Lobby extends JFrame implements MouseListener, MouseMotionListener,
 						this.player1_r.setSelected(true);
 					}else{
 						this.player1_r.setSelected(false);
-					}
+          }
 				}
-			}break;
-			case 2: {
-				x=152;y=81;
+      }break;
+      case 2: {
+        x=152;y=81;
 				if(team==1){
 					this.bgPanel.add(player2_b);
 					player2_b.setLocation(x, y);
@@ -375,7 +377,7 @@ public class Lobby extends JFrame implements MouseListener, MouseMotionListener,
 						this.player2_b.setSelected(true);
 					}else{
 						this.player2_b.setSelected(false);
-					}
+          }
 				}
 				if(team==-1){
 					this.bgPanel.add(player2_r);
@@ -385,11 +387,11 @@ public class Lobby extends JFrame implements MouseListener, MouseMotionListener,
 						this.player2_r.setSelected(true);
 					}else{
 						this.player2_r.setSelected(false);
-					}
+          }
 				}
-			}break;
-			case 3: {
-				x=274;y=81;
+      }break;
+      case 3: {
+        x=274;y=81;
 				if(team==1){
 					player3_b.setLocation(x, y);
 					this.bgPanel.add(player3_b);
@@ -397,7 +399,7 @@ public class Lobby extends JFrame implements MouseListener, MouseMotionListener,
 						this.player3_b.setSelected(true);
 					}else{
 						this.player3_b.setSelected(false);
-					}
+          }
 				}
 				if(team==-1){
 					player3_r.setLocation(x, y);
@@ -406,11 +408,11 @@ public class Lobby extends JFrame implements MouseListener, MouseMotionListener,
 						this.player3_r.setSelected(true);
 					}else{
 						this.player3_r.setSelected(false);
-					}
+          }
 				}
-			}break;
-			case 4: {
-				x=397;y=81;
+      }break;
+      case 4: {
+        x=397;y=81;
 				if(team==1){
 					player4_b.setLocation(x, y);
 					this.bgPanel.add(player4_b);
@@ -418,7 +420,7 @@ public class Lobby extends JFrame implements MouseListener, MouseMotionListener,
 						this.player4_b.setSelected(true);
 					}else{
 						this.player4_b.setSelected(false);
-					}
+          }
 				}
 				if(team==-1){
 					player4_r.setLocation(x, y);
@@ -429,9 +431,9 @@ public class Lobby extends JFrame implements MouseListener, MouseMotionListener,
 						this.player4_r.setSelected(false);
 					}
 				}
-			}break;
-			case 5: {
-				x=31; y=234;
+      }break;
+      case 5: {
+        x=31; y=234;
 				if(team==1){
 					player5_b.setLocation(x, y);
 					this.bgPanel.add(player5_b);
@@ -448,11 +450,11 @@ public class Lobby extends JFrame implements MouseListener, MouseMotionListener,
 						this.player5_r.setSelected(true);
 					}else{
 						this.player5_r.setSelected(false);
-					}
+          }
 				}
-			}break;
-			case 6: {
-				x=152; y=234;
+      }break;
+      case 6: {
+        x=152; y=234;
 				if(team==1){
 					player6_b.setLocation(x, y);
 					this.bgPanel.add(player6_b);
@@ -471,9 +473,9 @@ public class Lobby extends JFrame implements MouseListener, MouseMotionListener,
 						this.player6_r.setSelected(false);
 					}
 				}
-			}break;
-			case 7: {
-				x=274; y=234;
+      }break;
+      case 7: {
+        x=274; y=234;
 				if(team==1){
 					player7_b.setLocation(x, y);
 					this.bgPanel.add(player7_b);
@@ -492,9 +494,9 @@ public class Lobby extends JFrame implements MouseListener, MouseMotionListener,
 						this.player7_r.setSelected(false);
 					}
 				}
-			}break;
-			case 8: {
-				x=397; y=234;
+      }break;
+      case 8: {
+        x=397; y=234;
 				if(team==1){
 					player8_b.setLocation(x, y);
 					this.bgPanel.add(player8_b);
@@ -513,7 +515,7 @@ public class Lobby extends JFrame implements MouseListener, MouseMotionListener,
 						this.player8_r.setSelected(false);
 					}
 				}
-			}break;
+      }break;
 		}
 		
 	
@@ -530,7 +532,7 @@ public class Lobby extends JFrame implements MouseListener, MouseMotionListener,
    		switch(type){
 
    			//change group
-   			case 5:{
+      case 5:{
    				for(Enumeration e=htPlayer.elements();e.hasMoreElements();){
 					Message test =(Message)e.nextElement();
    					System.out.println("^^^^^^^^^case 5 team="+test.team);
@@ -541,15 +543,15 @@ public class Lobby extends JFrame implements MouseListener, MouseMotionListener,
 					}
 				}
 				//this.bgPanel.repaint();
-				this.paint();			
-				this.repaint();
+        this.paint();			
+        this.repaint();
    				
-   			}
+      }
    			break;
    			//login
-   			case 3:{
+      case 3:{
    				
-   				int s=0;
+        int s=0;
    				
    				for(Enumeration e=htPlayer.elements();e.hasMoreElements();){
 					Message test =(Message)e.nextElement();
@@ -564,16 +566,16 @@ public class Lobby extends JFrame implements MouseListener, MouseMotionListener,
 				}
 
 				//this.bgPanel.repaint();
-				this.paint();
-				this.repaint();
+        this.paint();
+        this.repaint();
    				
-   			}
+      }
    			break;
    			//处理聊天消息
-   			case 2:{   				
-   				this.showMsg.append(msg.msg+"\n");   				
-   			}break;
-   			case 31:{
+      case 2:{   				
+        this.showMsg.append(msg.msg+"\n");   				
+      }break;
+      case 31:{
    			//	htPlayer.put(Integer.toString(msg.number),msg);
    				//allMessage=msg;
    				
@@ -585,10 +587,10 @@ public class Lobby extends JFrame implements MouseListener, MouseMotionListener,
    					
    			//	}
    			
-   			}break;
+      }break;
    			
    			
-   			case 10:{
+      case 10:{
    				for(Enumeration e=htPlayer.elements();e.hasMoreElements();){
 					Message test =(Message)e.nextElement();
 					
@@ -598,7 +600,7 @@ public class Lobby extends JFrame implements MouseListener, MouseMotionListener,
 					}
 				}
    				
-				int b=0;
+        int b=0;
 				for(Enumeration e=htPlayer.elements();e.hasMoreElements();){
 					Message test =(Message)e.nextElement();
 					if(test.ready!=1){
@@ -609,11 +611,11 @@ public class Lobby extends JFrame implements MouseListener, MouseMotionListener,
 					this.Ready = true;
 				}
 				//this.bgPanel.repaint();
-				this.paint();
-				this.repaint();
-   			}break;
+        this.paint();
+        this.repaint();
+      }break;
    			
-   			case 11:{
+      case 11:{
    				
    				for(Enumeration e=htPlayer.elements();e.hasMoreElements();){
 					Message test =(Message)e.nextElement();
@@ -627,37 +629,37 @@ public class Lobby extends JFrame implements MouseListener, MouseMotionListener,
 					}
 				}
 				//EXIT=1;
-				System.out.println("********************EXIT");
+        System.out.println("********************EXIT");
 
 				//this.bgPanel.repaint();
-				this.paint();
-				this.repaint();
-   			}break;
+        this.paint();
+        this.repaint();
+      }break;
    		}
 	}
 	
-	public ImageButton getMyPlayerIcon(int num , int team){
+	public ImageButton getMyPlayerIcon(int num,int team){
 		if(team == 1){
 			switch(num){
-				case 1:return this.player1_b;
-				case 2:return this.player2_b;
-				case 3:return this.player3_b;
-				case 4:return this.player4_b;
-				case 5:return this.player5_b;
-				case 6:return this.player6_b;
-				case 7:return this.player7_b;
-				case 8:return this.player8_b;
+        case 1:return this.player1_b;
+        case 2:return this.player2_b;
+        case 3:return this.player3_b;
+        case 4:return this.player4_b;
+        case 5:return this.player5_b;
+        case 6:return this.player6_b;
+        case 7:return this.player7_b;
+        case 8:return this.player8_b;
 			}
 		}else if(team == -1){
 			switch(num){
-			case 1:return this.player1_r;
-			case 2:return this.player2_r;
-			case 3:return this.player3_r;
-			case 4:return this.player4_r;
-			case 5:return this.player5_r;
-			case 6:return this.player6_r;
-			case 7:return this.player7_r;
-			case 8:return this.player8_r;
+        case 1:return this.player1_r;
+        case 2:return this.player2_r;
+        case 3:return this.player3_r;
+        case 4:return this.player4_r;
+        case 5:return this.player5_r;
+        case 6:return this.player6_r;
+        case 7:return this.player7_r;
+        case 8:return this.player8_r;
 			}
 		}
 
@@ -671,7 +673,7 @@ public class Lobby extends JFrame implements MouseListener, MouseMotionListener,
 				|| e.getSource() == this.ready
 				|| e.getSource() == this.leave){
 			this.setCursor(handcur);
-			return ;
+			return;
 		}
 
 		this.setCursor(customcur);
@@ -696,12 +698,12 @@ public class Lobby extends JFrame implements MouseListener, MouseMotionListener,
 				
 				meMessage.setTeam(Key.TEAM_BLUE);
 				meMessage.setType(Key.MESSAGE_TYPE_CHANGE_TEAM);
-				MessageControl.sendMessage(test , out);
+				MessageControl.sendMessage(test,out);
 				Util.printMessage("Select Team ",test);
 				this.bule_role.setSelected(true);
 				this.red_role.setSelected(false);
 			}
-			return ;
+			return;
 		}else if(e.getSource() == this.red_role){
 			if(!this.red_role.isSelected()){
 				Message test=new Message();
@@ -715,13 +717,13 @@ public class Lobby extends JFrame implements MouseListener, MouseMotionListener,
 				
 				meMessage.setTeam(Key.TEAM_RED);
 				meMessage.setType(Key.MESSAGE_TYPE_CHANGE_TEAM);
-				MessageControl.sendMessage(test , out);
+				MessageControl.sendMessage(test,out);
 	
 				Util.printMessage("Select Team ",test);
 				this.red_role.setSelected(true);
 				this.bule_role.setSelected(false);
 			}
-			return ;
+			return;
 		}
 
 		//chat
@@ -731,7 +733,7 @@ public class Lobby extends JFrame implements MouseListener, MouseMotionListener,
 			Message msg =new Message();
 			msg.type=Key.MESSAGE_TYPE_CHART;
 			msg.msg=userName+" --> "+s;
-			MessageControl.sendMessage(msg , out);
+			MessageControl.sendMessage(msg,out);
 		}
 		//ready
 		else if(e.getSource() == this.ready){
@@ -754,7 +756,7 @@ public class Lobby extends JFrame implements MouseListener, MouseMotionListener,
 				meMessage.setType(Key.MESSAGE_TYPE_READY);
 				meMessage.setReady(-1);
 				Util.printMessage("Get Ready ",msg);
-				MessageControl.sendMessage(msg , out);
+				MessageControl.sendMessage(msg,out);
 				this.ready.setSelected(false);
 			}else {
 
@@ -767,9 +769,9 @@ public class Lobby extends JFrame implements MouseListener, MouseMotionListener,
 				meMessage.setType(Key.MESSAGE_TYPE_READY);
 				meMessage.setReady(1);
 				Util.printMessage("Get Ready ",msg);
-				MessageControl.sendMessage(msg , out);
+				MessageControl.sendMessage(msg,out);
 				this.ready.setSelected(true);
-			}
+      }
 		}
 		//exit
 		if(e.getSource() == this.leave){
@@ -777,7 +779,7 @@ public class Lobby extends JFrame implements MouseListener, MouseMotionListener,
 			msg.type=Key.MESSAGE_TYPE_EXIT;
 			msg.number=meMessage.number;
 			msg.exit=meMessage.exit;
-			MessageControl.sendMessage(msg , out);
+			MessageControl.sendMessage(msg,out);
 			System.exit(0);
 		}
 		
@@ -802,7 +804,7 @@ public class Lobby extends JFrame implements MouseListener, MouseMotionListener,
 			Message msg =new Message();
 			msg.type=Key.MESSAGE_TYPE_CHART;
 			msg.msg=userName+" --> "+s;
-			MessageControl.sendMessage(msg , out);
+			MessageControl.sendMessage(msg,out);
 		}
 		
 	}

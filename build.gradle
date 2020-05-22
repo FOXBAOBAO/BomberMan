@@ -62,7 +62,8 @@ apply plugin:'eclipse'
 apply plugin:'maven'
 apply plugin:'maven-publish'
 apply plugin:'checkstyle'
- 
+apply plugin:'pmd'
+
  checkstyle {
     toolVersion '8.32'
     configFile file("config/checkstyle/checkstyle.xml")
@@ -73,7 +74,15 @@ checkstyleMain {
 checkstyleTest {
     source ='src/test/java'
 }
-  
+ pmd{
+ 	toolVersion '6.23.0'
+ 	 ruleSetConfig = rootProject.resources.text.fromFile('config/pmd/ruleSet.xml')
+ 	 rulePriority = 5
+ 	 consoleOutput = true
+ 	 ignoreFailures = true
+ 
+ 
+ }
  repositories {
     mavenCentral()
      // maven {url 'https://dl.bintray.com/jetbrains/anko'} 

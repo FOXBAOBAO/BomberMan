@@ -8,8 +8,9 @@ import java.io.ObjectInputStream;
 import org.junit.Test;
 
 import logic.Message;
-import logic.*
-;public class MessageControlTest {
+import logic.*;
+
+public class MessageControlTest {
 
     @Test
     public void testSetMessage() throws Exception {

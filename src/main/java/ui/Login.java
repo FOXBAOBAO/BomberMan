@@ -30,7 +30,7 @@ import component.ImagePanel;
 import ui.Lobby;
 import util.Key;
 
-public class Login extends JFrame implements  ActionListener , MouseMotionListener{
+public class Login extends JFrame implements  ActionListener,MouseMotionListener{
 	
 	ImagePanel panel = new ImagePanel(new ImageIcon("images/textBg.png").getImage());
 	
@@ -39,8 +39,9 @@ public class Login extends JFrame implements  ActionListener , MouseMotionListen
 	private JPasswordField password;
 	
 	ImageButton login_bt;
-	ImageButton exit_bt ;
-	Cursor handcur,customcur;
+	ImageButton exit_bt;
+	Cursor handcur;
+	Cursor customcur;
 	
 	String userName;
 	String psw;
@@ -52,10 +53,10 @@ public class Login extends JFrame implements  ActionListener , MouseMotionListen
 	ObjectOutputStream out;
 	
 	
-	public  Login(){
-		init();
-		this.pack();
-	}
+  public  Login(){
+    init();
+    this.pack();
+  }
 		
 	
 	
@@ -82,8 +83,8 @@ public class Login extends JFrame implements  ActionListener , MouseMotionListen
 		exit_bt.addMouseMotionListener(this);
 		panel.add(exit_bt);
 		
-		handcur = Toolkit.getDefaultToolkit().createCustomCursor(ImageLoading.createImage("images/hand.png"),new Point(10,10),"hand") ; 
-		customcur = Toolkit.getDefaultToolkit().createCustomCursor(ImageLoading.createImage("images/custom.png"),new Point(10,10),"custom") ; 
+		handcur = Toolkit.getDefaultToolkit().createCustomCursor(ImageLoading.createImage("images/hand.png"),new Point(10,10),"hand"); 
+		customcur = Toolkit.getDefaultToolkit().createCustomCursor(ImageLoading.createImage("images/custom.png"),new Point(10,10),"custom"); 
 		this.setCursor(customcur);
 		
 		user = new JTextField();
@@ -110,18 +111,18 @@ public class Login extends JFrame implements  ActionListener , MouseMotionListen
 			out=new ObjectOutputStream(mysocket.getOutputStream());
 			
 		}
-		catch(IOException e){
-			System.out.println("error");
-		}
+    catch(IOException e){
+      System.out.println("error");
+    }
 
 	}
 	
 	public void doMessage(Message msg){
 		int type=msg.type;
 		switch(type){
-			case 3:{
-				number=msg.number;
-			}
+      case 3:{
+        number=msg.number;
+      }
 		}
 	}
 
@@ -138,7 +139,7 @@ public class Login extends JFrame implements  ActionListener , MouseMotionListen
 			}
 			
 			userName=user.getText();
-			psw = String.valueOf( password.getPassword()); 
+			psw = String.valueOf(password.getPassword()); 
 			System.out.println("Password: "+psw); 
 			//psw=password.getText();
 			
@@ -160,7 +161,7 @@ public class Login extends JFrame implements  ActionListener , MouseMotionListen
 	}
 
 	int o_x = 0;
-	int o_y = 0 ;
+	int o_y = 0;
 	public void mouseDragged(MouseEvent e) {
 		this.setLocation(this.getX()-o_x+e.getX(),this.getY()-o_y+e.getY());
 		
@@ -172,7 +173,7 @@ public class Login extends JFrame implements  ActionListener , MouseMotionListen
 			 this.setCursor(this.handcur);
 		 }else{
 			 this.setCursor(this.customcur);
-		 }
+    }
 		
 	}
 
