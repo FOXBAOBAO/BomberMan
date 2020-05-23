@@ -187,72 +187,77 @@ public class Background extends Panel implements Runnable,MouseListener,KeyListe
 			int n=test.y;
 
 			switch(test.number){
-
+// È«©
 				case 1:{
-					m=3;
-					n=3;
-					map[m][n]=1372;
-				//	myX=40*m+5;
-				//	myY=40*n+20;
+					m=2;
+					n=2;
+					map[m][n]=1322;
+					myX=40*m+5;
+					myY=40*n+20;
 				}break;
 				case 2:{
 					m=12;
 					n=10;
-					map[m][n]=2152;
-				//	myX=40*m+5;
-				//	myY=40*n+20;
-				}break;
-				/*case 3:{
+					
+					map[m][n]=1352;
+					myX=40*m+5;
+					myY=40*n+20;
+				}break;/*
+				case 3:{
 					m=NumX-3;
 					n=3-1;
 					map[m][n]=1352;
 
-				//	myX=40*m+5;
-				//	myY=40*n+20;
+					myX=40*m+5;
+					myY=40*n+20;
         }break;
         case 4:{
           m=2;
           n=10;
           map[m][n]=1352;
-				//	myX=40*m+5;
-				//	myY=40*n+20;
+				myX=40*m+5;
+					myY=40*n+20;
         }break;
         case 5:{
           m=3;
           n=1;
           map[m][n]=1352;
-				//	myX=40*m+5;
-				//	myY=40*n+20;
+					myX=40*m+5;
+					myY=40*n+20;
         }break;
         case 6:{
           m=3;
           n=1;
           map[m][n]=1352;
-				//	myX=40*m+5;
-				//	myY=40*n+20;
+					myX=40*m+5;
+					myY=40*n+20;
         }break;
         case 7:{
           m=3;
           n=1;
           map[m][n]=1352;
-				//	myX=40*m+5;
-				//	myY=40*n+20;
+					myX=40*m+5;
+					myY=40*n+20;
         }break;
         case 8:{
           m=3;
           n=1;
           map[m][n]=1352;
-				//	myX=40*m+5;
-					//myY=40*n+20;
+					myX=40*m+5;
+					myY=40*n+20;
 
-				}break;*/
+				}break;
 
-
+*/
 
 
 			}
 			test.isLive=1;
 			if(test.number==myNum){
+				m=12;
+				n=10;
+				
+				map[m][n]=1352;
 				myX=40*m+5;
 				myY=40*n+20;
 
@@ -346,9 +351,6 @@ public class Background extends Panel implements Runnable,MouseListener,KeyListe
 		Player22=tool.getImage("images/Player22.png");
 		Player23=tool.getImage("images/Player23.png");
 		Player24=tool.getImage("images/Player24.png");
-
-		Player132=tool.getImage("images/Player132.png");
-
 		paopao=tool.getImage("images/paopao.png");
 		bombing=tool.getImage("images/bombing.png");
 		tree=tool.getImage("images/tree.png");
@@ -356,7 +358,7 @@ public class Background extends Panel implements Runnable,MouseListener,KeyListe
 		winImg=tool.getImage("images/win.png");
 		lossImg=tool.getImage("images/loss.png");
 
-		TestImg=Player13;
+		//TestImg=Player13;
 	}
 	public void run(){
 		while(true){
@@ -444,16 +446,17 @@ public class Background extends Panel implements Runnable,MouseListener,KeyListe
 			g.drawImage(bombing,-600,-600,this);
 			g.drawImage(paopao,-600,-600,this);
 			if(myTeam==Key.TEAM_BLUE) {
-			g.drawImage(Player12,-600,-600,this);
+		/*	g.drawImage(Player12,-600,-600,this);
 			g.drawImage(Player13,-600,-600,this);
 			g.drawImage(Player14,-600,-600,this);
-			g.drawImage(Player11,-600,-600,this);}
+			g.drawImage(Player11,-600,-600,this);
+			*/}
 			
 			if(myTeam==Key.TEAM_RED) {
-				g.drawImage(Player22,-600,-600,this);
+			/*	g.drawImage(Player22,-600,-600,this);
 				g.drawImage(Player23,-600,-600,this);
 				g.drawImage(Player24,-600,-600,this);
-				g.drawImage(Player21,-600,-600,this);}
+				g.drawImage(Player21,-600,-600,this);*/}
 			
 			g.drawImage(deathImg,-600,-600,this);
 			//g.drawImage(Player132,-600,-600,this);
@@ -689,6 +692,15 @@ public class Background extends Panel implements Runnable,MouseListener,KeyListe
 				if(map[i][j]==1)g.drawImage(Box1,i*DX,8+j*DX,this);
 				if(map[i][j]==2)g.drawImage(tree,5+i*DX,-10+j*DX,this);
 
+				// È«©
+
+				
+				//if(map[i][j]==1322)
+					//g.drawImage(Player11,(i+1)*DX,(j+1)*DX,this);
+				//if(map[i][j]==2142)
+				//	g.drawImage(Player21,(i+1)*DX,(j+1)*DX,this);
+				/*if(map[i][j]==2142)
+					g.drawImage(Player21,(i+1)*DX,(j+1)*DX,this);
 				if(map[i][j]==21)
 					g.drawImage(Player21,(i+1)*DX,(j+1)*DX,this);
              	if(map[i][j]==22)
@@ -700,8 +712,8 @@ public class Background extends Panel implements Runnable,MouseListener,KeyListe
 
 
              	if(map[i][j]==13)
-             	g.drawImage(Player13,(i+1)*DX,(j+1)*DX,this);
-
+             	g.drawImage(Player13,(i+1)*DX,(j+1)*DX,this);*/
+				
 
              	if(map[i][j]==8){
              		g.drawImage(paopao,i*DX+5,j*DX+20,this);
@@ -711,50 +723,92 @@ public class Background extends Panel implements Runnable,MouseListener,KeyListe
              		g.drawImage(bombing,i*DX+5,j*DX+20,this);
              	}
 
-             	if(map[i][j]==44)
-             	g.drawImage(Player132,-5+i*DX,-45+j*DX,this);
+             /*	if(map[i][j]==44)
+             	g.drawImage(Player132,-5+i*DX,-45+j*DX,this);*/
 //-------------------------head towards up-----------------------------------
-//team+head+mTypeX+mTypeY
-             	if(map[i][j]==1111)
-             	g.drawImage(Player11,-5+i*DX-10,-45+j*DX-10,this);
-             	if(map[i][j]==1112)
-             	g.drawImage(Player11,-5+i*DX-10,-45+j*DX,this);
-             	if(map[i][j]==1113)
-             	g.drawImage(Player11,-5+i*DX-10,-45+j*DX+10,this);
-             	if(map[i][j]==1110)
-             	g.drawImage(Player11,-5+i*DX-10,-45+j*DX-20,this);
-//team+head+mTypeX+mTypeY
-             	if(map[i][j]==1121)
-             	g.drawImage(Player11,-5+i*DX,-45+j*DX-10,this);
-             	if(map[i][j]==1122)
-             	g.drawImage(Player11,-5+i*DX,-45+j*DX,this);
-             	if(map[i][j]==1123)
-             	g.drawImage(Player11,-5+i*DX,-45+j*DX+10,this);
-             	if(map[i][j]==1120)
-             	g.drawImage(Player11,-5+i*DX,-45+j*DX-20,this);
 
-//team+head+mTypeX+mTypeY
-             	if(map[i][j]==1131)
-             	g.drawImage(Player11,-5+i*DX+10,-45+j*DX-10,this);
-             	if(map[i][j]==1132)
-             	g.drawImage(Player11,-5+i*DX+10,-45+j*DX+0,this);
-             	if(map[i][j]==1133)
-             	g.drawImage(Player11,-5+i*DX+10,-45+j*DX+10,this);
-             	if(map[i][j]==1130)
-             	g.drawImage(Player11,-5+i*DX+10,-45+j*DX-20,this);
-//team+head+mTypeX+mTypeY
-             	if(map[i][j]==1101)
-             	g.drawImage(Player11,-5+i*DX-20,-45+j*DX-10,this);
-             	if(map[i][j]==1102)
-             	g.drawImage(Player11,-5+i*DX-20,-45+j*DX+0,this);
-             	if(map[i][j]==1103)
-             	g.drawImage(Player11,-5+i*DX-20,-45+j*DX+10,this);
-             	if(map[i][j]==1100)
-             	g.drawImage(Player11,-5+i*DX-20,-45+j*DX-20,this);
+             	if(myTeam==Key.TEAM_BLUE){
+     //team+head+mTypeX+mTypeY
+                 	if(map[i][j]==1111)
+                 	g.drawImage(Player11,-5+i*DX-10,-45+j*DX-10,this);
+                 	if(map[i][j]==1112)
+                 	g.drawImage(Player11,-5+i*DX-10,-45+j*DX,this);
+                 	if(map[i][j]==1113)
+                 	g.drawImage(Player11,-5+i*DX-10,-45+j*DX+10,this);
+                 	if(map[i][j]==1110)
+                 	g.drawImage(Player11,-5+i*DX-10,-45+j*DX-20,this);
+    //team+head+mTypeX+mTypeY
+                 	if(map[i][j]==1121)
+                 	g.drawImage(Player11,-5+i*DX,-45+j*DX-10,this);
+                 	if(map[i][j]==1122)
+                 	g.drawImage(Player11,-5+i*DX,-45+j*DX,this);
+                 	if(map[i][j]==1123)
+                 	g.drawImage(Player11,-5+i*DX,-45+j*DX+10,this);
+                 	if(map[i][j]==1120)
+                 	g.drawImage(Player11,-5+i*DX,-45+j*DX-20,this);
+
+    //team+head+mTypeX+mTypeY
+                 	if(map[i][j]==1131)
+                 	g.drawImage(Player11,-5+i*DX+10,-45+j*DX-10,this);
+                 	if(map[i][j]==1132)
+                 	g.drawImage(Player11,-5+i*DX+10,-45+j*DX+0,this);
+                 	if(map[i][j]==1133)
+                 	g.drawImage(Player11,-5+i*DX+10,-45+j*DX+10,this);
+                 	if(map[i][j]==1130)
+                 	g.drawImage(Player11,-5+i*DX+10,-45+j*DX-20,this);
+    //team+head+mTypeX+mTypeY
+                 	if(map[i][j]==1101)
+                 	g.drawImage(Player11,-5+i*DX-20,-45+j*DX-10,this);
+                 	if(map[i][j]==1102)
+                 	g.drawImage(Player11,-5+i*DX-20,-45+j*DX+0,this);
+                 	if(map[i][j]==1103)
+                 	g.drawImage(Player11,-5+i*DX-20,-45+j*DX+10,this);
+                 	if(map[i][j]==1100)
+                 	g.drawImage(Player11,-5+i*DX-20,-45+j*DX-20,this);
+             	}
+             	else if(myTeam==Key.TEAM_RED){
+             		if(map[i][j]==1111)
+                     	g.drawImage(Player21,-5+i*DX-10,-45+j*DX-10,this);
+                     	if(map[i][j]==1112)
+                     	g.drawImage(Player21,-5+i*DX-10,-45+j*DX,this);
+                     	if(map[i][j]==1113)
+                     	g.drawImage(Player21,-5+i*DX-10,-45+j*DX+10,this);
+                     	if(map[i][j]==1110)
+                     	g.drawImage(Player21,-5+i*DX-10,-45+j*DX-20,this);
+        //team+head+mTypeX+mTypeY
+                     	if(map[i][j]==1121)
+                     	g.drawImage(Player21,-5+i*DX,-45+j*DX-10,this);
+                     	if(map[i][j]==1122)
+                     	g.drawImage(Player21,-5+i*DX,-45+j*DX,this);
+                     	if(map[i][j]==1123)
+                     	g.drawImage(Player21,-5+i*DX,-45+j*DX+10,this);
+                     	if(map[i][j]==1120)
+                     	g.drawImage(Player21,-5+i*DX,-45+j*DX-20,this);
+
+        //team+head+mTypeX+mTypeY
+                     	if(map[i][j]==1131)
+                     	g.drawImage(Player21,-5+i*DX+10,-45+j*DX-10,this);
+                     	if(map[i][j]==1132)
+                     	g.drawImage(Player21,-5+i*DX+10,-45+j*DX+0,this);
+                     	if(map[i][j]==1133)
+                     	g.drawImage(Player21,-5+i*DX+10,-45+j*DX+10,this);
+                     	if(map[i][j]==1130)
+                     	g.drawImage(Player21,-5+i*DX+10,-45+j*DX-20,this);
+        //team+head+mTypeX+mTypeY
+                     	if(map[i][j]==1101)
+                     	g.drawImage(Player21,-5+i*DX-20,-45+j*DX-10,this);
+                     	if(map[i][j]==1102)
+                     	g.drawImage(Player21,-5+i*DX-20,-45+j*DX+0,this);
+                     	if(map[i][j]==1103)
+                     	g.drawImage(Player21,-5+i*DX-20,-45+j*DX+10,this);
+                     	if(map[i][j]==1100)
+                     	g.drawImage(Player21,-5+i*DX-20,-45+j*DX-20,this);
+             	}
 
 //-------------------------head towards right-----------------------------------
 
 
+             	if(myTeam==Key.TEAM_BLUE) {
 //team+head+mTypeX+mTypeY
              	if(map[i][j]==1211)
              	g.drawImage(Player12,-5+i*DX-10,-45+j*DX-10,this);
@@ -791,10 +845,49 @@ public class Background extends Panel implements Runnable,MouseListener,KeyListe
              	if(map[i][j]==1203)
              	g.drawImage(Player12,-5+i*DX-20,-45+j*DX+10,this);
              	if(map[i][j]==1200)
-             	g.drawImage(Player12,-5+i*DX-20,-45+j*DX-20,this);
+             	g.drawImage(Player12,-5+i*DX-20,-45+j*DX-20,this);}
+             	else if(myTeam==Key.TEAM_RED) {
+             		if(map[i][j]==1211)
+                     	g.drawImage(Player22,-5+i*DX-10,-45+j*DX-10,this);
+                     	if(map[i][j]==1212)
+                     	g.drawImage(Player22,-5+i*DX-10,-45+j*DX,this);
+                     	if(map[i][j]==1213)
+                     	g.drawImage(Player22,-5+i*DX-10,-45+j*DX+10,this);
+                     	if(map[i][j]==1210)
+                     	g.drawImage(Player22,-5+i*DX-10,-45+j*DX-20,this);
+        //team+head+mTypeX+mTypeY
+                     	if(map[i][j]==1221)
+                     	g.drawImage(Player22,-5+i*DX,-45+j*DX-10,this);
+                     	if(map[i][j]==1222)
+                     	g.drawImage(Player22,-5+i*DX,-45+j*DX,this);
+                     	if(map[i][j]==1223)
+                     	g.drawImage(Player22,-5+i*DX,-45+j*DX+10,this);
+                     	if(map[i][j]==1220)
+                     	g.drawImage(Player22,-5+i*DX,-45+j*DX-20,this);
+
+        //team+head+mTypeX+mTypeY
+                     	if(map[i][j]==1231)
+                     	g.drawImage(Player22,-5+i*DX+10,-45+j*DX-10,this);
+                     	if(map[i][j]==1232)
+                     	g.drawImage(Player22,-5+i*DX+10,-45+j*DX+0,this);
+                     	if(map[i][j]==1233)
+                     	g.drawImage(Player22,-5+i*DX+10,-45+j*DX+10,this);
+                     	if(map[i][j]==1230)
+                     	g.drawImage(Player22,-5+i*DX+10,-45+j*DX-20,this);
+        //team+head+mTypeX+mTypeY
+                     	if(map[i][j]==1201)
+                     	g.drawImage(Player22,-5+i*DX-20,-45+j*DX-10,this);
+                     	if(map[i][j]==1202)
+                     	g.drawImage(Player22,-5+i*DX-20,-45+j*DX+0,this);
+                     	if(map[i][j]==1203)
+                     	g.drawImage(Player22,-5+i*DX-20,-45+j*DX+10,this);
+                     	if(map[i][j]==1200)
+                     	g.drawImage(Player22,-5+i*DX-20,-45+j*DX-20,this);
+             	}
 
 //-------------------------head towards down-----------------------------------
 
+             	if(myTeam==Key.TEAM_BLUE) {
 //team+head+mTypeX+mTypeY
              	if(map[i][j]==1311)
              	g.drawImage(Player13,-5+i*DX-10,-45+j*DX-10,this);
@@ -831,10 +924,49 @@ public class Background extends Panel implements Runnable,MouseListener,KeyListe
              	if(map[i][j]==1303)
              	g.drawImage(Player13,-5+i*DX-20,-45+j*DX+10,this);
              	if(map[i][j]==1300)
-             	g.drawImage(Player13,-5+i*DX-20,-45+j*DX-20,this);
+             	g.drawImage(Player13,-5+i*DX-20,-45+j*DX-20,this);}
+             	else if(myTeam==Key.TEAM_RED) {
+             		if(map[i][j]==1311)
+                     	g.drawImage(Player23,-5+i*DX-10,-45+j*DX-10,this);
+                     	if(map[i][j]==1312)
+                     	g.drawImage(Player23,-5+i*DX-10,-45+j*DX,this);
+                     	if(map[i][j]==1313)
+                     	g.drawImage(Player23,-5+i*DX-10,-45+j*DX+10,this);
+                     	if(map[i][j]==1310)
+                     	g.drawImage(Player23,-5+i*DX-10,-45+j*DX-20,this);
+        //team+head+mTypeX+mTypeY
+                     	if(map[i][j]==1321)
+                     	g.drawImage(Player23,-5+i*DX,-45+j*DX-10,this);
+                     	if(map[i][j]==1322)
+                     	g.drawImage(Player23,-5+i*DX,-45+j*DX,this);
+                     	if(map[i][j]==1323)
+                     	g.drawImage(Player23,-5+i*DX,-45+j*DX+10,this);
+                     	if(map[i][j]==1320)
+                     	g.drawImage(Player23,-5+i*DX,-45+j*DX-20,this);
+
+        //team+head+mTypeX+mTypeY
+                     	if(map[i][j]==1331)
+                     	g.drawImage(Player23,-5+i*DX+10,-45+j*DX-10,this);
+                     	if(map[i][j]==1332)
+                     	g.drawImage(Player23,-5+i*DX+10,-45+j*DX+0,this);
+                     	if(map[i][j]==1333)
+                     	g.drawImage(Player23,-5+i*DX+10,-45+j*DX+10,this);
+                     	if(map[i][j]==1330)
+                     	g.drawImage(Player23,-5+i*DX+10,-45+j*DX-20,this);
+        //team+head+mTypeX+mTypeY
+                     	if(map[i][j]==1301)
+                     	g.drawImage(Player23,-5+i*DX-20,-45+j*DX-10,this);
+                     	if(map[i][j]==1302)
+                     	g.drawImage(Player23,-5+i*DX-20,-45+j*DX+0,this);
+                     	if(map[i][j]==1303)
+                     	g.drawImage(Player23,-5+i*DX-20,-45+j*DX+10,this);
+                     	if(map[i][j]==1300)
+                     	g.drawImage(Player23,-5+i*DX-20,-45+j*DX-20,this);
+             	}
 
 //-------------------------head towards left-----------------------------------
 
+             	 if(myTeam==Key.TEAM_BLUE) {
 //team+head+mTypeX+mTypeY
              	if(map[i][j]==1411)
              	g.drawImage(Player14,-5+i*DX-10,-45+j*DX-10,this);
@@ -873,7 +1005,47 @@ public class Background extends Panel implements Runnable,MouseListener,KeyListe
              	if(map[i][j]==1400)
              	g.drawImage(Player14,-5+i*DX-20,-45+j*DX-20,this);
 
-				if(map2[i][j]==8)g.drawImage(paopao,i*DX+5,j*DX+20,this);
+				if(map2[i][j]==8)g.drawImage(paopao,i*DX+5,j*DX+20,this);}
+             	 else  if(myTeam==Key.TEAM_RED) {
+             		if(map[i][j]==1411)
+                     	g.drawImage(Player24,-5+i*DX-10,-45+j*DX-10,this);
+                     	if(map[i][j]==1412)
+                     	g.drawImage(Player24,-5+i*DX-10,-45+j*DX,this);
+                     	if(map[i][j]==1413)
+                     	g.drawImage(Player24,-5+i*DX-10,-45+j*DX+10,this);
+                     	if(map[i][j]==1410)
+                     	g.drawImage(Player24,-5+i*DX-10,-45+j*DX-20,this);
+        //team+head+mTypeX+mTypeY
+                     	if(map[i][j]==1421)
+                     	g.drawImage(Player24,-5+i*DX,-45+j*DX-10,this);
+                     	if(map[i][j]==1422)
+                     	g.drawImage(Player24,-5+i*DX,-45+j*DX,this);
+                     	if(map[i][j]==1423)
+                     	g.drawImage(Player24,-5+i*DX,-45+j*DX+10,this);
+                     	if(map[i][j]==1420)
+                     	g.drawImage(Player24,-5+i*DX,-45+j*DX-20,this);
+
+        //team+head+mTypeX+mTypeY
+                     	if(map[i][j]==1431)
+                     	g.drawImage(Player24,-5+i*DX+10,-45+j*DX-10,this);
+                     	if(map[i][j]==1432)
+                     	g.drawImage(Player24,-5+i*DX+10,-45+j*DX+0,this);
+                     	if(map[i][j]==1433)
+                     	g.drawImage(Player24,-5+i*DX+10,-45+j*DX+10,this);
+                     	if(map[i][j]==1430)
+                     	g.drawImage(Player24,-5+i*DX+10,-45+j*DX-20,this);
+        //team+head+mTypeX+mTypeY
+                     	if(map[i][j]==1401)
+                     	g.drawImage(Player24,-5+i*DX-20,-45+j*DX-10,this);
+                     	if(map[i][j]==1402)
+                     	g.drawImage(Player24,-5+i*DX-20,-45+j*DX+0,this);
+                     	if(map[i][j]==1403)
+                     	g.drawImage(Player24,-5+i*DX-20,-45+j*DX+10,this);
+                     	if(map[i][j]==1400)
+                     	g.drawImage(Player24,-5+i*DX-20,-45+j*DX-20,this);
+
+        				if(map2[i][j]==8)g.drawImage(paopao,i*DX+5,j*DX+20,this);
+             	 }
 
 
 
