@@ -151,21 +151,21 @@ public class Lobby extends JFrame implements MouseListener, MouseMotionListener,
 		
 		this.player1_b.setSelectedIcon(ImageLoading.createImageIcon("images/player_b_ready.jpg"));
 		this.player2_b.setSelectedIcon(ImageLoading.createImageIcon("images/player_b_ready.jpg"));
-		this.player3_b.setSelectedIcon(ImageLoading.createImageIcon("images/player_b_ready.jpg"));
+		/*this.player3_b.setSelectedIcon(ImageLoading.createImageIcon("images/player_b_ready.jpg"));
 		this.player4_b.setSelectedIcon(ImageLoading.createImageIcon("images/player_b_ready.jpg"));
 		this.player5_b.setSelectedIcon(ImageLoading.createImageIcon("images/player_b_ready.jpg"));
 		this.player6_b.setSelectedIcon(ImageLoading.createImageIcon("images/player_b_ready.jpg"));
 		this.player7_b.setSelectedIcon(ImageLoading.createImageIcon("images/player_b_ready.jpg"));
-		this.player8_b.setSelectedIcon(ImageLoading.createImageIcon("images/player_b_ready.jpg"));
+		this.player8_b.setSelectedIcon(ImageLoading.createImageIcon("images/player_b_ready.jpg"));*/
 		
 		this.player1_r.setSelectedIcon(ImageLoading.createImageIcon("images/player_r_ready.jpg"));
 		this.player2_r.setSelectedIcon(ImageLoading.createImageIcon("images/player_r_ready.jpg"));
-		this.player3_r.setSelectedIcon(ImageLoading.createImageIcon("images/player_r_ready.jpg"));
+		/*this.player3_r.setSelectedIcon(ImageLoading.createImageIcon("images/player_r_ready.jpg"));
 		this.player4_r.setSelectedIcon(ImageLoading.createImageIcon("images/player_r_ready.jpg"));
 		this.player5_r.setSelectedIcon(ImageLoading.createImageIcon("images/player_r_ready.jpg"));
 		this.player6_r.setSelectedIcon(ImageLoading.createImageIcon("images/player_r_ready.jpg"));
 		this.player7_r.setSelectedIcon(ImageLoading.createImageIcon("images/player_r_ready.jpg"));
-		this.player8_r.setSelectedIcon(ImageLoading.createImageIcon("images/player_r_ready.jpg"));
+		this.player8_r.setSelectedIcon(ImageLoading.createImageIcon("images/player_r_ready.jpg"));*/
 
 		showMsg.setBounds(30,370,455,138);
 		//showMsg.setBackground(Color.blue);

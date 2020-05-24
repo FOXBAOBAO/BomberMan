@@ -15,10 +15,10 @@ public class Game extends JFrame{
 		//this.add(panel);
 		//panel.setDoubleBuffered(true);
 		//panel.setIgnoreRepaint(true);
-    this.setUndecorated(true);
-    this.pack();
-    this.setVisible(true);
-    new Windows(this);
+   // this.setUndecorated(true);
+   // this.pack();
+    //this.setVisible(true);
+    //new Windows(this);
   } 
 	public static  void main(String[] args){
 		Game game =new Game();

@@ -64,6 +64,37 @@ apply plugin:'maven-publish'
 apply plugin:'checkstyle'
 apply plugin:'pmd'
 
+
+task server(type: Jar) {
+	    manifest {
+	    	
+	    	attributes ('Main-Class': 'server.Server')
+	    }
+	    from {
+	        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+	    }
+	    baseName = 'server'
+	    with jar
+	 }
+	 task runserver(type: JavaExec) {
+   classpath = files('build/libs/server.jar')
+
+}
+	 
+	task player1(type: Jar) {
+	    manifest {
+	        attributes('Main-Class': 'game.Game')
+	    }
+	    from {
+	        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+	    }
+	    baseName = 'demo'
+	    with jar
+	 }
+ task runExecutableJar(type: JavaExec) {
+   classpath = files('build/libs/demo.jar')
+
+}
  checkstyle {
     toolVersion '8.32'
     configFile file("config/checkstyle/checkstyle.xml")
@@ -96,10 +127,7 @@ dependencies {
     compile group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '2.41.0'
     testCompile group: 'junit', name: 'junit', version: '4.+'
 }
-task myJar(type: Jar)
-artifacts {
-    archives myJar
-}
+
 uploadArchives {
     repositories {
         mavenDeployer {
