@@ -66,12 +66,27 @@ apply plugin:'pmd'
 
 
 
+task server(type: Jar) {
+	    manifest {
+	    	
+	    	attributes ('Main-Class': 'server.Server')
+	    }
+	    from {
+	        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+	    }
+	    baseName = 'server'
+	    with jar
+	 }
+	 task runserver(type: JavaExec) {
+   classpath = files('build/libs/server.jar')
+
+}
+	 
 	task player1(type: Jar) {
 	    manifest {
-	        attributes(
-	                
-	                'Main-Class': 'game.Game'
-	        )
+	    	
+	    	attributes ('Main-Class': 'server.Server')
+	        attributes('Main-Class': 'game.Game')
 	    }
 	    from {
 	        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
