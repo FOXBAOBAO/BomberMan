@@ -29,4 +29,4 @@ jobs:
       - name: Generate jar file as a production
         run: ./gradlew player1
       - name: Execute the Jar file
-        run:  runExecutableJar
+        run: ./gradlew runExecutableJar
