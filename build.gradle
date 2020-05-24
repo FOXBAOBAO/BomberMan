@@ -85,7 +85,7 @@ task server(type: Jar) {
 	task player1(type: Jar) {
 	    manifest {
 	    	
-	    	attributes ('Main-Class': 'server.Server')
+	    	
 	        attributes('Main-Class': 'game.Game')
 	    }
 	    from {

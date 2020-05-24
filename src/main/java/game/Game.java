@@ -33,7 +33,7 @@ public class Game extends JFrame{
        
        new Windows(frame);
        frame.setVisible(true);
-       game.setVisible(false);
+       game.setVisible(true);
 	       
 	}
 }
