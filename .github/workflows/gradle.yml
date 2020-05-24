@@ -26,3 +26,7 @@ jobs:
         run: chmod +x gradlew
       - name: Java CI with Gradle
         run: ./gradlew build
+      - name: Generate jar file as a production
+        run: ./gradlew player1
+      - name: Execute the Jar file
+        run:  runExecutableJar
