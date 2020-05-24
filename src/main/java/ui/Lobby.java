@@ -571,7 +571,6 @@ public class Lobby extends JFrame implements MouseListener, MouseMotionListener,
    				
       }
    			break;
-   			//处理聊天消息
       case 2:{   				
         this.showMsg.append(msg.msg+"\n");   				
       }break;

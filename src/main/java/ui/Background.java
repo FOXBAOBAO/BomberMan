@@ -24,7 +24,7 @@ public class Background extends Panel implements Runnable,MouseListener,KeyListe
 	String fileName="map/map1.txt";
 	Hashtable htPlayer=new Hashtable(); 
 
-	Hashtable allPlayers=new Hashtable();//保存所有的玩家信息，存放为Message对象
+	Hashtable allPlayers=new Hashtable();
 	public static int myNum;
 	
 	public static int isClose=0;
@@ -338,15 +338,12 @@ public class Background extends Panel implements Runnable,MouseListener,KeyListe
 			test = MessageControl.receiveMessage(in);
 			doMessage(test);
 			
-			//如果有一方被消灭
 			if(Sum_Blue==Dead_Blue ||Sum_Red==Dead_Red){
 				int second = 5000 ;
-			//team= blue的小组被消灭
 				if(Sum_Blue==Dead_Blue){
 					blue_team_alive = false;
 					if(this.meMessage.team==Key.TEAM_RED)second = 5000;
 				}
-				//team=red 的小组被消灭
 				if(Sum_Red==Dead_Red){
 					red_team_alive = false;
 					if(this.meMessage.team==Key.TEAM_BLUE)second = 5000;
@@ -479,11 +476,9 @@ public class Background extends Panel implements Runnable,MouseListener,KeyListe
 		System.out.println("setPosition team="+team+"  head="+head+" mTypeX="+mTypeX+"  mTypeY="+mTypeY+" m="+m+"  n="+n);
 		int typeX=mTypeX/10;
 		int typeY=mTypeY/10;
-		//这里写死为1，即蓝队。因为没有做相应的图片
 		//int all=team*1000+head*100+typeX*10+typeY;
 		int all=1*1000+head*100+typeX*10+typeY;
 		map[m][n]=all;
-			//根据移动的方向，把前一个位置的数值设置为0
 			switch(isnext){
 				case 1:map[m][n+1]=0;break;
 				case 2:map[m-1][n]=0;break;
@@ -503,13 +498,12 @@ public class Background extends Panel implements Runnable,MouseListener,KeyListe
 		int n=y;
 		int power=p;
 		
-		for(int i=m;i<=m+power;i++){   //向右
+		for(int i=m;i<=m+power;i++){   
 			System.out.println("  Power:"+power+"  i="+i+"  n="+n);
-			//是否过了边界
+
 			if(i>=15){
 				break;
 			}
-			//是否有植物
 			if(map[i][n]==2){
 				break;
 			}
@@ -520,7 +514,6 @@ public class Background extends Panel implements Runnable,MouseListener,KeyListe
 				map[i][n]=88;
 				break;
 			}
-			//判断是否自己被炸死
 			if(map[i][n]>1000&&map[i][n]<1500){
 				
 				map[i][n]=44;
@@ -530,7 +523,7 @@ public class Background extends Panel implements Runnable,MouseListener,KeyListe
 			}
 		}
 		
-		for(int i=m;i>=m-power;i--){	//向左
+		for(int i=m;i>=m-power;i--){	
 			if(i<0){
 				break;
 			}
@@ -556,7 +549,7 @@ public class Background extends Panel implements Runnable,MouseListener,KeyListe
 			
 		}
 		
-		for(int i=n;i<=n+power;i++){		//向下
+		for(int i=n;i<=n+power;i++){		
 			if(i>=13){
 				break;
 			}
@@ -582,7 +575,7 @@ public class Background extends Panel implements Runnable,MouseListener,KeyListe
 			
 		}
 		
-		for(int i=n;i>=n-power;i--){	//向上
+		for(int i=n;i>=n-power;i--){	
 		
 			if(i<0){
 				break;
@@ -618,7 +611,7 @@ public class Background extends Panel implements Runnable,MouseListener,KeyListe
 			msg.isLive=0;
 			msg.type=104;
 			MessageControl.sendMessage(msg,out);
-			//sendMessage(msg);
+			
 		}
 		
 	}
@@ -683,8 +676,7 @@ public class Background extends Panel implements Runnable,MouseListener,KeyListe
              	}     
              	
              	if(map[i][j]==44)
-             	g.drawImage(Player132,-5+i*DX,-45+j*DX,this);      	
-//-------------------------头朝上(1)-----------------------------------             	
+             	g.drawImage(Player132,-5+i*DX,-45+j*DX,this);      	            	
 //team+head+mTypeX+mTypeY
              	if(map[i][j]==1111)
              	g.drawImage(Player11,-5+i*DX-10,-45+j*DX-10,this);
@@ -722,8 +714,7 @@ public class Background extends Panel implements Runnable,MouseListener,KeyListe
              	g.drawImage(Player11,-5+i*DX-20,-45+j*DX+10,this);
              	if(map[i][j]==1100)
              	g.drawImage(Player11,-5+i*DX-20,-45+j*DX-20,this);	
-
-//-------------------------头朝右(2)-----------------------------------     
+  
 
 
 //team+head+mTypeX+mTypeY
@@ -763,8 +754,7 @@ public class Background extends Panel implements Runnable,MouseListener,KeyListe
              	g.drawImage(Player12,-5+i*DX-20,-45+j*DX+10,this);
              	if(map[i][j]==1200)
              	g.drawImage(Player12,-5+i*DX-20,-45+j*DX-20,this);	
-
-//-------------------------头朝下(3)-----------------------------------              	
+            	
 
 //team+head+mTypeX+mTypeY
              	if(map[i][j]==1311)
@@ -804,7 +794,6 @@ public class Background extends Panel implements Runnable,MouseListener,KeyListe
              	if(map[i][j]==1300)
              	g.drawImage(Player13,-5+i*DX-20,-45+j*DX-20,this);		
 
-//-------------------------头朝左(4)-----------------------------------   
 
 //team+head+mTypeX+mTypeY
              	if(map[i][j]==1411)
@@ -883,13 +872,10 @@ public class Background extends Panel implements Runnable,MouseListener,KeyListe
 		
 		
 		if(e.getKeyCode()==KeyEvent.VK_UP){
-			//得到当前的方格（方格边长为40，x坐标初始值为5,y坐标初始值为20）
 			int m1=(myX-5)/40;
 			int n1=(myY-20)/40;
 			
-			//得到移动都的y方格数
 			myY=myY-MoveD;
-			//如果已经在边界就返回
 			if(myY<40){
 				myY=40;
 				return;
@@ -904,13 +890,11 @@ public class Background extends Panel implements Runnable,MouseListener,KeyListe
 //				case 0: moveTypeX=0;break;
 //				default: break;
 //			}
-			//如果前面有障碍物就保持不动
 			if(n1-1>=0){
 				if((map[m1][n1-1]==1||map2[m1][n1-1]==8||map[m1][n1-1]==2)&&moveTypeY <=20){
 					myY=myY+MoveD;
 				}else {
 
-					//得到移动后处于方格的那个位置。
 					switch((myY-20)%40){
 						case 10: moveTypeY=10;break;
 						case 20: moveTypeY=20;break;
@@ -924,7 +908,6 @@ public class Background extends Panel implements Runnable,MouseListener,KeyListe
 			
 			m=(myX-5)/40;
 			n=(myY-20)/40;
-			//如果不是在当前位置，就把isnext设置为1(判断是否有移动，如果有处理时将根据该值把前一个位置清零)
 			if(n1!=n){
 				isNext=1;
 			}
@@ -1007,13 +990,7 @@ public class Background extends Panel implements Runnable,MouseListener,KeyListe
 			}
 			else{
 			
-//			switch((myX-5)%40){
-//				case 10: moveTypeX=10;break;
-//				case 20: moveTypeX=20;break;
-//				case 30: moveTypeX=30;break;
-//				case 0: moveTypeX=0;break;
-//				default: break;
-//			}
+
 				switch((myY-20)%40){	
 					case 10: moveTypeY=10;break;
 					case 20: moveTypeY=20;break;
