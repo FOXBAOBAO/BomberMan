@@ -65,19 +65,20 @@ apply plugin:'checkstyle'
 apply plugin:'pmd'
 
 
-task player1(type: Jar) {
-    manifest {
-        attributes(
-                
-                'Main-Class': 'game.Game'
-        )
-    }
-    from {
-        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
-    }
-    baseName = 'demo'
-    with jar
- }
+
+	task player1(type: Jar) {
+	    manifest {
+	        attributes(
+	                
+	                'Main-Class': 'game.Game'
+	        )
+	    }
+	    from {
+	        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+	    }
+	    baseName = 'demo'
+	    with jar
+	 }
  task runExecutableJar(type: JavaExec) {
    classpath = files('build/libs/demo.jar')
 

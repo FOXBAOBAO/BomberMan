@@ -2,8 +2,8 @@
 <pmd xmlns="http://pmd.sourceforge.net/report/2.0.0"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://pmd.sourceforge.net/report/2.0.0 http://pmd.sourceforge.net/report_2_0_0.xsd"
-    version="6.23.0" timestamp="2020-05-24T11:59:20.821">
-<file name="C:\Users\Wang yuchen\Desktop\BomberMan\src\main\java\component\ImageButton.java">
+    version="6.23.0" timestamp="2020-05-24T13:26:26.005">
+<file name="E:\课件\BomberMan\src\main\java\component\ImageButton.java">
 <violation beginline="7" endline="32" begincolumn="8" endcolumn="1" rule="MissingSerialVersionUID" ruleset="Error Prone" package="component" class="ImageButton" externalInfoUrl="https://pmd.github.io/pmd-6.23.0/pmd_rules_java_errorprone.html#missingserialversionuid" priority="3">
 Classes implementing Serializable should set a serialVersionUID
 </violation>
@@ -20,7 +20,7 @@ It is a good practice to call super() in a constructor
 Parameter 'icon' is not assigned and could be declared final
 </violation>
 </file>
-<file name="C:\Users\Wang yuchen\Desktop\BomberMan\src\main\java\component\ImageLabel.java">
+<file name="E:\课件\BomberMan\src\main\java\component\ImageLabel.java">
 <violation beginline="6" endline="22" begincolumn="8" endcolumn="1" rule="MissingSerialVersionUID" ruleset="Error Prone" package="component" class="ImageLabel" externalInfoUrl="https://pmd.github.io/pmd-6.23.0/pmd_rules_java_errorprone.html#missingserialversionuid" priority="3">
 Classes implementing Serializable should set a serialVersionUID
 </violation>
@@ -37,7 +37,7 @@ It is a good practice to call super() in a constructor
 Parameter 'icon' is not assigned and could be declared final
 </violation>
 </file>
-<file name="C:\Users\Wang yuchen\Desktop\BomberMan\src\main\java\component\ImageLoading.java">
+<file name="E:\课件\BomberMan\src\main\java\component\ImageLoading.java">
 <violation beginline="7" endline="20" begincolumn="27" endcolumn="1" rule="UseUtilityClass" ruleset="Design" package="component" class="ImageLoading" externalInfoUrl="https://pmd.github.io/pmd-6.23.0/pmd_rules_java_design.html#useutilityclass" priority="3">
 All methods are static.  Consider using a utility class instead. Alternatively, you could add a private constructor or make the class abstract to silence this warning.
 </violation>
@@ -48,7 +48,7 @@ Parameter 'path' is not assigned and could be declared final
 Parameter 'path' is not assigned and could be declared final
 </violation>
 </file>
-<file name="C:\Users\Wang yuchen\Desktop\BomberMan\src\main\java\component\ImagePanel.java">
+<file name="E:\课件\BomberMan\src\main\java\component\ImagePanel.java">
 <violation beginline="9" endline="36" begincolumn="8" endcolumn="1" rule="MissingSerialVersionUID" ruleset="Error Prone" package="component" class="ImagePanel" externalInfoUrl="https://pmd.github.io/pmd-6.23.0/pmd_rules_java_errorprone.html#missingserialversionuid" priority="3">
 Classes implementing Serializable should set a serialVersionUID
 </violation>
@@ -83,7 +83,7 @@ System.out.println is used
 Parameter 'g' is not assigned and could be declared final
 </violation>
 </file>
-<file name="C:\Users\Wang yuchen\Desktop\BomberMan\src\main\java\component\Windows.java">
+<file name="E:\课件\BomberMan\src\main\java\component\Windows.java">
 <violation beginline="15" endline="15" begincolumn="20" endcolumn="33" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="component" class="Windows" method="Windows" variable="window" externalInfoUrl="https://pmd.github.io/pmd-6.23.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
 Parameter 'window' is not assigned and could be declared final
 </violation>
@@ -112,7 +112,7 @@ Local variable 'screenSize' could be declared final
 Local variable 'dialogSize' could be declared final
 </violation>
 </file>
-<file name="C:\Users\Wang yuchen\Desktop\BomberMan\src\main\java\game\Game.java">
+<file name="E:\课件\BomberMan\src\main\java\game\Game.java">
 <violation beginline="3" endline="3" begincolumn="1" endcolumn="29" rule="UnusedImports" ruleset="Best Practices" package="game" class="Game" externalInfoUrl="https://pmd.github.io/pmd-6.23.0/pmd_rules_java_bestpractices.html#unusedimports" priority="4">
 Avoid unused imports such as 'javax.swing.ImageIcon'
 </violation>
@@ -141,7 +141,7 @@ Avoid printStackTrace(); use a logger call instead.
 Local variable 'frame' could be declared final
 </violation>
 </file>
-<file name="C:\Users\Wang yuchen\Desktop\BomberMan\src\main\java\logic\Bomb.java">
+<file name="E:\课件\BomberMan\src\main\java\logic\Bomb.java">
 <violation beginline="6" endline="6" begincolumn="20" endcolumn="21" rule="BeanMembersShouldSerialize" ruleset="Error Prone" package="logic" class="Bomb" variable="bg" externalInfoUrl="https://pmd.github.io/pmd-6.23.0/pmd_rules_java_errorprone.html#beanmembersshouldserialize" priority="3">
 Found non-transient, non-static member. Please mark as transient or provide accessors.
 </violation>
@@ -212,7 +212,7 @@ Parameter 'x' is not assigned and could be declared final
 Parameter 'y' is not assigned and could be declared final
 </violation>
 </file>
-<file name="C:\Users\Wang yuchen\Desktop\BomberMan\src\main\java\logic\Message.java">
+<file name="E:\课件\BomberMan\src\main\java\logic\Message.java">
 <violation beginline="1" endline="191" begincolumn="1" endcolumn="3" rule="ExcessivePublicCount" ruleset="Design" package="logic" class="Message" externalInfoUrl="https://pmd.github.io/pmd-6.23.0/pmd_rules_java_design.html#excessivepubliccount" priority="3">
 This class has a bunch of public methods and attributes
 </violation>
@@ -316,7 +316,7 @@ Parameter 'x' is not assigned and could be declared final
 Parameter 'y' is not assigned and could be declared final
 </violation>
 </file>
-<file name="C:\Users\Wang yuchen\Desktop\BomberMan\src\main\java\logic\MessageControl.java">
+<file name="E:\课件\BomberMan\src\main\java\logic\MessageControl.java">
 <violation beginline="7" endline="7" begincolumn="1" endcolumn="21" rule="ImportFromSamePackage" ruleset="Error Prone" package="logic" class="MessageControl" externalInfoUrl="https://pmd.github.io/pmd-6.23.0/pmd_rules_java_errorprone.html#importfromsamepackage" priority="3">
 No need to import a type that lives in the same package
 </violation>
@@ -378,7 +378,7 @@ Document empty method body
 Parameter 'message' is not assigned and could be declared final
 </violation>
 </file>
-<file name="C:\Users\Wang yuchen\Desktop\BomberMan\src\main\java\server\Server.java">
+<file name="E:\课件\BomberMan\src\main\java\server\Server.java">
 <violation beginline="15" endline="15" begincolumn="1" endcolumn="27" rule="ImportFromSamePackage" ruleset="Error Prone" package="server" class="Server" externalInfoUrl="https://pmd.github.io/pmd-6.23.0/pmd_rules_java_errorprone.html#importfromsamepackage" priority="3">
 No need to import a type that lives in the same package
 </violation>
@@ -665,7 +665,7 @@ Avoid empty if statements
 Avoid empty if statements
 </violation>
 </file>
-<file name="C:\Users\Wang yuchen\Desktop\BomberMan\src\main\java\ui\Background.java">
+<file name="E:\课件\BomberMan\src\main\java\ui\Background.java">
 <violation beginline="17" endline="17" begincolumn="1" endcolumn="16" rule="ImportFromSamePackage" ruleset="Error Prone" package="ui" class="Background" externalInfoUrl="https://pmd.github.io/pmd-6.23.0/pmd_rules_java_errorprone.html#importfromsamepackage" priority="3">
 No need to import a type that lives in the same package
 </violation>
@@ -2416,7 +2416,7 @@ Document empty method body
 Parameter 'e' is not assigned and could be declared final
 </violation>
 </file>
-<file name="C:\Users\Wang yuchen\Desktop\BomberMan\src\main\java\ui\BattleFrame.java">
+<file name="E:\课件\BomberMan\src\main\java\ui\BattleFrame.java">
 <violation beginline="13" endline="13" begincolumn="1" endcolumn="21" rule="ImportFromSamePackage" ruleset="Error Prone" package="ui" class="BattleFrame" externalInfoUrl="https://pmd.github.io/pmd-6.23.0/pmd_rules_java_errorprone.html#importfromsamepackage" priority="3">
 No need to import a type that lives in the same package
 </violation>
@@ -2460,7 +2460,7 @@ System.out.println is used
 Local variable 'bg' could be declared final
 </violation>
 </file>
-<file name="C:\Users\Wang yuchen\Desktop\BomberMan\src\main\java\ui\Lobby.java">
+<file name="E:\课件\BomberMan\src\main\java\ui\Lobby.java">
 <violation beginline="1" endline="819" begincolumn="1" endcolumn="2" rule="ExcessiveImports" ruleset="Design" package="ui" class="Lobby" externalInfoUrl="https://pmd.github.io/pmd-6.23.0/pmd_rules_java_design.html#excessiveimports" priority="3">
 A high number of imports can indicate a high degree of coupling within an object.
 </violation>
@@ -3599,7 +3599,7 @@ Document empty method body
 Parameter 'arg0' is not assigned and could be declared final
 </violation>
 </file>
-<file name="C:\Users\Wang yuchen\Desktop\BomberMan\src\main\java\ui\Login.java">
+<file name="E:\课件\BomberMan\src\main\java\ui\Login.java">
 <violation beginline="30" endline="30" begincolumn="1" endcolumn="16" rule="ImportFromSamePackage" ruleset="Error Prone" package="ui" class="Login" externalInfoUrl="https://pmd.github.io/pmd-6.23.0/pmd_rules_java_errorprone.html#importfromsamepackage" priority="3">
 No need to import a type that lives in the same package
 </violation>
@@ -3820,12 +3820,12 @@ Parameter 'e' is not assigned and could be declared final
 Parameter 'e' is not assigned and could be declared final
 </violation>
 </file>
-<file name="C:\Users\Wang yuchen\Desktop\BomberMan\src\main\java\util\Key.java">
+<file name="E:\课件\BomberMan\src\main\java\util\Key.java">
 <violation beginline="3" endline="27" begincolumn="8" endcolumn="1" rule="TooManyFields" ruleset="Design" package="util" class="Key" externalInfoUrl="https://pmd.github.io/pmd-6.23.0/pmd_rules_java_design.html#toomanyfields" priority="3">
 Too many fields
 </violation>
 </file>
-<file name="C:\Users\Wang yuchen\Desktop\BomberMan\src\main\java\util\Util.java">
+<file name="E:\课件\BomberMan\src\main\java\util\Util.java">
 <violation beginline="13" endline="82" begincolumn="19" endcolumn="1" rule="UseUtilityClass" ruleset="Design" package="util" class="Util" externalInfoUrl="https://pmd.github.io/pmd-6.23.0/pmd_rules_java_design.html#useutilityclass" priority="3">
 All methods are static.  Consider using a utility class instead. Alternatively, you could add a private constructor or make the class abstract to silence this warning.
 </violation>
