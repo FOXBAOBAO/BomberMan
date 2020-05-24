@@ -28,4 +28,6 @@ jobs:
         run: ./gradlew build
       - name: Generate jar file as a production
         run: ./gradlew player1
+      - name: Generate jar file for server as a production
+        run: ./gradlew server
 
