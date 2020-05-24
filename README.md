@@ -1,7 +1,9 @@
 # BomberMan
 ## Some explainations related to the Continious deployment(CD)
 For our project,each time you commit or do a pull request.
+
 The workflow action will generate the brand new version of the production jar files.
+
 Two tasks are set in the configuration file of gradle.
 One called player1,this task is created in order to generate the jar file for the game running.
 The other called server,which can generate the jar file to set up the server.
