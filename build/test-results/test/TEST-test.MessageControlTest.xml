@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="test.MessageControlTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2020-05-24T11:26:33" hostname="LAPTOP-PV3T0M68" time="0.001">
+<testsuite name="test.MessageControlTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2020-05-24T14:39:58" hostname="LAPTOP-PV3T0M68" time="0.002">
   <properties/>
   <testcase name="testSetMessage" classname="test.MessageControlTest" time="0.001"/>
-  <testcase name="testreceiveMessage" classname="test.MessageControlTest" time="0.0"/>
+  <testcase name="testreceiveMessage" classname="test.MessageControlTest" time="0.001"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

@@ -133,11 +133,8 @@
 <error line="8" severity="warning" message="导入语句&apos;component.ImagePanel&apos; 字典顺序错误。应在&apos;javax.swing.JFrame&apos;之前。" source="com.puppycrawl.tools.checkstyle.checks.imports.CustomImportOrderCheck"/>
 <error line="12" column="33" severity="warning" message="WhitespaceAround: &apos;{&apos; is not preceded with whitespace." source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
 <error line="13" column="1" severity="warning" message="行内含有制表符 tab 。" source="com.puppycrawl.tools.checkstyle.checks.whitespace.FileTabCharacterCheck"/>
-<error line="14" column="3" severity="warning" message="缺少 Javadoc 。" source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
-<error line="14" column="16" severity="warning" message="WhitespaceAround: &apos;{&apos; is not preceded with whitespace." source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
 <error line="15" column="1" severity="warning" message="行内含有制表符 tab 。" source="com.puppycrawl.tools.checkstyle.checks.whitespace.FileTabCharacterCheck"/>
 <error line="16" column="1" severity="warning" message="行内含有制表符 tab 。" source="com.puppycrawl.tools.checkstyle.checks.whitespace.FileTabCharacterCheck"/>
-<error line="17" severity="warning" message="注释应与第18行代码同样缩进4个缩进符，而不是2个。" source="com.puppycrawl.tools.checkstyle.checks.indentation.CommentsIndentationCheck"/>
 <error line="17" column="1" severity="warning" message="行内含有制表符 tab 。" source="com.puppycrawl.tools.checkstyle.checks.whitespace.FileTabCharacterCheck"/>
 <error line="23" severity="warning" message="&apos;METHOD_DEF 前应有空行。" source="com.puppycrawl.tools.checkstyle.checks.whitespace.EmptyLineSeparatorCheck"/>
 <error line="23" severity="warning" message="&apos;method def modifier&apos; 缩进了8个缩进符，应为2个。" source="com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheck"/>

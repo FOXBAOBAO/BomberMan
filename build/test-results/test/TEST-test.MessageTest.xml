@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="test.MessageTest" tests="19" skipped="0" failures="0" errors="0" timestamp="2020-05-24T11:26:33" hostname="LAPTOP-PV3T0M68" time="0.003">
+<testsuite name="test.MessageTest" tests="19" skipped="0" failures="0" errors="0" timestamp="2020-05-24T14:39:58" hostname="LAPTOP-PV3T0M68" time="0.003">
   <properties/>
   <testcase name="testSetPassWord" classname="test.MessageTest" time="0.0"/>
   <testcase name="testSetBomberPower" classname="test.MessageTest" time="0.0"/>
@@ -7,15 +7,15 @@
   <testcase name="testSetY" classname="test.MessageTest" time="0.0"/>
   <testcase name="testSetIsAlive" classname="test.MessageTest" time="0.0"/>
   <testcase name="testSetIsDead" classname="test.MessageTest" time="0.0"/>
-  <testcase name="testSetIsNext" classname="test.MessageTest" time="0.001"/>
+  <testcase name="testSetIsNext" classname="test.MessageTest" time="0.0"/>
   <testcase name="testSetUserName" classname="test.MessageTest" time="0.0"/>
   <testcase name="testSetNumber" classname="test.MessageTest" time="0.0"/>
   <testcase name="testSetExit" classname="test.MessageTest" time="0.0"/>
   <testcase name="testSetHead" classname="test.MessageTest" time="0.0"/>
   <testcase name="testSetTeam" classname="test.MessageTest" time="0.0"/>
-  <testcase name="testSetType" classname="test.MessageTest" time="0.001"/>
+  <testcase name="testSetType" classname="test.MessageTest" time="0.0"/>
   <testcase name="testSetMap" classname="test.MessageTest" time="0.0"/>
-  <testcase name="testSetMsg" classname="test.MessageTest" time="0.0"/>
+  <testcase name="testSetMsg" classname="test.MessageTest" time="0.001"/>
   <testcase name="testMoveTypeX" classname="test.MessageTest" time="0.0"/>
   <testcase name="testMoveTypeY" classname="test.MessageTest" time="0.0"/>
   <testcase name="testSetReady" classname="test.MessageTest" time="0.0"/>

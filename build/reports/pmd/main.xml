@@ -2,7 +2,7 @@
 <pmd xmlns="http://pmd.sourceforge.net/report/2.0.0"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://pmd.sourceforge.net/report/2.0.0 http://pmd.sourceforge.net/report_2_0_0.xsd"
-    version="6.23.0" timestamp="2020-05-24T13:26:26.005">
+    version="6.23.0" timestamp="2020-05-24T16:39:47.070">
 <file name="E:\课件\BomberMan\src\main\java\component\ImageButton.java">
 <violation beginline="7" endline="32" begincolumn="8" endcolumn="1" rule="MissingSerialVersionUID" ruleset="Error Prone" package="component" class="ImageButton" externalInfoUrl="https://pmd.github.io/pmd-6.23.0/pmd_rules_java_errorprone.html#missingserialversionuid" priority="3">
 Classes implementing Serializable should set a serialVersionUID
@@ -124,6 +124,9 @@ Classes implementing Serializable should set a serialVersionUID
 </violation>
 <violation beginline="12" endline="39" begincolumn="8" endcolumn="1" rule="MissingSerialVersionUID" ruleset="Error Prone" package="game" class="Game" externalInfoUrl="https://pmd.github.io/pmd-6.23.0/pmd_rules_java_errorprone.html#missingserialversionuid" priority="3">
 Classes implementing Serializable should set a serialVersionUID
+</violation>
+<violation beginline="14" endline="22" begincolumn="10" endcolumn="3" rule="UnnecessaryConstructor" ruleset="Code Style" package="game" class="Game" method="Game" externalInfoUrl="https://pmd.github.io/pmd-6.23.0/pmd_rules_java_codestyle.html#unnecessaryconstructor" priority="3">
+Avoid unnecessary constructors - the compiler will generate these for you
 </violation>
 <violation beginline="14" endline="22" begincolumn="10" endcolumn="3" rule="CallSuperInConstructor" ruleset="Code Style" package="game" class="Game" method="Game" externalInfoUrl="https://pmd.github.io/pmd-6.23.0/pmd_rules_java_codestyle.html#callsuperinconstructor" priority="3">
 It is a good practice to call super() in a constructor
