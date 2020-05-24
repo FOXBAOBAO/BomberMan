@@ -1,5 +1,5 @@
 # BomberMan
-Some explainations related to the Continious deployment(CD)
+## Some explainations related to the Continious deployment(CD)
 For our project,each time you commit or do a pull request.
 The workflow action will generate the brand new version of the production jar files.
 Two tasks are set in the configuration file of gradle.
