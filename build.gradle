@@ -84,7 +84,6 @@ task server(type: Jar) {
 	task player1(type: Jar) {
 	    manifest {
 	        attributes('Main-Class': 'game.Game')
-	        attributes('Main-Class': 'ui.Background')
 	    }
 	    from {
 	        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
